@@ -1,6 +1,6 @@
 <?php
 
-$sitename = 'CHANGEME';
+$sitename = 'localho_st';
 
 // - DO NOT make changes below this Comment
 
@@ -9,7 +9,14 @@ if($sitename == 'CHANGEME')
   die("[ERROR] - Luke, you should change the Sitename in aliases.drushrc.php!\n");
 
 // Fetch our Distfile for magically know what servers we need to know within drush.
-$distfile = json_decode(file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/servers.json'), TRUE);
+$amazeelabs_configuration = json_decode(file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/servers.json'), TRUE);
+// Try to fetch the site related configs, if it fails we expect it not to be presetnt - quick and dirty
+$customer_configuration = json_decode(@file_get_contents('customers/'.$sitename.'.json'), TRUE);
+
+if ($customer_configuration == true) {
+    $aliases = $customer_configuration;
+}
+
 
 // Generate Site specifc variables like userid and siteurl
 $site = array();
@@ -17,7 +24,7 @@ $site['userid'] = $sitename;
 $site['siteurl'] = str_replace('_', '.', $site['userid']);
 
 // Generate live sites aliases
-foreach ($distfile['live'] as $key => $value) {
+foreach ($amazeelabs_configuration['live'] as $key => $value) {
     $aliases[$key] = array(
     'remote-host' => $value,
     'remote-user' => $site['userid'],
@@ -38,7 +45,7 @@ foreach ($distfile['live'] as $key => $value) {
 }
 
 // Generate DEV sites aliases
-foreach ($distfile['dev'] as $key => $value) {
+foreach ($amazeelabs_configuration['dev'] as $key => $value) {
     $aliases[$key] = array(
     'remote-host' => $value,
     'remote-user' => 'www-data',
@@ -59,5 +66,5 @@ foreach ($distfile['dev'] as $key => $value) {
 
 // Generate Server Groups
 $aliases['live'] = array(
-  'site-list' => array_map(function($k){ return '@'.$k;},array_keys($distfile['live']))
+  'site-list' => array_map(function($k){ return '@'.$k;},array_keys($amazeelabs_configuration['live']))
 );

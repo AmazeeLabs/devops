@@ -1,0 +1,66 @@
+<?php
+
+$sitename = 'CHANGEME';
+
+// - DO NOT make changes below this Comment
+
+// Basic error handling
+if($sitename == 'CHANGEME')
+  die("[ERROR] - Luke, you should change the Sitename in aliases.drushrc.php!\n");
+
+
+// Fetch our Distfile for magically know what servers we need to know within drush.
+$distfile = json_decode(file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/servers.json'), TRUE);
+
+// Generate Site specifc variables like userid and siteurl
+$site = array();
+$site['userid'] = $sitename;
+$site['siteurl'] = str_replace('_', '.', $site['userid']);
+
+// Generate live sites aliases
+foreach ($distfile['live'] as $key => $value) {
+    $aliases[$key] = array(
+    'remote-host' => $value,
+    'remote-user' => $site['userid'],
+    'path-aliases' => array(
+      '%drush-script' => '/home/'. $site['userid'].'/bin/drush',
+      '%dump-dir' => '/home/'. $site['userid'] .'/',
+    ),
+    'command-specific' => array (
+    'sql-sync' => array (
+      'no-cache' => TRUE,
+    ),
+  ),
+  'root' => '/home/'. $site['userid'].'/public_html',
+  'uri' => 'http://'. $site['siteurl'].'.'. $value .'/',
+
+      );
+}
+
+// Generate DEV sites aliases
+foreach ($distfile['dev'] as $key => $value) {
+    $aliases[$key] = array(
+    'remote-host' => $value,
+    'remote-user' => $site['userid'],
+    'path-aliases' => array(
+      '%drush-script' => '/home/'. $site['userid'].'/bin/drush',
+      '%dump-dir' => '/home/'. $site['userid'] .'/',
+    ),
+    'command-specific' => array (
+    'sql-sync' => array (
+      'no-cache' => TRUE,
+    ),
+  ),
+  'root' => '/home/'. $site['userid'].'/public_html',
+  'uri' => 'http://'. $site['siteurl'].'.'. $value .'/',
+      );
+}
+
+// Generate Server Groups
+$aliases['live'] = array(
+  'site-list' => array_map(function($k){ return '@'.$k;},array_values($distfile['live']))
+);
+
+$aliases['dev'] = array(
+  'site-list' => array_map(function($k){ return '@'.$k;},array_values($distfile['dev']))
+);

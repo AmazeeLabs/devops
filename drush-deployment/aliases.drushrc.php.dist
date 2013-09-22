@@ -28,6 +28,7 @@ foreach ($distfile['live'] as $key => $value) {
     'command-specific' => array (
     'sql-sync' => array (
       'no-cache' => TRUE,
+      'no-ordered-dump' => TRUE
     ),
   ),
   'root' => '/home/'. $site['userid'].'/public_html',
@@ -40,26 +41,23 @@ foreach ($distfile['live'] as $key => $value) {
 foreach ($distfile['dev'] as $key => $value) {
     $aliases[$key] = array(
     'remote-host' => $value,
-    'remote-user' => $site['userid'],
+    'remote-user' => 'www-data',
     'path-aliases' => array(
-      '%drush-script' => '/home/'. $site['userid'].'/bin/drush',
-      '%dump-dir' => '/home/'. $site['userid'] .'/',
+      '%drush-script' => '/home/www-data/bin/drush',
+      '%dump-dir' => '/home/www-data/',
     ),
     'command-specific' => array (
     'sql-sync' => array (
       'no-cache' => TRUE,
+      'no-ordered-dump' => TRUE
     ),
   ),
-  'root' => '/home/'. $site['userid'].'/public_html',
+  'root' => '/home/www-data/'. $site['siteurl'],
   'uri' => 'http://'. $site['siteurl'].'.'. $value .'/',
       );
 }
 
 // Generate Server Groups
 $aliases['live'] = array(
-  'site-list' => array_map(function($k){ return '@'.$k;},array_values($distfile['live']))
-);
-
-$aliases['dev'] = array(
-  'site-list' => array_map(function($k){ return '@'.$k;},array_values($distfile['dev']))
+  'site-list' => array_map(function($k){ return '@'.$k;},array_keys($distfile['live']))
 );

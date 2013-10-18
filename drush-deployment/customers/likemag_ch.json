@@ -1,0 +1,18 @@
+{
+  "dev": {
+    "remote-host": "amazeedev1.nine.ch",
+    "remote-user": "likemag",
+    "path-aliases": {
+      "%drush-script": "/home/www-data/drush/drush",
+      "%dump-dir": "/home/www-data/likemag.ch/"
+    },
+    "command-specific": {
+      "sql-sync": {
+        "no-cache": true,
+        "no-ordered-dump": true
+      }
+    },
+    "root": "/home/www-data/likemag.ch",
+    "uri": "http://www.likemag.ch"
+  }
+}

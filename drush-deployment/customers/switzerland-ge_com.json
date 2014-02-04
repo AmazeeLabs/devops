@@ -15,7 +15,7 @@
     "root": "/home/www-data/dev.switzerland-ge.com",
     "uri": "http://dev.switzerland-ge.com.amazeedev1.nine.ch"
   },
-  'staging' : {
+  "staging" : {
     "remote-host": "amazeedev1.nine.ch",
     "remote-user": "www-data",
     "path-aliases": {

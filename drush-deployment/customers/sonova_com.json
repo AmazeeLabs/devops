@@ -1,0 +1,18 @@
+{
+  "staging": {
+    "remote-host": "amazeedev1.nine.ch",
+    "remote-user": "www-data",
+    "path-aliases": {
+      "%drush-script": "/home/www-data/drush/drush",
+      "%dump-dir": "/home/www-data/staging.sonova.com/"
+    },
+    "command-specific": {
+      "sql-sync": {
+        "no-cache": true,
+        "no-ordered-dump": true
+      }
+    },
+    "root": "/home/www-data/staging.sonova.com",
+    "uri": "http://staging.sonova.com.amazeedev1.nine.ch"
+  }
+}

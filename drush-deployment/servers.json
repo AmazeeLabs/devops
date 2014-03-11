@@ -7,6 +7,8 @@
     "web5" : "amazeeweb5.nine.ch"
   },
   "dev": {
-    "dev" : "amazeedev1.nine.ch"
+    "dev" : "amazeedev1.nine.ch",
+    "dev2" : "amazeedev2.nine.ch"
+
   }
 }

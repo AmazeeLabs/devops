@@ -17,7 +17,7 @@ $options['after']['deploy-symlink'][] = 'deploy_cache_task';
  * @mandatory
  */
 function deploy_settings_php_task($d) {
-  $d->run("cp /home/nfs_share/www-data/`whoami`/settings.php ~/deploy/drupal/shared/settings.php", $d->latest_release());
+  $d->run("cp /home/nfs_share/www-data/`whoami`/settings.php %s/sites/default/settings.php", $d->latest_release());
 }
 
 /**
@@ -25,7 +25,6 @@ function deploy_settings_php_task($d) {
  * @task
  */
 function deploy_symlinks_task($d) {
-  $d->run("ln -s ~/deploy/drupal/shared/settings.php %s/sites/default/settings.php", $d->latest_release());
   $d->run("ln -s /home/nfs_share/www-data/`whoami`/files %s/sites/default/files", $d->latest_release());
 }
 

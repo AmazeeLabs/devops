@@ -13,8 +13,6 @@ $amazeelabs_configuration = json_decode(file_get_contents('https://raw.github.co
 // Try to fetch the site related configs, if it fails we expect it not to be presetnt - quick and dirty
 $customer_configuration = json_decode(@file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/customers/'.$sitename.'.json'), TRUE);
 
-
-
 // Generate Site specifc variables like userid and siteurl
 $site = array();
 $site['userid'] = $sitename;

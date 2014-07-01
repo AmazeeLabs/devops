@@ -10,8 +10,14 @@ if($sitename == 'CHANGEME')
 
 // Fetch our Distfile for magically know what servers we need to know within drush.
 $amazeelabs_configuration = json_decode(file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/servers.json'), TRUE);
+// Fetch our Distfile for magically know what servers we need to know within drush.
+$customer_server_configuration = json_decode(@file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/customers/'.$sitename.'_servers.json'), TRUE);
 // Try to fetch the site related configs, if it fails we expect it not to be presetnt - quick and dirty
 $customer_configuration = json_decode(@file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/customers/'.$sitename.'.json'), TRUE);
+
+if (!empty($customer_server_configuration)) {
+  $amazeelabs_configuration = $customer_server_configuration;
+}
 
 // Generate Site specifc variables like userid and siteurl
 $site = array();

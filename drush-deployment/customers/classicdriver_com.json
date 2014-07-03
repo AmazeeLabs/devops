@@ -3,7 +3,7 @@
     "remote-host": "amazeedev2.nine.ch",
     "remote-user": "www-classicdriver",
     "path-aliases": {
-      "%drush-script": "/home/www-classicdriver/drush/drush",
+      "%drush-script": "/home/www-classicdriver/drush",
       "%dump-dir": "/home/www-classicdriver/classicdriver.com/"
     },
     "command-specific": {

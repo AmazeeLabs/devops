@@ -7,8 +7,8 @@ global $server_configuration;
 
 // Fetch our Distfile for magically know what servers we need to know within drush.
 if (!isset($server_configuration)) {
-  $customer_server_configuration = json_decode(@file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/customers/'.$sitename.'_servers.json'), TRUE);
-  if (!empty($customer_server_configuration)) {
+  $server_configuration = json_decode(@file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/customers/'.$sitename.'_servers.json'), TRUE);
+  if (!empty($server_configuration)) {
     $server_configuration = json_decode(file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/servers.json'), TRUE);
   }
 }

@@ -53,7 +53,7 @@
     "remote-host": "amazeedev1.nine.ch",
     "remote-user": "www-data",
     "path-aliases": {
-      "%drush-script": "/home/www-data/drush/drush",
+      "%drush-script": "/home/www-data/bin/drush",
       "%dump-dir": "/home/www-data/$siteurl/"
     },
     "root": "/home/www-data/$siteurl",
@@ -63,7 +63,7 @@
     "remote-host": "amazeedev2.nine.ch",
     "remote-user": "www-data",
     "path-aliases": {
-      "%drush-script": "/home/www-data/drush/drush",
+      "%drush-script": "/home/www-data/bin/drush",
       "%dump-dir": "/home/www-data/$siteurl/"
     },
     "root": "/home/www-data/$siteurl",

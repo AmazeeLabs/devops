@@ -77,7 +77,6 @@ if (!empty($custom_site_configuration)) {
 // function_exists, because this file is included multiple times in the same drush process.
 if (!function_exists('deploy_replace_sitespecifics')) {
   function deploy_replace_sitespecifics(&$item, $key, $sitespecifics) {
-    var_dump($item);
     $item = strtr($item, $sitespecifics);
   }
 }

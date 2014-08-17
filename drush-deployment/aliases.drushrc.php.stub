@@ -85,3 +85,60 @@ if ($customer_configuration == true) {
 $aliases['live'] = array(
   'site-list' => array_map(function($k){ return '@'.$k;},array_keys($amazeelabs_configuration['live']))
 );
+
+
+function deploy_before_deploy_symlink_tasks($d) {
+    deploy_settings_php_task($d);
+    deploy_symlinks_task($d);
+}
+
+function deploy_after_deploy_symlink_tasks($d) {
+    deploy_update_task($d);
+    deploy_cache_task($d);
+    deploy_newrelic_task($d);
+}
+
+
+/**
+ * The task needs to be defined with a @task "decorator" in the comment block preceding it
+ * @task
+ * @mandatory
+ */
+function deploy_settings_php_task($d) {
+  $d->run("cp /home/nfs_share/www-data/`whoami`/settings.php %s/sites/default/settings.php", $d->latest_release());
+}
+
+/**
+ * The task needs to be defined with a @task "decorator" in the comment block preceding it
+ * @task
+ */
+function deploy_symlinks_task($d) {
+  $d->run("ln -s /home/nfs_share/www-data/`whoami`/files %s/sites/default/files", $d->latest_release());
+}
+
+/**
+ * The task needs to be defined with a @task "decorator" in the comment block preceding it
+ * @task
+ */
+function deploy_update_task($d) {
+  $d->run_once("cd ~/public_html && %s updb -y", $d->sites[0]['path-aliases']['%drush-script']);
+}
+
+
+/**
+ * The task needs to be defined with a @task "decorator" in the comment block preceding it
+ * @task
+ */
+function deploy_cache_task($d) {
+  $d->run_once("cd ~/public_html && %s cc all -y", $d->sites[0]['path-aliases']['%drush-script']);
+}
+
+/**
+ * The task needs to be defined with a @task "decorator" in the comment block preceding it
+ * @task
+ */
+function deploy_newrelic_task($d) {
+  $d->run_once('curl -H "x-api-key:'.$d->sites[0]['newrelic']['api-key'].'" -d "deployment[app_name]=' . $d->sites[0]['newrelic']['app-name'] . '" -d "deployment[user]='.get_current_user().'" https://api.newrelic.com/deployments.xml
+', $d->sites[0]['path-aliases']['%drush-script']);
+}
+

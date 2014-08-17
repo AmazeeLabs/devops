@@ -11,7 +11,7 @@ if (!isset($amazeelabs_configuration)) {
 // Fetch our Distfile for magically know what servers we need to know within drush.
 global $customer_server_configuration;
 if (!isset($customer_server_configuration)) {
-  $customer_server_configuration = json_decode(@file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/customers/'.$sitename.'_servers.json'), TRUE);
+  //$customer_server_configuration = json_decode(@file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/customers/'.$sitename.'_servers.json'), TRUE);
 }
 
 // Try to fetch the site related configs, if it fails we expect it not to be presetnt - quick and dirty

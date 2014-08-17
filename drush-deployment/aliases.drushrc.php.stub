@@ -3,6 +3,7 @@ if($sitename == 'CHANGEME')
   die("[ERROR] - Luke, you should change the Sitename in aliases.drushrc.php!\n");
 
 // Fetch our Distfile for magically know what servers we need to know within drush.
+global $amazeelabs_configuration;
 if (!isset($amazeelabs_configuration)) {
   echo "download";
   $amazeelabs_configuration = json_decode(file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/servers.json'), TRUE);

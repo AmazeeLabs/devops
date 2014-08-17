@@ -74,16 +74,18 @@ if (!empty($custom_site_configuration)) {
   }
 }
 
+// function_exists, because this file is included multiple times in the same drush process.
+if (!function_exists('deploy_replace_sitespecifics')) {
+  function deploy_replace_sitespecifics(&$item, $key, $sitespecifics) {
+    var_dump($item);
+    $item = strtr($item, $sitespecifics);
+  }
+}
+
 // Replace Site specifc variables like userid and siteurl from the generated array
 $siteurl = str_replace('_', '.', $sitename);
 array_walk_recursive($aliases, 'deploy_replace_sitespecifics', array('$sitename' => $sitename, '$siteurl' => $siteurl));
 
-// function_exisists, because this file is included multiple times in the same drush process.
-if (!function_exists('deploy_replace_sitespecifics')) {
-  function deploy_replace_sitespecifics(&$item, $key, $sitespecifics) {
-    $item = strtr($item, $sitespecifics);
-  }
-}
 
 // Default Group of Tasks that should run before the new symlinks are created.
 // This function should be used to overwrite in site specific aliases.drushrc.php files

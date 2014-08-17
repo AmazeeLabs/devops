@@ -7,5 +7,10 @@
     ],
     "dev": [
         "dev1"
+    ],
+    "staging": [
+        "web5",
+        "web1",
+        "dev2"
     ]
 }

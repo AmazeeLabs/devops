@@ -1,0 +1,22 @@
+{
+  "web1": {
+    "remote-host": "amazeeweb1.nine.ch",
+    "remote-user": "&userid",
+    "path-aliases": {
+      "%drush-script": "/home/&userid/bin/drush",
+      "%dump-dir": "/home/&userid"
+    },
+    "root": "/home/&userid/public_html",
+    "uri": "http://&siteurl.amazeeweb1.nine.ch"
+  },
+  "web2": {
+    "remote-host": "amazeeweb2.nine.ch",
+    "remote-user": "&userid",
+    "path-aliases": {
+      "%drush-script": "/home/&userid/bin/drush",
+      "%dump-dir": "/home/&userid"
+    },
+    "root": "/home/&userid/public_html",
+    "uri": "http://&siteurl.amazeeweb1.nine.ch"
+  }
+}

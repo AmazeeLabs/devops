@@ -5,13 +5,20 @@ if($sitename == 'CHANGEME')
 // Fetch our Distfile for magically know what servers we need to know within drush.
 global $amazeelabs_configuration;
 if (!isset($amazeelabs_configuration)) {
-  echo "download";
-  $amazeelabs_configuration = json_decode(file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/servers.json'), TRUE);
+  //$amazeelabs_configuration = json_decode(file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/servers.json'), TRUE);
 }
+
 // Fetch our Distfile for magically know what servers we need to know within drush.
-$customer_server_configuration = json_decode(@file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/customers/'.$sitename.'_servers.json'), TRUE);
+global $customer_server_configuration;
+if (!isset($customer_server_configuration)) {
+  $customer_server_configuration = json_decode(@file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/customers/'.$sitename.'_servers.json'), TRUE);
+}
+
 // Try to fetch the site related configs, if it fails we expect it not to be presetnt - quick and dirty
-$customer_configuration = json_decode(@file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/customers/'.$sitename.'.json'), TRUE);
+global $customer_configuration;
+if (!isset($customer_configuration)) {
+  $customer_configuration = json_decode(@file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/customers/'.$sitename.'.json'), TRUE);
+}
 
 // Drush Deploy Options
 $options['application'] = 'drupal';

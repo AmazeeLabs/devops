@@ -86,10 +86,11 @@ $aliases['live'] = array(
   'site-list' => array_map(function($k){ return '@'.$k;},array_keys($amazeelabs_configuration['live']))
 );
 
-
-function deploy_before_deploy_symlink_tasks($d) {
-    deploy_settings_php_task($d);
-    deploy_symlinks_task($d);
+if (!function_exists("deploy_before_deploy_symlink_tasks")) {
+  function deploy_before_deploy_symlink_tasks($d) {
+      deploy_settings_php_task($d);
+      deploy_symlinks_task($d);
+  }
 }
 
 function deploy_after_deploy_symlink_tasks($d) {

@@ -117,7 +117,7 @@ if (!function_exists("deploy_settings_php_task")) {
  * The task needs to be defined with a @task "decorator" in the comment block preceding it
  * @task
  */
-if (!function_exists("deploy_before_deploy_symlink_tasks")) {
+if (!function_exists("deploy_symlinks_task")) {
   function deploy_symlinks_task($d) {
     $d->run("ln -s /home/nfs_share/www-data/`whoami`/files %s/sites/default/files", $d->latest_release());
   }

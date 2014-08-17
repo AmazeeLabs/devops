@@ -4,14 +4,6 @@ $sitename = 'CHANGEME';   //use the username on our servers like testsite_ch
 $options['newrelic-api-key'] = 'CHANGEME';
 $options['deploy-repository'] = 'git@github.com:AmazeeLabs/CHANGEME.git';
 
-if (!function_exists("deploy_after_deploy_symlink_tasks")) {
-  function deploy_after_deploy_symlink_tasks($d) {
-      //deploy_update_task($d);
-      //deploy_cache_task($d);
-      deploy_newrelic_task($d);
-  }
-}
-
 // - And we load the aliases file here
 global $aliases_stub;
 if (empty($aliases_stub)) {

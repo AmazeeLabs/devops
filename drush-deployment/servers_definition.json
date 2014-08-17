@@ -68,5 +68,5 @@
     },
     "root": "/home/www-data/$siteurl",
     "uri": "http://$siteurl.amazeedev2.nine.ch"
-  },
+  }
 }

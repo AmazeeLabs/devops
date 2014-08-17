@@ -18,5 +18,67 @@
     },
     "root": "/home/&userid/public_html",
     "uri": "http://&siteurl.amazeeweb1.nine.ch"
+  },
+  "web3": {
+    "remote-host": "amazeeweb2.nine.ch",
+    "remote-user": "&userid",
+    "path-aliases": {
+      "%drush-script": "/home/&userid/bin/drush",
+      "%dump-dir": "/home/&userid"
+    },
+    "root": "/home/&userid/public_html",
+    "uri": "http://&siteurl.amazeeweb1.nine.ch"
+  },
+  "web4": {
+    "remote-host": "amazeeweb2.nine.ch",
+    "remote-user": "&userid",
+    "path-aliases": {
+      "%drush-script": "/home/&userid/bin/drush",
+      "%dump-dir": "/home/&userid"
+    },
+    "root": "/home/&userid/public_html",
+    "uri": "http://&siteurl.amazeeweb1.nine.ch"
+  },
+  "web5": {
+    "remote-host": "amazeeweb2.nine.ch",
+    "remote-user": "&userid",
+    "path-aliases": {
+      "%drush-script": "/home/&userid/bin/drush",
+      "%dump-dir": "/home/&userid"
+    },
+    "root": "/home/&userid/public_html",
+    "uri": "http://&siteurl.amazeeweb1.nine.ch"
+  },
+  "dev1": {
+    "remote-host": "amazeedev1.nine.ch",
+    "remote-user": "www-data",
+    "path-aliases": {
+      "%drush-script": "/home/www-data/drush/drush",
+      "%dump-dir": "/home/www-data/staging.sonova.com/"
+    },
+    "command-specific": {
+      "sql-sync": {
+        "no-cache": true,
+        "no-ordered-dump": true
+      }
+    },
+    "root": "/home/www-data/staging.sonova.com",
+    "uri": "http://staging.sonova.com.amazeedev1.nine.ch"
+  },
+  "dev2": {
+    "remote-host": "amazeedev1.nine.ch",
+    "remote-user": "www-data",
+    "path-aliases": {
+      "%drush-script": "/home/www-data/drush/drush",
+      "%dump-dir": "/home/www-data/staging.sonova.com/"
+    },
+    "command-specific": {
+      "sql-sync": {
+        "no-cache": true,
+        "no-ordered-dump": true
+      }
+    },
+    "root": "/home/www-data/staging.sonova.com",
+    "uri": "http://staging.sonova.com.amazeedev1.nine.ch"
   }
 }

@@ -1,7 +1,7 @@
 {
   "web1": {
     "remote-host": "amazeeweb1.nine.ch",
-    "remote-user": "&sitename",
+    "remote-user": "$sitename",
     "path-aliases": {
       "%drush-script": "/home/$sitename/bin/drush",
       "%dump-dir": "/home/$sitename"

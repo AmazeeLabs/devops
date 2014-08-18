@@ -1,6 +1,3 @@
-Drush Deployment
-================
-
 # Install and use
 http://confluence.amazeelabs.com/display/KNOWLEDGE/Drush+Deploy+-+Install+and+Use
 

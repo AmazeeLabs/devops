@@ -30,7 +30,7 @@ $server_definition_defaults = array(
 // Globally defined so we can prevent drush from making too many requests to Github.
 global $server_group_mappings;
 
-// Fetch the Server Group Mapping File. First try to load a site specific file, if this does not exist, use the default ont.
+// Fetch the Server Group Mapping File. First try to load a site specific file, if this does not exist, use the default one.
 if (!isset($server_group_mappings)) {
   $server_group_mappings = json_decode(file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/server-group-mappings/site-specific/' . $sitename . '.json?' . rand(0, 1000000)), TRUE);
   if (empty($server_group_mappings)) {

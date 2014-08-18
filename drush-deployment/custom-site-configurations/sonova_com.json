@@ -6,12 +6,6 @@
       "%drush-script": "/home/www-data/bin/drush",
       "%dump-dir": "/home/www-data/staging.$siteurl/"
     },
-    "command-specific": {
-      "sql-sync": {
-        "no-cache": true,
-        "no-ordered-dump": true
-      }
-    },
     "root": "/home/www-data/staging.$siteurl",
     "uri": "http://staging.$siteurl.amazeedev1.nine.ch"
   }

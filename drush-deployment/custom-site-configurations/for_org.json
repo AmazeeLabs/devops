@@ -1,0 +1,22 @@
+{
+  "forum-dev": {
+    "remote-host": "amazeedev2.nine.ch",
+    "remote-user": "www-data",
+    "path-aliases": {
+      "%drush-script": "/home/www-data/bin/drush",
+      "%dump-dir": "/home/www-data/forum.$siteurl/"
+    },
+    "root": "/home/www-data/forum.$siteurl",
+    "uri": "http://forum.$siteurl.amazeedev2.nine.ch"
+  },
+  "consensus-dev": {
+    "remote-host": "amazeedev2.nine.ch",
+    "remote-user": "www-data",
+    "path-aliases": {
+      "%drush-script": "/home/www-data/bin/drush",
+      "%dump-dir": "/home/www-data/dev2.$siteurl/"
+    },
+    "root": "/home/www-data/dev2.$siteurl",
+    "uri": "http://dev2.$siteurl.amazeedev2.nine.ch"
+  }
+}

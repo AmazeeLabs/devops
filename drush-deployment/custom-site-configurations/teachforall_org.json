@@ -1,12 +1,12 @@
 {
-dev2: {
-remote-host: "amazeedev2.nine.ch",
-remote-user: "www-data",
-path-aliases: {
-%drush-script: "/home/www-data/bin/drush",
-%dump-dir: "/home/www-data/$siteurl/"
-},
-root: "/home/www-data/$siteurl/docroot",
-uri: "http://$siteurl.amazeedev2.nine.ch"
-}
-}
+  "dev2": {
+    "remote-host": "amazeedev2.nine.ch",
+    "remote-user": "www-data",
+    "path-aliases": {
+      "%drush-script": "/home/www-data/bin/drush",
+      "%dump-dir": "/home/www-data/$siteurl/"
+    },
+    "root": "/home/www-data/$siteurl/docroot",
+    "uri": "http://$siteurl.amazeedev2.nine.ch"
+  }
+}  

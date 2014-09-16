@@ -1,5 +1,5 @@
 {
-  "seo1": {
+  "seo-server": {
     "remote-host": "amazeedev1.nine.ch",
     "remote-user": "www-data",
     "path-aliases": {

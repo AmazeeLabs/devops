@@ -1,0 +1,18 @@
+{
+  "seo": {
+    "remote-host": "amazeedev1.nine.ch",
+    "remote-user": "www-data",
+    "path-aliases": {
+      "%drush-script": "/home/www-data/drush/drush",
+      "%dump-dir": "/home/www-data/seo.fischerconnectors.com/"
+    },
+    "command-specific": {
+      "sql-sync": {
+        "no-cache": true,
+        "no-ordered-dump": true
+      }
+    },
+    "root": "/home/www-data/seo.fischerconnectors.com",
+    "uri": "http://seo.fischerconnectors.com.amazeedev1.nine.ch"
+  }
+}

@@ -3,7 +3,7 @@
     "remote-host": "amazeedev2.nine.ch",
     "remote-user": "www-data",
     "path-aliases": {
-      "%drush-script": "/home/www-data/bin/drush",
+      "%drush-script": "/home/www-data/bin/drush8",
       "%dump-dir": "/home/www-data/$siteurl/"
     },
     "root": "/home/www-data/$siteurl/docroot",

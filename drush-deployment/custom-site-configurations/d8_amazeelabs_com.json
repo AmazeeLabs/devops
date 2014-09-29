@@ -1,0 +1,12 @@
+{
+  "bastian": {
+    "remote-host": "amazeedev2.nine.ch",
+    "remote-user": "www-data",
+    "path-aliases": {
+      "%drush-script": "/home/www-data/bin/drush",
+      "%dump-dir": "/home/www-data/labsd8-bastian.amazeelabs.com/"
+    },
+    "root": "/home/www-data/labsd8-bastian.amazeelabs.coml",
+    "uri": "http://labsd8-bastian.amazeelabs.com.amazeedev2.nine.ch"
+  }
+}

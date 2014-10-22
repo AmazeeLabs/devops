@@ -103,6 +103,7 @@ if (!function_exists("deploy_after_deploy_symlink_tasks")) {
       deploy_update_task($d);
       deploy_cache_task($d);
       deploy_newrelic_task($d);
+      deploy_apc_flush_task($d);
   }
 }
 
@@ -168,5 +169,15 @@ if (!function_exists("deploy_newrelic_task")) {
   function deploy_newrelic_task($d) {
     $d->run_once('curl -H "x-api-key:'.$d->sites[0]['newrelic']['api-key'].'" -d "deployment[app_name]=' . $d->sites[0]['newrelic']['app-name'] . '" -d "deployment[user]='.get_current_user().'" https://api.newrelic.com/deployments.xml
   ', $d->sites[0]['path-aliases']['%drush-script']);
+  }
+}
+
+/**
+ * The task needs to be defined with a @task "decorator" in the comment block preceding it
+ * @task
+ */
+if (!function_exists("deploy_apc_flush_task")) {
+  function deploy_apc_flush_task($d) {
+    $d->run_once('curl -H http://jenkins.amazeelabs.com/buildByToken/build?job=Amazee%20APC%20Flush&token=AMAZEEREMOTE', $d->sites[0]['path-aliases']['%drush-script']);
   }
 }

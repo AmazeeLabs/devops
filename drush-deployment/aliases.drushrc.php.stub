@@ -178,6 +178,6 @@ if (!function_exists("deploy_newrelic_task")) {
  */
 if (!function_exists("deploy_apc_flush_task")) {
   function deploy_apc_flush_task($d) {
-    $d->run_once('curl "http://jenkins.amazeelabs.com/buildByToken/build?job=Amazee%20APC%20Flush&token=AMAZEEREMOTE"', $d->sites[0]['path-aliases']['%drush-script']);
+    $d->run_once('curl http://jenkins.amazeelabs.com/buildByToken/build?job=Amazee%20APC%20Flush\&token=AMAZEEREMOTE', $d->sites[0]['path-aliases']['%drush-script']);
   }
 }

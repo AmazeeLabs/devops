@@ -18,5 +18,15 @@
     },
     "root": "/home/www-data/dev2.$siteurl",
     "uri": "http://dev2.$siteurl.amazeedev2.nine.ch"
+  },
+  "patient-histories-dev": {
+    "remote-host": "amazeedev2.nine.ch",
+    "remote-user": "www-data",
+    "path-aliases": {
+      "%drush-script": "/home/www-data/bin/drush",
+      "%dump-dir": "/home/www-data/$siteurl/"
+    },
+    "root": "/home/www-data/patient-histories.$siteurl",
+    "uri": "http://patient-histories.$siteurl.amazeedev2.nine.ch"
   }
 }

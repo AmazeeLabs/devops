@@ -6,7 +6,7 @@
       "%drush-script": "/home/www-data/bin/drush8",
       "%dump-dir": "/home/www-data/$siteurl/"
     },
-    "root": "/home/www-data/$siteurl",
+    "root": "/home/www-data/$siteurl/docroot",
     "uri": "http://$siteurl.amazeedev2.nine.ch"
   }
 }

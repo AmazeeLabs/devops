@@ -6,7 +6,7 @@
       "%drush-script": "/usr/bin/drush",
       "%dump-dir": "/home/www-data/$siteurl/"
     },
-    "root": "/home/www-data/$siteurl/docroot",
+    "root": "/home/www-data/$siteurl",
     "uri": "http://$siteurl.sigvarisp.nine.ch"
   }
 }

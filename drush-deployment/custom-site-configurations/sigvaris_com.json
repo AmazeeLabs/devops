@@ -1,0 +1,12 @@
+{
+  "sigvarisp": {
+    "remote-host": "sigvarisp.nine.ch",
+    "remote-user": "www-data",
+    "path-aliases": {
+      "%drush-script": "/usr/bin/drush",
+      "%dump-dir": "/home/www-data/$siteurl/"
+    },
+    "root": "/home/www-data/$siteurl/docroot",
+    "uri": "http://$siteurl.sigvarisp.nine.ch"
+  }
+}

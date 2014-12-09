@@ -1,0 +1,8 @@
+{
+  "live": {
+    "sigvarisp" : "sigvarisp.nine.ch"
+  },
+  "dev": {
+    "dev2" : "amazeedev2.nine.ch"
+  }
+}

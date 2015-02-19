@@ -49,6 +49,16 @@
     "root": "/home/$sitename/public_html",
     "uri": "http://$siteurl.amazeeweb5.nine.ch"
   },
+  "web6": {
+    "remote-host": "amazeeweb6.nine.ch",
+    "remote-user": "$sitename",
+    "path-aliases": {
+      "%drush-script": "/home/$sitename/bin/drush",
+      "%dump-dir": "/home/$sitename"
+    },
+    "root": "/home/$sitename/public_html",
+    "uri": "http://$siteurl.amazeeweb6.nine.ch"
+  },
   "dev1": {
     "remote-host": "amazeedev1.nine.ch",
     "remote-user": "www-data",

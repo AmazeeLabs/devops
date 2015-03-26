@@ -6,20 +6,16 @@
 TMP=$(mktemp -t vagrant_sudoers)
 cat /etc/sudoers > $TMP
 cat >> $TMP <<EOF
-
-# Allow passwordless startup of Vagrant when using NFS.
-# https://gist.github.com/joemaller/6764700
-
-Cmnd_Alias VAGRANT_EXPORTS_ADD = /bin/bash -c echo '*' >> /etc/exports
+# Allow NFS Operations without password prompt
+Cmnd_Alias VAGRANT_EXPORTS_ADD = /usr/bin/tee -a /etc/exports
 Cmnd_Alias VAGRANT_NFSD = /sbin/nfsd restart
 Cmnd_Alias VAGRANT_EXPORTS_REMOVE = /usr/bin/sed -E -e /*/ d -ibak /etc/exports
-%staff ALL=(root) NOPASSWD: VAGRANT_EXPORTS_ADD, VAGRANT_NFSD, VAGRANT_EXPORTS_REMOVE
+%admin ALL=(root) NOPASSWD: VAGRANT_EXPORTS_ADD, VAGRANT_NFSD, VAGRANT_EXPORTS_REMOVE
 
 # Allow passwordless startup of Vagrant with vagrant-hostsupdater.
-
 Cmnd_Alias VAGRANT_HOSTS_ADD = /bin/sh -c echo "*" >> /etc/hosts
 Cmnd_Alias VAGRANT_HOSTS_REMOVE = /usr/bin/sed -i -e /*/ d /etc/hosts
-%staff ALL=(root) NOPASSWD: VAGRANT_HOSTS_ADD, VAGRANT_HOSTS_REMOVE
+%admin ALL=(root) NOPASSWD: VAGRANT_HOSTS_ADD, VAGRANT_HOSTS_REMOVE
 EOF
 
 # Check syntax and overwrite sudoers if clean

@@ -61,8 +61,8 @@ foreach ($server_group_mappings as $group_name => $group_servers) {
 }
 
 // Try to fetch the custom overwrites for this site
-global $custom_site_configuration;
-if (!isset($custom_site_configuration)) {
+global $custom_site_configurations;
+if (!isset($custom_site_configurations)) {
   $custom_site_configurations = json_decode(@file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/custom-site-configurations/'.$sitename.'.json?' . rand(0, 1000000)), TRUE);
 }
 

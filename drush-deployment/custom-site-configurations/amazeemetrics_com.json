@@ -6,6 +6,7 @@
       "%dump-dir": "/var/www/$siteurl/"
     },
     "root": "/var/www/$siteurl/public_html",
+    "deploy-to": "/var/www/$siteurl/deploy",
     "uri": "http://$siteurl.us1.compact.amazee.io"
   }
 }

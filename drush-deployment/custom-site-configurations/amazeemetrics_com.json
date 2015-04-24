@@ -1,5 +1,5 @@
 {
-  "us1_compact": {
+  "us1.compact": {
     "remote-host": "us1.compact.amazee.io",
     "path-aliases": {
       "%drush-script": "sudo -i -E -u amazeemetrics_com_live /usr/local/bin/drush",

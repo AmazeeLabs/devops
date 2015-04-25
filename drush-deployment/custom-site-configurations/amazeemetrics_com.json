@@ -5,7 +5,7 @@
       "%drush-script": "sudo -i -E -u amazeemetrics_com_live /usr/local/bin/drush",
       "%dump-dir": "/var/www/$siteurl/"
     },
-    "root": "/var/www/$siteurl/public_html",
+    "root": "/var/www/amazeemetrics_com_live/public_html",
     "deploy-to": "/var/www/amazeemetrics_com_live/deploy",
     "uri": "http://$siteurl.us1.compact.amazee.io"
   }

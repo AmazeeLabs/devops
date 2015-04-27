@@ -1,6 +1,7 @@
 {
   "us1.compact": {
     "remote-host": "us1.compact.amazee.io",
+    "ssh-prefix": "LC_user=asdf",
     "path-aliases": {
       "%drush-script": "sudo -i -E -u amazeemetrics_com_live /usr/local/bin/drush",
       "%dump-dir": "/var/www/$siteurl/"

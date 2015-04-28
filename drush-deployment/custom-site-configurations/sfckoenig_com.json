@@ -6,7 +6,7 @@
       "%drush-script": "/home/www-sfckoenig/bin/drush",
       "%dump-dir": "/home/www-sfckoenig/dev2.$siteurl/"
     },
-    "root": "/home/www-data/dev2.$siteurl",
+    "root": "/home/www-sfckoenig/dev2.$siteurl",
     "uri": "http://dev2.$siteurl.amazeedev2.nine.ch"
   }
 }

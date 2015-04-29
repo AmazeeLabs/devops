@@ -1,0 +1,12 @@
+{
+  "staging": {
+    "remote-host": "amazeedev2.nine.ch",
+    "remote-user": "www-data",
+    "path-aliases": {
+      "%drush-script": "/home/www-data/bin/drush",
+      "%dump-dir": "/home/www-data/staging.$siteurl/"
+    },
+    "root": "/home/www-data/staging.$siteurl",
+    "uri": "http://staging.$siteurl.amazeedev2.nine.ch"
+  }
+}

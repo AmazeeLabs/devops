@@ -7,7 +7,6 @@
       "%dump-dir": "/var/www/amazee_com_live/"
     },
     "root": "/var/www/amazee_com_live/public_html",
-    "deploy-to": "/var/www/amazee_live/deploy",
     "uri": "http://$siteurl.us1.compact.amazee.io"
   }
 }

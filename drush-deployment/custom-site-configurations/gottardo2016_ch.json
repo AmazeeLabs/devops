@@ -7,6 +7,6 @@
       "%dump-dir": "/var/www/gottardo2016_ch_dev/"
     },
     "root": "/var/www/gottardo2016_ch_dev/public_html",
-    "uri": "http://$siteurl.dev1.compact.amazee.io"
+    "uri": "http://$siteurl.dev.dev1.compact.amazee.io"
   }
 }

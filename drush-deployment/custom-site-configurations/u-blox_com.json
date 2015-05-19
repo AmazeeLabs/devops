@@ -1,0 +1,12 @@
+{
+  "ublox.prod": {
+    "remote-host": "195.34.89.148",
+    "remote-user": "amazee",
+    "path-aliases": {
+      "%drush-script": "/usr/bin/drush",
+      "%dump-dir": "/var/www/"
+    },
+    "root": "/var/www/ublox",
+    "uri": "http://testsite.u-blox.com"
+  }
+}

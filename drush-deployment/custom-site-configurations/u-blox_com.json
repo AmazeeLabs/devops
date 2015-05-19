@@ -4,7 +4,7 @@
     "remote-user": "amazee",
     "path-aliases": {
       "%drush-script": "/usr/bin/drush",
-      "%dump-dir": "/var/www/"
+      "%dump-dir": "/var/www/ublox/"
     },
     "root": "/var/www/ublox",
     "uri": "http://testsite.u-blox.com"

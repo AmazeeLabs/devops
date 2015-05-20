@@ -7,6 +7,6 @@
       "%dump-dir": "/home/www-data/staging.$siteurl/"
     },
     "root": "/home/www-data/staging.$siteurl",
-    "uri": "http://staging.$siteurl.amazeedev1.nine.ch"
+    "uri": "http://staging.$siteurl.amazeedev2.nine.ch"
   }
 }

@@ -1,0 +1,8 @@
+{
+    "live": [
+        "ublox.prod",
+    ],
+    "dev": [
+        "dev2"
+    ]
+}

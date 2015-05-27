@@ -133,10 +133,31 @@ if (!function_exists("deploy_settings_local_php_task")) {
 /**
  * The task needs to be defined with a @task "decorator" in the comment block preceding it
  * @task
+ * @mandatory
+ */
+if (!function_exists("deploy_vshn_settings_local_php_task")) {
+  function deploy_vshn_settings_local_php_task($d) {
+    $d->run("cp /var/www/`whoami`/settings.local.php %s/sites/default/settings.local.php", $d->latest_release());
+  }
+}
+
+/**
+ * The task needs to be defined with a @task "decorator" in the comment block preceding it
+ * @task
  */
 if (!function_exists("deploy_symlinks_task")) {
   function deploy_symlinks_task($d) {
     $d->run("ln -s /home/nfs_share/www-data/`whoami`/files %s/sites/default/files", $d->latest_release());
+  }
+}
+
+/**
+ * The task needs to be defined with a @task "decorator" in the comment block preceding it
+ * @task
+ */
+if (!function_exists("deploy_vshn_symlinks_task")) {
+  function deploy_vshn_symlinks_task($d) {
+    $d->run("ln -s /var/www/`whoami`/files %s/sites/default/files", $d->latest_release());
   }
 }
 

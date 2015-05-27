@@ -1,6 +1,7 @@
 {
   "us1.compact": {
     "remote-host": "us1.compact.amazee.io",
+    "remove-environment": "amazee.io",
     "remote-user": "jibes_amazeelabs_com",
     "path-aliases": {
       "%drush-script": "/usr/local/bin/drush",

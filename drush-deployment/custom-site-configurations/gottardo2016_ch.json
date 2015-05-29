@@ -17,6 +17,7 @@
             "%dump-dir": "/var/www/gottardo2016_ch/"
         },
         "root": "/var/www/gottardo2016_ch/public_html",
-        "uri": "http://$siteurl.live.zh1.compact.amazee.io"
+        "uri": "http://$siteurl.live.zh1.compact.amazee.io",
+        "ssh-options": "ssh -W %h:%p vshn-zh1-single"
     }
 }

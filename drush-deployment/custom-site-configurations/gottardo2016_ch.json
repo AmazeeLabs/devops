@@ -1,12 +1,22 @@
 {
-  "dev1.compact": {
-    "remote-host": "dev1.compact.amazee.io",
-    "remote-user": "gottardo2016_ch_dev",
-    "path-aliases": {
-      "%drush-script": "/usr/local/bin/drush",
-      "%dump-dir": "/var/www/gottardo2016_ch_dev/"
+    "dev1.compact": {
+        "remote-host": "dev1.compact.amazee.io",
+        "remote-user": "gottardo2016_ch_dev",
+        "path-aliases": {
+            "%drush-script": "/usr/local/bin/drush",
+            "%dump-dir": "/var/www/gottardo2016_ch_dev/"
+        },
+        "root": "/var/www/gottardo2016_ch_dev/public_html",
+        "uri": "http://$siteurl.dev.dev1.compact.amazee.io"
     },
-    "root": "/var/www/gottardo2016_ch_dev/public_html",
-    "uri": "http://$siteurl.dev.dev1.compact.amazee.io"
-  }
+    "zh1.single": {
+        "remote-host": "zh1.single.amazee.io",
+        "remote-user": "gottardo2016_ch",
+        "path-aliases": {
+            "%drush-script": "/usr/local/bin/drush",
+            "%dump-dir": "/var/www/gottardo2016_ch/"
+        },
+        "root": "/var/www/gottardo2016_ch/public_html",
+        "uri": "http://$siteurl.live.zh1.compact.amazee.io"
+    }
 }

@@ -10,7 +10,7 @@
         "uri": "http://$siteurl.dev.dev1.compact.amazee.io"
     },
     "zh1.single": {
-        "remote-host": "zh1.single.amazee.io",
+        "remote-host": "backend",
         "remote-user": "gottardo2016_ch",
         "path-aliases": {
             "%drush-script": "/usr/local/bin/drush",

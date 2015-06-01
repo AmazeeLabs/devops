@@ -565,7 +565,6 @@ if(getenv('AMAZEEIO_SITENAME')){
   );
 }
 
-
 $local_settings_filename = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'settings.local.php';
 if (file_exists($local_settings_filename)) {
     require_once $local_settings_filename;

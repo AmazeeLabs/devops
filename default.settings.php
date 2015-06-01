@@ -552,6 +552,20 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
  */
 # $conf['allow_authorize_operations'] = FALSE;
 
+// If we are on Amazee.io Infrastructure take the ENV variables for Database
+// connections
+if(getenv('AMAZEEIO_SITENAME')){
+  $databases['default']['default'] = array(
+    'driver' => 'mysql',
+    'database' => getenv('AMAZEEIO_SITENAME'),
+    'username' => getenv('AMAZEEIO_DB_USERNAME'),
+    'password' => getenv('AMAZEEIO_DB_PASSWORD'),
+    'host' => getenv('AMAZEEIO_DB_HOST'),
+    'prefix' => '',
+  );
+}
+
+
 $local_settings_filename = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'settings.local.php';
 if (file_exists($local_settings_filename)) {
     require_once $local_settings_filename;

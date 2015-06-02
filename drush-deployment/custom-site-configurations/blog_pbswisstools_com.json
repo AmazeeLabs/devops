@@ -1,0 +1,13 @@
+{
+  "zh2.single": {
+      "remote-host": "backend.zh2.single.amazee.io",
+      "remote-user": "blog_pbswisstools_com",
+      "path-aliases": {
+          "%drush-script": "/usr/local/bin/drush",
+          "%dump-dir": "/var/www/blog_pbswisstools_com/"
+      },
+      "root": "/var/www/blog_pbswisstools_com/public_html",
+      "uri": "http://$siteurl.live.zh1.compact.amazee.io",
+      "ssh-options": "-o ProxyCommand='ssh -W %h:%p vshn-zh2-single'"
+  }
+}

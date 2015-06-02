@@ -8,6 +8,6 @@
       },
       "root": "/var/www/communityplanb_ch/public_html",
       "uri": "http://$siteurl.live.zh1.compact.amazee.io",
-      "ssh-options": "-o ProxyCommand='ssh -W %h:%p vshn-zh1-single'"
+      "ssh-options": "-o ProxyCommand='ssh -W %h:%p vshn-zh2-single'"
   }
 }

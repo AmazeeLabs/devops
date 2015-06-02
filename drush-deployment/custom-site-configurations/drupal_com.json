@@ -1,12 +1,12 @@
 {
-  "dev2": {
-    "remote-host": "amazeedev2.nine.ch",
-    "remote-user": "www-data",
-    "path-aliases": {
-      "%drush-script": "/home/www-data/bin/drush8",
-      "%dump-dir": "/home/www-data/$siteurl/"
-    },
-    "root": "/home/www-data/$siteurl/docroot",
-    "uri": "http://$siteurl.amazeedev2.nine.ch"
-  }
+    "dev1.compact": {
+        "remote-host": "dev1.compact.amazee.io",
+        "remote-user": "drupal_com_dev",
+        "path-aliases": {
+            "%drush-script": "/usr/local/bin/drush",
+            "%dump-dir": "/var/www/drupal_com_dev/"
+        },
+        "root": "/var/www/drupal_com_dev/public_html",
+        "uri": "http://$siteurl.dev.dev1.compact.amazee.io"
+    }
 }

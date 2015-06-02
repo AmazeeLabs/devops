@@ -18,6 +18,6 @@
         },
         "root": "/var/www/gottardo2016_ch/public_html",
         "uri": "http://$siteurl.live.zh1.compact.amazee.io",
-        "ssh-options": "-o ProxyCommand='ssh -W %h:%p vshn-zh1-single'"
+        "ssh-options": "-o ProxyCommand='ssh -W %h:%p frontend.zh1.single.amazee.io'"
     }
 }

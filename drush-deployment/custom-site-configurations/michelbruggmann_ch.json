@@ -9,5 +9,16 @@
     },
     "root": "/var/www/michelbruggmann_ch/public_html",
     "uri": "http://$siteurl.us1.compact.amazee.io"
+  },
+  "dev1.compact": {
+      "remote-host": "dev1.compact.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "michelbruggmann_ch",
+      "path-aliases": {
+          "%drush-script": "/usr/local/bin/drush",
+          "%dump-dir": "/var/www/michelbruggmann_ch/"
+      },
+      "root": "/var/www/michelbruggmann_ch/public_html",
+      "uri": "http://$siteurl.dev.dev1.compact.amazee.io"
   }
 }

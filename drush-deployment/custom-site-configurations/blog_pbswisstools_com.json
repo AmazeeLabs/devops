@@ -9,6 +9,7 @@
       },
       "root": "/var/www/blog_pbswisstools_com/public_html",
       "uri": "http://$siteurl.live.zh1.compact.amazee.io",
-      "ssh-options": "-o ProxyCommand='ssh -W %h:%p vshn-zh2-single'"
+      "ssh-options": "-o ProxyCommand='ssh -W %h:%p frontend.zh2.single.amazee.io'"
+
   }
 }

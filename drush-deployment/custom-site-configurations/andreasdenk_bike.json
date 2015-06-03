@@ -9,7 +9,7 @@
     },
     "root": "/var/www/andreasdenk_bike/public_html",
     "uri": "http://$siteurl.us1.compact.amazee.io"
-  }
+  },
   "dev1.compact": {
       "remote-host": "dev1.compact.amazee.io",
       "remote-environment": "amazee.io",

@@ -1,0 +1,8 @@
+{
+    "live": [
+        "us1.compact",
+    ],
+    "dev": [
+        "dev1"
+    ]
+}

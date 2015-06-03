@@ -18,7 +18,7 @@
           "%drush-script": "/usr/local/bin/drush",
           "%dump-dir": "/var/www/andreasdenk_bike/"
       },
-      "root": "/var/www/andreasdenk_bike_dev/public_html",
+      "root": "/var/www/andreasdenk_bike/public_html",
       "uri": "http://$siteurl.dev.dev1.compact.amazee.io"
-  },
+  }
 }

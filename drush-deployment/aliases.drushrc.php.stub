@@ -176,7 +176,11 @@ if (!function_exists("deploy_cache_task")) {
  */
 if (!function_exists("deploy_newrelic_task")) {
   function deploy_newrelic_task($d) {
-    $d->run_once('curl -H "x-api-key:'.$d->sites[0]['newrelic']['api-key'].'" -d "deployment[app_name]=' . $d->sites[0]['newrelic']['app-name'] . '" -d "deployment[user]='.get_current_user().'" https://api.newrelic.com/deployments.xml
+    // Try to get the user from the LC_AMA_GITUSER environment variable
+    $username = getenv('LC_AMA_GITUSER');
+    // if we fail to do so take the user which runs the php process
+    if(!$username) { $username = get_current_user();}
+    $d->run_once('curl -H "x-api-key:'.$d->sites[0]['newrelic']['api-key'].'" -d "deployment[app_name]=' . $d->sites[0]['newrelic']['app-name'] . '" -d "deployment[user]='.$username.'" https://api.newrelic.com/deployments.xml
   ', $d->sites[0]['path-aliases']['%drush-script']);
   }
 }

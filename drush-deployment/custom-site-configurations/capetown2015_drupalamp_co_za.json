@@ -1,0 +1,12 @@
+{
+  "zh1single": {
+    "remote-host": "backend.zh1.single.amazee.io",
+    "remote-user": "www-data",
+    "path-aliases": {
+      "%drush-script": "sudo -i -E -u capetown2015_drupalcamp_co_za /usr/local/bin/drush",
+      "%dump-dir": "/var/www/$siteurl/"
+    },
+    "root": "/var/www/$siteurl/public_html",
+    "uri": "http://$siteurl.zh1.single.amazee.io"
+  }
+}

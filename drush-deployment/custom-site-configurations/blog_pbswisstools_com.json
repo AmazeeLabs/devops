@@ -8,7 +8,7 @@
           "%dump-dir": "/var/www/blog_pbswisstools_com/"
       },
       "root": "/var/www/blog_pbswisstools_com/public_html",
-      "uri": "http://$siteurl.live.zh2.single.amazee.io",
+      "uri": "http://$siteurl.zh2.single.amazee.io",
       "ssh-options": "-o ProxyCommand='ssh -W %h:%p frontend.zh2.single.amazee.io 2> /dev/null'"
   }
 }

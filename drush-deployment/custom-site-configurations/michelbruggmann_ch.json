@@ -9,7 +9,7 @@
       },
       "root": "/var/www/michelbruggmann_ch/public_html",
       "uri": "http://$siteurl.zh2.single.amazee.io",
-      "ssh-options": "-o ProxyCommand='ssh -W %h:%p frontend.zh2.single.amazee.io 2> /dev/null'"
+      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io 2> /dev/null\""
   },
   "dev1.compact": {
       "remote-host": "dev1.compact.amazee.io",

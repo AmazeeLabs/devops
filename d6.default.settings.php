@@ -241,3 +241,8 @@ ini_set('memory_limit', '128M');
 # );
 
 $db_url = 'mysqli://'.getenv('AMAZEEIO_DB_USERNAME').':'.getenv('AMAZEEIO_DB_PASSWORD').'@'.getenv('AMAZEEIO_DB_HOST').'/'.getenv('AMAZEEIO_SITENAME');
+
+$local_settings_filename = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'settings.local.php';
+if (file_exists($local_settings_filename)) {
+    require_once $local_settings_filename;
+}

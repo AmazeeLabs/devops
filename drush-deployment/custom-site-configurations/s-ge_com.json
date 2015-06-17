@@ -9,5 +9,15 @@
         },
         "root": "/var/www/s-ge_com/public_html",
         "uri": "http://$siteurl.dev.dev1.compact.amazee.io"
-    }
+    },
+    "web1": {
+        "remote-host": "amazeeweb1.nine.ch",
+        "remote-user": "switzerland-ge_com",
+        "path-aliases": {
+          "%drush-script": "/home/switzerland-ge_com/bin/drush",
+          "%dump-dir": "/home/switzerland-ge_com"
+        },
+        "root": "/home/switzerland-ge_com/public_html",
+        "uri": "http://$siteurl.amazeeweb1.nine.ch"
+    }    
 }

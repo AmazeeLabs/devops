@@ -20,6 +20,6 @@
           "%dump-dir": "/var/www/amazeelabs_com/"
       },
       "root": "/var/www/amazeelabs_com/public_html",
-      "uri": "http://$siteurl.dev1.compact.amazee.io",
+      "uri": "http://$siteurl.dev1.compact.amazee.io"
   }  
 }

@@ -1,5 +1,5 @@
 {
-    "live": [
+    "prod": [
         "zh1.single"
     ],
     "dev": [

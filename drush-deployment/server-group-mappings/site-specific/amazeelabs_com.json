@@ -1,6 +1,6 @@
 {
     "live": [
-        "zh1.single",
+        "zh1.single"
     ],
     "dev": [
         "dev1.compact"

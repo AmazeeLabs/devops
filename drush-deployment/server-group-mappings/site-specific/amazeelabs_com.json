@@ -1,6 +1,7 @@
 {
     "prod": [
-        "zh1.single"
+        "zh1.single",
+        "dev1.compact"
     ],
     "dev": [
         "dev1.compact"

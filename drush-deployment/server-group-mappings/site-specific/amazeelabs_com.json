@@ -1,0 +1,8 @@
+{
+    "live": [
+        "zh1.single",
+    ],
+    "dev": [
+        "dev1.compact"
+    ]
+}

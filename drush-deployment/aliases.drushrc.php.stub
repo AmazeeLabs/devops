@@ -230,7 +230,7 @@ if (!function_exists("deploy_apc_flush_task")) {
  */
 if (!function_exists("deploy_gulp_compile_task")) {
   function deploy_gulp_compile_task($d) {
-    $d->run("cd ~/public_html && gulp compile");
+    $d->run("cd ~/public_html && npm run gulp -- compile");
   }
 }
 
@@ -240,6 +240,6 @@ if (!function_exists("deploy_gulp_compile_task")) {
  */
 if (!function_exists("deploy_gulp_build_task")) {
   function deploy_gulp_build_task($d) {
-    $d->run("cd ~/public_html && gulp build");
+    $d->run("cd ~/public_html && npm run gulp -- build");
   }
 }

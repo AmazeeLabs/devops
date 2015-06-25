@@ -260,6 +260,6 @@ if (!function_exists("deploy_gulp_compile_task")) {
  */
 if (!function_exists("deploy_gulp_build_task")) {
   function deploy_gulp_build_task($d) {
-    $d->run("cd ~/public_html && npm run gulp -- build");
+    $d->run("cd %s && npm install && npm run gulp -- build", $d->latest_release());
   }
 }

@@ -199,6 +199,16 @@ if (!function_exists("deploy_cache_task")) {
  * The task needs to be defined with a @task "decorator" in the comment block preceding it
  * @task
  */
+if (!function_exists("deploy_cache_task_d8")) {
+  function deploy_cache_task_d8($d) {
+    $d->run_once("cd ~/public_html && %s cr -y", $d->sites[0]['path-aliases']['%drush-script']);
+  }
+}
+
+/**
+ * The task needs to be defined with a @task "decorator" in the comment block preceding it
+ * @task
+ */
 if (!function_exists("deploy_newrelic_task")) {
   function deploy_newrelic_task($d) {
     // Try to get the user from the LC_AMA_GITUSER environment variable

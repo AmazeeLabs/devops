@@ -250,7 +250,7 @@ if (!function_exists("deploy_apc_flush_task")) {
  */
 if (!function_exists("deploy_gulp_compile_task")) {
   function deploy_gulp_compile_task($d) {
-    $d->run("cd ~/public_html && npm update && npm run bower -- install && npm run gulp -- compile");
+    $d->run("cd ~/public_html && npm update && bower install && npm run gulp -- compile");
   }
 }
 

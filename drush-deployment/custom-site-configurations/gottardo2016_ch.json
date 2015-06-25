@@ -29,5 +29,20 @@
         "root": "/var/www/gottardo2016_ch/public_html",
         "uri": "http://$siteurl.live.zh1.compact.amazee.io",
         "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $(echo $AMAZEEIO_SSH_OPTIONS) 2> /dev/null\""
+        "before": {
+          "deploy-symlink": [
+            "deploy_before_deploy_symlink_tasks"
+          ]
+        },
+        "after": {
+          "deploy-update-code": [
+            "deploy_gulp_compile_task"
+          ],
+          "deploy-symlink": [
+            "deploy_update_task",
+            "deploy_cache_task_d8",
+            "deploy_newrelic_task"
+          ]
+        }
     }
 }

@@ -24,9 +24,9 @@
       "deploy-via": "Pull",
       "branch": "dev",
       "after": {
-        "deploy-updatecode": {
+        "deploy-updatecode": [
           "deploy_gulp_compile_task"
-        }
+        ]
       }
   }  
 }

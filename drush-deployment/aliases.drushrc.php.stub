@@ -221,6 +221,25 @@ if (!function_exists("deploy_apc_flush_task")) {
     }else {
       $d->run_once("curl http://jenkins.amazeelabs.com/buildByToken/buildWithParameters?job=Amazee%%20APC%%20Flush\&token=AMAZEEREMOTE\&source=drush-deploy", $d->sites[0]['path-aliases']['%drush-script']);
     }
+  }
+}
 
+/**
+ * The task needs to be defined with a @task "decorator" in the comment block preceding it
+ * @task
+ */
+if (!function_exists("deploy_gulp_compile_task")) {
+  function deploy_gulp_compile_task($d) {
+    $d->run("cd ~/public_html && gulp compile");
+  }
+}
+
+/**
+ * The task needs to be defined with a @task "decorator" in the comment block preceding it
+ * @task
+ */
+if (!function_exists("deploy_gulp_build_task")) {
+  function deploy_gulp_build_task($d) {
+    $d->run("cd ~/public_html && gulp build");
   }
 }

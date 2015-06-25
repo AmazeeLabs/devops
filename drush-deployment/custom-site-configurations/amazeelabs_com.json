@@ -22,6 +22,11 @@
       "root": "/var/www/amazeelabs_com/public_html",
       "uri": "http://$siteurl.dev1.compact.amazee.io",
       "deploy-via": "Pull",
-      "branch": "dev"
+      "branch": "dev",
+      "after": {
+        "deploy-updatecode": {
+          "deploy_gulp_compile_task"
+        }
+      }
   }  
 }

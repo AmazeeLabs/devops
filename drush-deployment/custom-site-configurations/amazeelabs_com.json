@@ -21,7 +21,7 @@
       },
       "root": "/var/www/amazeelabs_com/public_html",
       "uri": "http://$siteurl.dev1.compact.amazee.io",
-      "deploy-via": "Checkout",
+      "deploy-via": "Pull",
       "branch": "dev"
   }  
 }

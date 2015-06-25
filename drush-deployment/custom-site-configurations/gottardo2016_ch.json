@@ -43,7 +43,7 @@
           ],
           "deploy-update-code": [
             "deploy_gulp_build_task"
-          ],
+          ]
         }
     }
 }

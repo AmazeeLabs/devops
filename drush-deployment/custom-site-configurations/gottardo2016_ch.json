@@ -35,9 +35,6 @@
           ]
         },
         "after": {
-          "deploy-update-code": [
-            "deploy_gulp_compile_task"
-          ],
           "deploy-symlink": [
             "deploy_update_task",
             "deploy_cache_task_d8",

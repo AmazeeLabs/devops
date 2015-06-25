@@ -13,7 +13,8 @@
         "branch": "dev",
         "after": {
           "deploy-update-code": [
-            "deploy_gulp_compile_task"
+            "deploy_gulp_compile_task",
+            "deploy_cache_task_d8"
           ]
         }        
     },

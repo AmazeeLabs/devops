@@ -1,47 +1,112 @@
+--
+classes:
+  - vshn_lib::file
+  - identity
+  - drupalhosting::helpers::git
+
+groups:
+  amazeeroot:
+    gid: 2601
+  amazeedev:
+    gid: 2602
+
+users:
+  bastian.widmer:
+    uid: 2501
+    groups:
+      - amazeeroot
+      - amazeedev
+    ssh_keys:
+      master:
+        key: 'AAAAB3NzaC1yc2EAAAABIwAAAQEApW6rxNgBIjhpE/DYICapI04NzJW5hOcFD3WmtSXk/UfTbimm/vNPP4jv76vkIqVgOONUpgea8S8Iul/1TFyxf+1N7q2BDpMM8rmoy1tkPJVLW0yu87ou8ClHOl2mX/1UfIHRB7mAHA+ICbnD+iM0v0aVR3MUCcZUpbzTe/wmkmIHGoWDVv1Py8gfO2Jie3MsAyWxYCuhojRc06uqZyW8IRL3PJhSc8Z9LEC86UJGayB5VX/Fer+rH1gJhMZVlqEfMiyBHsuR1TSMzqg0oE8lpBPH2+oFIdyYUzsYX7mYxBDyK+CAGBpJeV+0M5ypE8aOoI/dzZNcOeE3Bl77CAlYow=='
+  michael.schmid:
+    uid: 2502
+    groups:
+      - amazeeroot
+      - amazeedev
+    ssh_keys:
+      master:
+        key: 'AAAAB3NzaC1yc2EAAAABIwAAAQEAtXgL2PXSMDEdr7p6lvdlj6qPY4SZDIGWZtOQIG1oKokJqtd+bUXRKFQXNYcS2dClXK63qrZ4kMafwtJH2wjs5/4LXLK5HVIbCVhNHagpOosYSYcisWk/tkKMv0k2jcBYzyvaAo9B5ZsE0Z4NonoeHT8ISxD6FRTOKcDC4D7jO2Z3KksNijo0Y4PCAXt7rJzt+hUX0rurNSric+Z3zY1tOTXC1XcyZlW7dUunrAhGYFmi82/Yh0KVt7QVVYzX6ARXAzog79DsWyFDBmyQNPN8j4nbYPOHn/EclwDral3g0pY8yt4FwIVSawqKvAV6CcDhVAhEo5rz1BrN5QQ7EolHEw=='
+  elia.ponzio:
+    uid: 2503
+    groups:
+      - amazeeroot
+      - amazeedev
+    ssh_keys:
+      master:
+        key: 'AAAAB3NzaC1yc2EAAAADAQABAAACAQDEKPW3PGWHt08ZS+Kne7XBIdZLHkSw0x7MCJAgQ0d24/Qx2xpPVHKkrI9z0I8uWmfjSbBbnwrqxJtk5or2IG4WI7z3bakr+cRS6WaEZviMUr8bCb0jCjIauFYwB55BlSWgyec5U5IsZrwKtwpVvewKgdk39anxx1SLA1EMokMS2tI+dt5okqrF/4F4GDdDpu7ojfrEv9Lky82KLM+nnywoqjG7PKQSpryzJOf1mUMGJjpGzBP6eVb2oaNKR9qQZ1IX0E1eg85C94gIIQFwD121PjZi5XvnYNgXd0SCRWFu3zHsX9qAGJ+jqkXMcv/vzL34WY0UzmKH6PZNm12C/11MBlFhJJeRajtBOcs2ycrsOANlv1ppXZIzq5wqziafiORytgYwsj45o6vJKyTK5lpFI/pro+FcoaGURcpES/jmLzRNFxz10m29gGSzZosnXjMmqCWjAyarsun64nw9Tg6NiBbLlLp4mFw3YWbEtgJH5GwB5Yu2Z4Zf2zfywrKmRYhZzTCg3t7FJFQaho60QUqKp5gmyZAW2n2TEkL5Dv7yJqNTMwPsrbDL4g512HHhe00XzM+P3wM1jIpEZueMb4Vf8Rna18R4mPIcC095qmrTNyaAJdexC3jFm+6fjVeHGoAoSzTDNNb0j3j9trzxZkQCiD5BIETCmI1DRlCSx8KMIw=='
+  josef.dabernig:
+    uid: 2504
+    groups:
+      - amazeedev
+    ssh_keys:
+      master:
+        key: 'AAAAB3NzaC1yc2EAAAABIwAAAQEAm1mLgfJ7ZWke6jE9n9ettQWE0d+2hJEb9ORkLxSSw+0k4vgKzW6b0QaoVHbO0RwOgPKFLkuIVFEJdU/OE3aTzUth13lx81GXxKMHl7tbhIezBTn8vmmuplHZe1Mn4tgdp5j3Q9NM7Q2nwuWgyR59h8b0MYsy/zx87zHK/TYPNNeDvWAMOjGNt+5NK37SjIJXiyD+2qFcAkiLpVZxzQmyEA5KnnREpGZVJkFkVHEyC+WhueCacbF76EjyUnbUtlBn+TkQz99ZkiisOi2ES4/Qe8IQcqE4IAAIbWo/8Bxr0415cbmzr/FR2SR+TCh1kOT+OumQP6Vof9tJ+wsdZ6Q0lw=='
+  claudine.braendle:
+    uid: 2505
+    groups:
+      - amazeedev
+    ssh_keys:
+      master:
+        key: 'AAAAB3NzaC1yc2EAAAABIwAAAQEA0hdWPkI2+i2WhgUamJQhS1a5Kp2RY0p0o+crRpSR6O5pGkXxq21uGdUi055wJNxWeL30OZtwqWs4/Yc0VIT+WVDaQFccP/jmHa0Mq0BlrefqvtzXhYEOSj1MJC7E2T1FmMOs82JANtNoUCvuR/hDHQLvlanEFoHKQknPHeTThwR+2RCqoH9qJ2t1vRxjXrDPPd4eApPNmsAHwyyP2aGpgEujwXdKyhUBv6YPR0fk4KMWMQpdyeTOFSjIXdDMVRqhZw33ZXzv1reQ7UCMCMGC/Sv0rysx8XyOtJAOdYHMpG0dOOucbY9aEcfbJC+Y7O9pY38MXDQF1oMtiWrXbht4xw=='
+  stew.west:
+    uid: 2506
+    groups:
+      - amazeedev
+    ssh_keys:
+      master:
+        key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDZ056rIzhc8kDaxN5igJX1Jx/PeR/coo9NGK+9fkkmjcU/Z6Va8iQO2rSgVcNPl6r7RMQ7ThJ4depJNAyZ2yAp4DJcVAJudOnNz+sn5oSuFtesvq157ZBaQNq8C+wE78Me1POOb7uDgkiy5Ir7r8e884rgaiSvi4QIlqzWg5/KgGc7N2IPHQsN1wyrTnvSMZ3495vgyndSUZONPsn/csreZQxcIWBT3Hw072QZp/tFmfvz86OFnmVoSYWWUGdR/JxKZWrQXOeDXBaVAXm1HWEt30WzsNpyiRtNr8+SC7SXEBxRton9J7lnHTb1WqHtnNU1a1phk1aG2V15YtFGo56L'
+  nelly.moseki:
+    uid: 2507
+    groups:
+      - amazeedev
+    ssh_keys:
+      master:
+        key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC94ETRLdS3/gAuZoK6mWUV1mhxTvwoxnsPUqgiTpNQdvF7LrtixUl/jP1r+5mLw/H5IjDGvMjO0q78+8weAJuZ4fgUPLavgEMu+dBrFVShk4uJSuvQxB2TbDq2H1xMk3C9phXlVEpLD1U+QAdnRVMJVScRfkdlN4ElNbaH
 siteusers_authorized_keys:
-  'bastian@amazeelabs.com':
+  'bastian.widmer@amazeelabs.com':
     key: 'AAAAB3NzaC1yc2EAAAABIwAAAQEApW6rxNgBIjhpE/DYICapI04NzJW5hOcFD3WmtSXk/UfTbimm/vNPP4jv76vkIqVgOONUpgea8S8Iul/1TFyxf+1N7q2BDpMM8rmoy1tkPJVLW0yu87ou8ClHOl2mX/1UfIHRB7mAHA+ICbnD+iM0v0aVR3MUCcZUpbzTe/wmkmIHGoWDVv1Py8gfO2Jie3MsAyWxYCuhojRc06uqZyW8IRL3PJhSc8Z9LEC86UJGayB5VX/Fer+rH1gJhMZVlqEfMiyBHsuR1TSMzqg0oE8lpBPH2+oFIdyYUzsYX7mYxBDyK+CAGBpJeV+0M5ypE8aOoI/dzZNcOeE3Bl77CAlYow=='
-  'lucian@amazeelabs.com':
+  'lucian.neag@amazeelabs.com':
     key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC2luW1L8qYpDIOjFdcL0VIkkEQQaBEiAYm2cDA6ShHln3GsUcjIeLDqX6oOH/2rLRqvCgKfa8KY4lV/IepIMfL7W8Cb5RkYIgZqewDIAYkaiP04TaUF1esbVJ4QpkgCaYrroQvE3439oY87D5FLe8eXvKS7hblbwjKjRwYtoAJ19enxa5LpKWDGfE2jWFvMlWauFDZ3Xfa+BqyS3lTFeCNYC7n0n8UctQVUnFFrxW+HOCqC8q/BMhQN3RbUIbAJQzIct2bULwPRVCFr6EDBVbwsPBTZVy8dOVnC/0Xwpqcgk/zkM4o/f3/EwNixgTtm7wIukDyfFGlvieEC6I5cCzL'
-  'kathryn@amazeelabs.com':
+  'kathryn.mcclintock@amazeelabs.com':
     key: 'AAAAB3NzaC1yc2EAAAABIwAAAQEAyVftzIfRim3snmUsf53vuUX9Y/dmznTBGFj4OexnoRNs670dZO8GLl4s5E47Kw0RIkt+erbdpwXBd9SgvMP8EwVy0EDcoQlvJVc1yfNkYHoCn7WNqmwzTJvHX7Xovm3HbUxx19TTDMoSDiMOuBCy74HNjCXj80p5jkmG7Cx9o19tuiZuuOPC2kHgNRCHSkIIIuCqkUCyksNCqRkjMnSCVxcrukxK2D1usiAwLVwYpYVxhNIpT4vfC8wmIC9iukaRfblLBfaEYu9GjPq9YEbtorpIf/c36KFG8z/BWc0cO8xHlFdeY6lJuvNoQb3uchnZIo9TUAsGOG/HK0OO+mqN3w=='
-  'michael@amazeelabs.com':
+  'michael.schmid@amazeelabs.com':
     key: 'AAAAB3NzaC1yc2EAAAABIwAAAQEAtXgL2PXSMDEdr7p6lvdlj6qPY4SZDIGWZtOQIG1oKokJqtd+bUXRKFQXNYcS2dClXK63qrZ4kMafwtJH2wjs5/4LXLK5HVIbCVhNHagpOosYSYcisWk/tkKMv0k2jcBYzyvaAo9B5ZsE0Z4NonoeHT8ISxD6FRTOKcDC4D7jO2Z3KksNijo0Y4PCAXt7rJzt+hUX0rurNSric+Z3zY1tOTXC1XcyZlW7dUunrAhGYFmi82/Yh0KVt7QVVYzX6ARXAzog79DsWyFDBmyQNPN8j4nbYPOHn/EclwDral3g0pY8yt4FwIVSawqKvAV6CcDhVAhEo5rz1BrN5QQ7EolHEw=='
-  'alex@amazeelabs.com':
+  'alex.tkachev@amazeelabs.com':
     key: 'AAAAB3NzaC1yc2EAAAABIwAAAQEAyX6IU+q+2JMxDFLfviKKVGMBOhV8lmSV1QoaIPt9dtTxPqAKHYkUfMMRFB/7KtT9ASr2zB27BjGHbKCpiGcBq+xr8ThdsB4t3+4d8Y9cyw8WxwPXAKcHNAVb5jCs8qa5yUF+t5ZYMwTNFDbrbyN5I3bYvBsOWJpAsxPDgO14lii95i0j1jWfKKJTbfHdLXtcw+6jqLA13OOgtLUiqo7klrgVmPbQQsLw6xeearYg+yk0cRfDCUpaozHFtoLuW1w4w6PTDYPgEY3lPvfu9pJnoX1Od/X15hTg5nRJbfq+F/5ztHdXBamtz4ELNXFEL+Wy5OZ5c6Pbin4GetwkBA7zgw=='
-  'vasi@amazeelabs.com':
+  'vasile.chindris@amazeelabs.com':
     key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDZVjC8AFlIWxKNYJbxaQYvRnnOrToJ7iGwoOF2xq07FXScgwN0nU3s+wX9X+b4eKqdfNX/ljwHt6uTx3kIad76NZ3ofAEIi/W8KpsIpfHy8JdY+I/pYnDokc6K0V37Wo5tEiAsXJEtSvsxyooGXHQeprTrF+VvHjjML054LVIY5yDKHtGCnZZUbGhXKWI81Glm7UZBSoDLr/PMox/MAQDcQk78xOw8ZpIbZsZITCWV4wXwX2d3K4XA/9eQunomqPNvqPavl4CFhHxnRNd/Feu5mwECWQopJrfUOrrwkkJh8kQahDFSqdADcqsOkJ9wh47xcupPSkSErhpL7EmDPX/P'
-  'marc@amazeelabs.com':
+  'marc.pfaendler@amazeelabs.com':
     key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCYUMpfiuTEmVT/I2pL30WGwB0dsdteUdo8zyjgNvaszWXzRd44V91NfXALfrxihr0CbkH224HevNLKtYwyj9s53JcnY6srFpv8yLA0Qs7zVfr7/d4xqSypaJXMHS4oiG6x+AWfVmyK0GkTxlxfsO+9zbl5l3kmT8ZPEuwwGR5M0r2OGj0bdNZyE2Rae+51KjcV20nTkn4YiPTWdB1Rajl8iUyGX/7jwOXDCD3py4FdyrfNwGhFHjh37i2uUiOhdytbGSSH11QKXLA5PC3gRI12xnwyvxtf0zBBzpgfLW+x6Tb8VJg0z6WDetE+8Oyv8+WIH8VMxzsLPLOlRiS5pKFF'
-  'sascha@amazeelabs.com':
+  'sascha.eggenberger@amazeelabs.com':
     key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCdhex5zv3OCG6cIhWdCeoWFROt2do/v1FZ/fiW5ZwV3kq0CfhPkgR1YbxQ92oL6qutsUzgf7ubghZNn3RbEk9xB5k4AloZUl7dmDN+XekvWHMhGMGFY8zsIFQsL3akjxBBHCLdYoQZcWMGv4/NZUU3VSD4f+52a2TwVidCKKlNTTsqO1uD+tS9ECqM5a/JkDk468V9L38eDTX+Ntw7H9wxvQIUgR7S47aMjQ7tcxgDX+iYlgPYcY56qGPFmHKdzliXiSUwNZKVfOI0CWrTDmqQc64hzhe6mAU6sMObJYBQ60qeVos7qcYT8VVrOQcwN5lh8HJBV7hd0XEHLmXFSbrl'
-  'laura@amazeemetrics.com':
-    key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC93my6w5dHQ7stSVtHjC1gBfe3AnIDbydrR7lm69ZL7CmEGcpQSERn1AJ+IHREmlFyP6X6U4kQlzulenpZXELRc12mln2HbqjHUDIJYuoVCnHKoPztx3XuOKZC6Jsh6TImsWPXUqbbtAjusqm5JpZAHhiPsCEnTl71U90iRnnDy/NAwA4zCUbavgLaqLBAgkvKQDDExe4Km++/LI6RMn6p+uI0maiZQXf2RWcaC/XqCEWngL7hBpTsUpiRMhSE7jCr9tzC0LSh123gWWeHA02pyW4bGFiRyXDCdmFWmUV1dh98GfTuSWWOOhWjXsZoGea+K+AWDOISanHh4C+Es5l7'
-  'victor@amazeelabs.com':
+  'victor.kuenzig@amazeelabs.com':
     key: 'AAAAB3NzaC1yc2EAAAABIwAAAQEAwd7LlS+vm2vSKUZqu77qOHbqkk8qoj6TDeGDEcEYafHhbGhd4hcqbsTj6GSs72R5pI7PQtPCwcOnJyjekKzeBbSKaFtoKyjFm2k4ON3lq9uVLTs13tg3YKZRxVXtTOO+sTknFY5tHCjHobgQKf53T33wuYBy2Jmgq7GyihImHWmA7B2KLMRw4GZTDqilgvmFo021sRstB5ThnXTl5KDquqwvnnwjdK2CHpBUP3rqp8bMSyso5C78zcb2jejOsZeTrJEXC8T9YKx3QZE4rHh/ifqAJRs6d7NWruNLu9oVC4/3zR5mj+966ToDMxSOG0P4Pov3ZtFlalpLotbILO4UMQ=='
-  'emma@amazeelabs.com':
+  'emma.karayiannis@amazeelabs.com':
     key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCjwpA9UU2DrYS/uyKUs85NzPWpjKV2+inIbc5bgUmUjwP467/oAt2KfNS2W8Kqqx4c7SUb5kZ0AJXPtEzmmYdmZxTBjrDVQ5bYWAwo58s7vt+lDuzcW0nhgj5xFPwmhO4PmTV4yH6Y222fmDLJ4eL9AumZ6mh1L9wEMmTIHbg0UG57JFFOBogvwHq2qtz7cxeYfOmS4tlh9Dp44OGCApa/oDNlOfXlVR0dMaoQ+Nx/3GD47aMhPu5f8EpPQN4aDSKhHffY2v5eAo45+6f7GE2aPmKeoGgdk9LurZwXSdaY7oriM2g7qpdIc3vWRFRN/PSYwW4LTPFbvQrxnMjoliI3'
-  'laura@amazeemetrics.com':
+  'laura.hornbake@amazeemetrics.com':
     key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC93my6w5dHQ7stSVtHjC1gBfe3AnIDbydrR7lm69ZL7CmEGcpQSERn1AJ+IHREmlFyP6X6U4kQlzulenpZXELRc12mln2HbqjHUDIJYuoVCnHKoPztx3XuOKZC6Jsh6TImsWPXUqbbtAjusqm5JpZAHhiPsCEnTl71U90iRnnDy/NAwA4zCUbavgLaqLBAgkvKQDDExe4Km++/LI6RMn6p+uI0maiZQXf2RWcaC/XqCEWngL7hBpTsUpiRMhSE7jCr9tzC0LSh123gWWeHA02pyW4bGFiRyXDCdmFWmUV1dh98GfTuSWWOOhWjXsZoGea+K+AWDOISanHh4C+Es5l7'
-  'diana@amazeelabs.com':
+  'diana.montalion@amazeelabs.com':
     key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDn4ZGtReFf0WWZ4CuuZ5LjyzzncxR8WnTSyXrxNI4HE2rcPfnLBWV89WlAEIItTUN75PMYOx9fxHxFQsXVzwmmagzrAZ+7Jw90ofLg7odZIp5U3kPeC6/Lsm3U7X98mjEdeczU1U/i/BOEF1EPPm/KxtBbCIlDuW78gxDRrxa6eK4pR1xH3DO10bs85cNNa7bsVYl1T4VhoWvBuzS9dEddIZ4sF6fQvvDvObWFK1Vw+1RUx/sv/vzhdW+q6lC6iNMeTANhh1W7rrR/L5EpN+gyzJBG/ps6rDSRM6z4Ji6IMZ3/zKZnNSU6LT+u9kQZaZs647MVLtpDaF7jgt+hk9yB'
   'evelyn.thar@amazeemetrics.com':
     key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDG8+EGCPOxy3F+A7bBE1P+2Wpctsr4T919xR3zS8YYQUbLVUmsNCqkpG4CdlOt/DFxaYh9ljxdaGN/Ys0kH+JcDxDjxjPEKN5FLowWN4mEBHrYqyT5rZhEIalhlbQevLqvke8zaxn2Zdxh/vCfKCBOWaKFDgdsicel3dB/uoLJ2VOa3K8UaqF81467vigNybiD40ng8MaGHxHn+W2TUx5PMM8jUbS2D5ponfXP2QDonkZe8xcjbZTvM1Pxh+G/6rTgVgn62FMsPv7GDbjhPCnwItfr1lxW/oZp+bGondDkFMRT7AS5q77eIRORl9y4nAua/7A2MBXDFaU7YDWSIF/x'
-  'josef@amazeelabs.com':
+  'josef.dabernig@amazeelabs.com':
     key: 'AAAAB3NzaC1yc2EAAAABIwAAAQEAm1mLgfJ7ZWke6jE9n9ettQWE0d+2hJEb9ORkLxSSw+0k4vgKzW6b0QaoVHbO0RwOgPKFLkuIVFEJdU/OE3aTzUth13lx81GXxKMHl7tbhIezBTn8vmmuplHZe1Mn4tgdp5j3Q9NM7Q2nwuWgyR59h8b0MYsy/zx87zHK/TYPNNeDvWAMOjGNt+5NK37SjIJXiyD+2qFcAkiLpVZxzQmyEA5KnnREpGZVJkFkVHEyC+WhueCacbF76EjyUnbUtlBn+TkQz99ZkiisOi2ES4/Qe8IQcqE4IAAIbWo/8Bxr0415cbmzr/FR2SR+TCh1kOT+OumQP6Vof9tJ+wsdZ6Q0lw=='
-  'patrick@amazeelabs.com':
+  'patrick.brunner@amazeelabs.com':
     key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC64FdL4txepYJlltvj/kpetLCBM+XNKaPpZor8pN3aJU71ipdMEHDKXeoBha/rjAovXW+/VKeqB+nNZ7I89irxJrTR+u2YGiNVvIX0VW3vHWsVDIqRxPyGjxNKH9gM3J0PpULvq6wQmCKI4Qj4eIbQDgWrNgmkBWae+5sxUtbukiGs+d8N5MwIc4g+p8KiK5ajQbftrLihwSZOK9sQGw3rlRqdc370DWvGTqeaHWxhyUtXaExWa9vjw1FO80o+7iwQxtocnyVn1orDg8IUL4GWxLMiK1IGLozznOQkndfKsi3Rzs6kHePUFLmdMolc2qrGQgJVuWj/YCZXtOMDm8vB'
-  'jason@amazeelabs.com':
+  'jason.savino@amazeelabs.com':
     key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCv+TxzZHQIdi9RMHtyC4umXuKIdSmYqeAJY89E1qjCNZR78c8HUqRgiQrPLGrztfSvy6a66Ov2l3N5TmW2ytR9eUkTwa50/i1PnXKrVOMpCKH5swf3B95UdhF67B5BXfWnYC8lNmejzh52c7P+ZyiMYAVIfc3DefDinj5tFxbwvD1QBZWC2d6sRcWbUcJHJPZnGRqBmNz7pv9uDL2oCpZbzTJVLA5OpjamComImJng69XXfF+2kDTiMjC1nlw64cIDL3eJtlY6F7GckHgn7xz0+U9QHZwbolu2SpQjDaR8UV3ouTD5V43ibncCTT8L7kelWdMmXO96fqlHmMEVaV1R'
-  'claudine@amazeelabs.com':
+  'claudine.braendle@amazeelabs.com':
     key: 'AAAAB3NzaC1yc2EAAAABIwAAAQEA0hdWPkI2+i2WhgUamJQhS1a5Kp2RY0p0o+crRpSR6O5pGkXxq21uGdUi055wJNxWeL30OZtwqWs4/Yc0VIT+WVDaQFccP/jmHa0Mq0BlrefqvtzXhYEOSj1MJC7E2T1FmMOs82JANtNoUCvuR/hDHQLvlanEFoHKQknPHeTThwR+2RCqoH9qJ2t1vRxjXrDPPd4eApPNmsAHwyyP2aGpgEujwXdKyhUBv6YPR0fk4KMWMQpdyeTOFSjIXdDMVRqhZw33ZXzv1reQ7UCMCMGC/Sv0rysx8XyOtJAOdYHMpG0dOOucbY9aEcfbJC+Y7O9pY38MXDQF1oMtiWrXbht4xw=='
-  'anna@amazeelabs.com':
+  'anna.hanchar@amazeelabs.com':
     key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDtqfKWaL5K2JnEQcsYzQFkBueUkw00zWrOowKArUtIJGmXBBtyiD22DMtx3pBKBjog/hL8jazUiqmCGtpigXNzMI07iB/M8Bx3r8QeYJr9cmnq6EvU9Ql98tzKdpFNr9Y5dZbiBYgnyL+c81zBZdLA6tA+q1s9O/Z+HQ1OnorU7JHHTfGBRuG4fQiiOoe922WRcCHsdlJe1KbQSdU6gKQtcv06JJ5G5SsmKfwqoHtUSck9LbrD4t95EcVEfJBHzvrLw2GjzUpDmaMuiF3hwrNH6tzc3/uuB6II6xTt8ETCurtSZ9WkSlj160x4Xdj8TQ7Ju/YUgKDiHCzODBnj4ajl'
-  'yacine@amazeelabs.com':
+  'yacine.belarbi@amazeelabs.com':
     key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQD6bH6cx8hFy9v79aQvoNU7qc6gfMqB1CrUrQekSgrDszqnROLDn+aatz+0NDGlzychFQ/Yj2GZHBxFqGK9EsnQdpmv8N5IOKqr0oPK3HYXZKVslST4z/6JC1t12aoVO6n5A3sys5t08MbZyd3mq6oQAJ35AoGmyDoZfLvzd5f29YXm61WTyxvDL7HZT009vFnT4YlJG/nmQfFIM1zBHy2/keoz8SSewWpeHk6lpX0o/N7rjB3RcEM50WvoR+705hth7wsiquQARi6BgnAN3CPGDgqeltoayEMfSK1v8x6UUnoGkeIKN2rLipQYaLj3mkpC8D6YcRBcaj5kNk66XaO/'
-  'andrew@amazeelabs.com':
+  'andrew.mcclintock@amazeelabs.com':
     key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDExgA4/IX8606QyECHPC4kab+oCJytmezzFfK83tmon5iXBqjBFVRNMVM2M9QCuK4TWENI7l95ujmpYtmTEGalE4NxtnVuGOLZBh29SFkZJX1z7A7UNyEkggDFio1BYlDaxMEDM2EhfHd/TKQO9TEz7uFVjJriO7EOKzDNFSGO8Wfmij9XP4/X46dp3m1ORMmHJMEAukO0mcw2OmG4Ku8jeHzDPJvTyHp+IMXuLL3cN3mbGreL+fSoWMu5i338cInlRtsa+eiB/uKIkIamj2OT3WsnI9d15CzB88+V5UFAI7l+C2Niig5P8ANBhAV0TLmfZqOJ9LsLYx+JzBomO+kR'
-  'nelly.moseki@amazeelabs.com':
-    key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC94ETRLdS3/gAuZoK6mWUV1mhxTvwoxnsPUqgiTpNQdvF7LrtixUl/jP1r+5mLw/H5IjDGvMjO0q78+8weAJuZ4fgUPLavgEMu+dBrFVShk4uJSuvQxB2TbDq2H1xMk3C9phXlVEpLD1U+QAdnRVMJVScRfkdlN4ElNbaHOd8JgE87CMHAGMtvamlNRc/LO1/6C14G/u8pzQgxYBi0ciuhTC7t/gm7nyL84M7lApqkv+/FKsfbYnMULcQS2TstXifQsXdKRsRDwo1WL6rhQSgjgDUkeuRgbaXwIdWRZg2oyrRnWG8sAk4QAOAKHYLuE6D7HD1SztXMJJSbrJ5rx77/'
   'stew.west@amazeelabs.com':
     key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDZ056rIzhc8kDaxN5igJX1Jx/PeR/coo9NGK+9fkkmjcU/Z6Va8iQO2rSgVcNPl6r7RMQ7ThJ4depJNAyZ2yAp4DJcVAJudOnNz+sn5oSuFtesvq157ZBaQNq8C+wE78Me1POOb7uDgkiy5Ir7r8e884rgaiSvi4QIlqzWg5/KgGc7N2IPHQsN1wyrTnvSMZ3495vgyndSUZONPsn/csreZQxcIWBT3Hw072QZp/tFmfvz86OFnmVoSYWWUGdR/JxKZWrQXOeDXBaVAXm1HWEt30WzsNpyiRtNr8+SC7SXEBxRton9J7lnHTb1WqHtnNU1a1phk1aG2V15YtFGo56L'
+  'nelly.moseki@amazeelabs.com':
+    key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQC94ETRLdS3/gAuZoK6mWUV1mhxTvwoxnsPUqgiTpNQdvF7LrtixUl/jP1r+5mLw/H5IjDGvMjO0q78+8weAJuZ4fgUPLavgEMu+dBrFVShk4uJSuvQxB2TbDq2H1xMk3C9phXlVEpLD1U+QAdnRVMJVScRfkdlN4ElNbaHOd8JgE87CMHAGMtvamlNRc/LO1/6C14G/u8pzQgxYBi0ciuhTC7t/gm7nyL84M7lApqkv+/FKsfbYnMULcQS2TstXifQsXdKRsRDwo1WL6rhQSgjgDUkeuRgbaXwIdWRZg2oyrRnWG8sAk4QAOAKHYLuE6D7HD1SztXMJJSbrJ5rx77/'
+  'jason.lewis@amazeelabs.com':
+    key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDUNZ4J3+Zc/53p4UNbTusE7x2Dv7lGXtKM35YuWSzPbZL4jWWiur6ivp7ByZ/0SOK4PLkWoyyNhb2VZ3oqJJC2tf05ru06SmsuTo5cHFyw5oZqOrqleepL2k4X3gulSXlXSWCQmWVD+WXC4lJ2GrNDmZEPHQDyNBrVUGpVhfHILCCazzTxswciZVazLm4Zza3EReZc8raFd8WTB0/y6nE+VoAQxPHDggrDoZH5m7LNlNcsSmR0nNJs+P5A4bBkLVClR5Rn3A34qiVuGn5XRwSiqiZ25reJ1IvN1ocZZEwoKVTQPObP36yQLPRwdcjAFgY2P+wnfbvRbFxwBnmUhOHz'

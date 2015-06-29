@@ -1,6 +1,7 @@
 {
     "live": [
-        "ublox.prod"
+        "ublox.prod",
+        "web1"
     ],
     "dev": [
         "dev2"

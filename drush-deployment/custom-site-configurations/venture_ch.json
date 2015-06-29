@@ -8,5 +8,17 @@
     },
     "root": "/home/www-data/staging.$siteurl",
     "uri": "http://staging.$siteurl.amazeedev2.nine.ch"
+  },
+  "zh2.single": {
+      "remote-host": "backend.zh2.single.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "modelhof_ch",
+      "path-aliases": {
+          "%drush-script": "/usr/local/bin/drush",
+          "%dump-dir": "/var/www/modelhof_ch/"
+      },
+      "root": "/var/www/modelhof_ch/public_html",
+      "uri": "http://$siteurl.zh2.single.amazee.io",
+      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io 2> /dev/null\""
   }
 }

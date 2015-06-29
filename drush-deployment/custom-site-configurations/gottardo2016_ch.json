@@ -42,7 +42,7 @@
             "deploy_newrelic_task"
           ],
           "deploy-update-code": [
-            "deploy_gulp_build_task",
+            "deploy_gulp_build_task"
           ]
         }
     }

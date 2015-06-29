@@ -38,10 +38,11 @@
         "after": {
           "deploy-symlink": [
             "deploy_cache_task_d8",
+            "deploy_apc_flush_task",
             "deploy_newrelic_task"
           ],
           "deploy-update-code": [
-            "deploy_gulp_build_task"
+            "deploy_gulp_build_task",
           ]
         }
     }

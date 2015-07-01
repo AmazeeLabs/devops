@@ -31,8 +31,9 @@
         },
         "after": {
           "deploy-symlink": [
-          ],
-          "deploy-update-code": [
+            "deploy_cache_task",
+            "deploy_update_task",
+            "deploy_newrelic_task"
           ]
         }
     }

@@ -1,5 +1,5 @@
 {
-  "zh2.single": {
+  "prod": {
       "remote-host": "backend.zh2.single.amazee.io",
       "remote-environment": "amazee.io",
       "remote-user": "ricobaldegger_ch",
@@ -24,7 +24,7 @@
         ]
       }
   },
-  "dev1.compact": {
+  "dev": {
       "remote-host": "dev1.compact.amazee.io",
       "remote-environment": "amazee.io",
       "remote-user": "ricobaldegger_ch",

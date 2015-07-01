@@ -3,7 +3,7 @@
 /**
  * @file
  * AmazeeIO Drupal 7 configuration file.
- * 
+ *
  * You should not edit this file, please use environment specific files!
  * They are loaded in this order:
  * - settings.all.php
@@ -14,14 +14,14 @@
  *   For settings only for the development environment (dev servers, vagrant).
  * - settings.local.php
  *   For settings only for the local environment, this file will not be commited in GIT!
- * 
+ *
  */
 
 ### AMAZEE.IO Varnish & Reverse proxy settings
 if (getenv('AMAZEEIO_VARNISH_HOSTS') && getenv('AMAZEEIO_VARNISH_SECRET')) {
   $varnish_hosts = explode(',', getenv('AMAZEEIO_VARNISH_HOSTS'));
   array_walk($varnish_hosts, function(&$value, $key) { $value .= ':6082'; });
-  
+
   $conf['reverse_proxy'] = TRUE;
   $conf['reverse_proxy_addresses'] = explode(getenv('AMAZEEIO_VARNISH_HOSTS'), ',');
   $conf['varnish_control_terminal'] = implode($varnish_hosts, " ");

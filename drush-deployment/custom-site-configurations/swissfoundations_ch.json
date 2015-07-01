@@ -7,7 +7,6 @@
           "%drush-script": "/usr/local/bin/drush",
           "%dump-dir": "/var/www/swissfoundations_ch/"
       },
-      "branch": "prod",
       "root": "/var/www/swissfoundations_ch/public_html",
       "uri": "http://$siteurl.zh1.single.amazee.io",
       "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io 2> /dev/null\""

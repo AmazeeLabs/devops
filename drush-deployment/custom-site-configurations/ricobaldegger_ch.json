@@ -9,7 +9,20 @@
       },
       "root": "/var/www/ricobaldegger_ch/public_html",
       "uri": "http://$siteurl.zh2.single.amazee.io",
-      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io 2> /dev/null\""
+      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io 2> /dev/null\"",
+      "branch": "prod",
+      "before": {
+        "deploy-symlink": [
+          "deploy_before_deploy_symlink_tasks"
+        ]
+      },
+      "after": {
+        "deploy-symlink": [
+          "deploy_cache_task",
+          "deploy_apc_flush_task",
+          "deploy_newrelic_task"
+        ]
+      }
   },
   "dev1.compact": {
       "remote-host": "dev1.compact.amazee.io",

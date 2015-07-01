@@ -7,7 +7,7 @@
  */
  
 ### Requirement: Define the $base_url (no trailing slash!)
-$base_url = "http://domain.com"
+$base_url = "http://domain.com";
  
 # $conf['preprocess_css'] = TRUE;
 # $conf['preprocess_js'] = TRUE;

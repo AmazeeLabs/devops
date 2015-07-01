@@ -51,7 +51,7 @@ if(getenv('AMAZEEIO_SITENAME')){
 
 ### Base URL
 if (getenv('AMAZEEIO_SITE_URL')) {
-  $base_url = getenv('AMAZEEIO_SITE_URL');
+  $base_url = 'http://' . getenv('AMAZEEIO_SITE_URL');
 }
 
 // Let the ultimate_cron work as usual on the core-cron command ("drush cron").

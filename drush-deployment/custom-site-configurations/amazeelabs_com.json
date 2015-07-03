@@ -9,7 +9,7 @@
       },
       "root": "/var/www/amazeelabs_com/public_html",
       "uri": "http://$siteurl.zh1.single.amazee.io",
-      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io 2> /dev/null\""
+      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
   },
   "dev": {
       "remote-host": "dev1.compact.amazee.io",

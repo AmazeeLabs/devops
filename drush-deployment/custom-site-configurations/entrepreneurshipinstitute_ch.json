@@ -1,5 +1,5 @@
 {
-  "zh2.single": {
+  "prod": {
       "remote-host": "backend.zh2.single.amazee.io",
       "remote-environment": "amazee.io",
       "remote-user": "entrepreneurshipinstitute_ch",

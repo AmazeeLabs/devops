@@ -1,0 +1,14 @@
+{
+  "zh1.single": {
+      "remote-host": "backend.zh1.single.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "jrz_amazeelabs_com",
+      "path-aliases": {
+          "%drush-script": "/usr/local/bin/drush",
+          "%dump-dir": "/var/www/jrz_amazeelabs_com/"
+      },
+      "root": "/var/www/jrz_amazeelabs_com/public_html",
+      "uri": "http://$siteurl.zh1.single.amazee.io",
+      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io 2> /dev/null\""
+  }
+}

@@ -21,7 +21,7 @@
             "%dump-dir": "/var/www/amazeemetrics_com_live/"
         },
         "root": "/var/www/amazeemetrics_com_live/public_html",
-        "uri": "http://www.thetrek.co.za",
+        "uri": "http://www.amazeemetrics.com",
         "branch": "prod",
         "before": {
           "deploy-symlink": [

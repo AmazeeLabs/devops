@@ -2,12 +2,12 @@
     "dev": {
         "remote-host": "dev1.compact.amazee.io",
         "remote-environment": "amazee.io",
-        "remote-user": "thetrek_co_za",
+        "remote-user": "thetrek_co_za_dev",
         "path-aliases": {
             "%drush-script": "/usr/local/bin/drush",
-            "%dump-dir": "/var/www/thetrek_co_za/"
+            "%dump-dir": "/var/www/thetrek_co_za_dev/"
         },
-        "root": "/var/www/thetrek_co_za/public_html",
+        "root": "/var/www/thetrek_co_za_dev/public_html",
         "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
         "deploy-via": "Pull",
         "branch": "dev"

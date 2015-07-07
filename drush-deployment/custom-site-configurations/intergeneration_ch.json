@@ -17,13 +17,12 @@
       ]
     },
     "after": {
-      "deploy-symlink": [
+      "deploy-update-code": [
+        "deploy_gulp_build_task",
+        "deploy_cache_css_js_task",
         "deploy_cache_task",
         "deploy_apc_flush_task",
         "deploy_newrelic_task"
-      ],
-      "deploy-update-code": [
-        "deploy_gulp_build_task"
       ]
     }
   }

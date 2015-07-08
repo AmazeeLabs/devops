@@ -9,7 +9,7 @@
         },
         "root": "/var/www/thetrek_co_za_dev/public_html",
         "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
-        "deploy-via": "Pull",
+        "deploy-via": "Checkout",
         "branch": "dev"
     },
     "prod": {

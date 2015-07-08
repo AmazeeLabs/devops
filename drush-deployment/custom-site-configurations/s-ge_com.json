@@ -1,5 +1,5 @@
 {
-    "dev1.compact": {
+    "amazeeiodev": {
         "remote-host": "dev1.compact.amazee.io",
         "remote-environment": "amazee.io",
         "remote-user": "s-ge_com",
@@ -8,7 +8,9 @@
             "%dump-dir": "/var/www/s-ge_com/"
         },
         "root": "/var/www/s-ge_com/public_html",
-        "uri": "http://$siteurl.dev.dev1.compact.amazee.io"
+        "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+        "deploy-via": "Pull",
+        "branch": "dev"
     },
     "web1": {
         "remote-host": "amazeeweb1.nine.ch",

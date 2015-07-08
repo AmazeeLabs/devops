@@ -11,7 +11,7 @@
       "uri": "http://$siteurl.zh2.single.amazee.io",
       "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io 2> /dev/null\""
   },
-  "dev": {
+  "amazeeiodev": {
       "remote-host": "dev1.compact.amazee.io",
       "remote-environment": "amazee.io",
       "remote-user": "michelbruggmann_ch",
@@ -20,6 +20,8 @@
           "%dump-dir": "/var/www/michelbruggmann_ch/"
       },
       "root": "/var/www/michelbruggmann_ch/public_html",
-      "uri": "http://$siteurl.dev.dev1.compact.amazee.io"
+      "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+      "deploy-via": "Pull",
+      "branch": "dev"
   }
 }

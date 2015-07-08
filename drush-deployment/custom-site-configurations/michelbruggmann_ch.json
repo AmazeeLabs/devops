@@ -12,15 +12,16 @@
       "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
   },
   "amazeeiodev": {
-      "remote-host": "dev1.compact.amazee.io",
+      "remote-host": "backend.zh2.single.amazee.io",
       "remote-environment": "amazee.io",
-      "remote-user": "michelbruggmann_ch",
+      "remote-user": "michelbruggmann_ch_dev",
       "path-aliases": {
           "%drush-script": "/usr/local/bin/drush",
-          "%dump-dir": "/var/www/michelbruggmann_ch/"
+          "%dump-dir": "/var/www/michelbruggmann_ch_dev/"
       },
-      "root": "/var/www/michelbruggmann_ch/public_html",
-      "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+      "root": "/var/www/michelbruggmann_ch_dev/public_html",
+      "uri": "http://$siteurl.dev.zh2.single.amazee.io",
+      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
       "deploy-via": "Pull",
       "branch": "dev"
   }

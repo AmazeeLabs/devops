@@ -56,6 +56,7 @@
         "root": "/var/www/gottardo2016_ch/public_html",
         "uri": "http://www.gottardo2016.ch",
         "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+        "branch": "prod",
         "before": {
           "deploy-symlink": [
             "deploy_before_deploy_symlink_tasks"
@@ -83,6 +84,21 @@
         "root": "/var/www/gottardo2016_ch/public_html",
         "uri": "http://www.gottardo2016.ch",
         "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-        "branch": "prod"
+        "branch": "prod",
+        "before": {
+          "deploy-symlink": [
+            "deploy_before_deploy_symlink_tasks"
+          ]
+        },
+        "after": {
+          "deploy-symlink": [
+            "deploy_cache_task_d8",
+            "deploy_apc_flush_task",
+            "deploy_newrelic_task"
+          ],
+          "deploy-update-code": [
+            "deploy_gulp_build_task"
+          ]
+        }        
     }    
 }

@@ -1,0 +1,11 @@
+{
+    "name": "devops",
+    "version": "1.0.0",
+    "description": "Amazee Labs Devops",
+    "devDependencies": {
+        "jsonlint": ">=1.6.2"
+    },
+    "scripts": {
+        "test": "find .  -name \\*.json -not -path './node_modules/*' | xargs -I {} jsonlint -q -c {}"
+    }
+}

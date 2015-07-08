@@ -16,7 +16,7 @@
             "deploy_gulp_compile_task",
             "deploy_cache_css_js_task"
           ]
-        }        
+        }
     },
     "prod": {
         "remote-host": "backend.zh1.single.amazee.io",

@@ -9,5 +9,5 @@
       },
       "root": "/var/www/d8-starter_io/public_html",
       "uri": "http://$siteurl.dev1.compact.amazee.io"
-  }  
+  }
 }

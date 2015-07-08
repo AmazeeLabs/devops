@@ -1,7 +1,7 @@
 {
   "name": "devops",
   "version": "1.0.0",
-  "description": "Amazee Labs Devops"
+  "description": "Amazee Labs Devops",
   "devDependencies": {
     "jsonlint": ">=1.6.2"
   },

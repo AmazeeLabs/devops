@@ -6,6 +6,6 @@
     "jsonlint": ">=1.6.2"
   },
   "scripts": {
-    "test": "find . -name \*.json  | xargs -I {} jsonlint -q {}",
+    "test": "find . -name \\*.json  | xargs -I {} jsonlint -q {}",
   }
 }

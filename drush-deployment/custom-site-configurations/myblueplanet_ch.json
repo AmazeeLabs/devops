@@ -1,5 +1,5 @@
 {
-  "amazeeio-dev": {
+  "dev": {
         "remote-host": "dev1.compact.amazee.io",
         "remote-environment": "amazee.io",
         "remote-user": "myblueplanet_ch_dev",

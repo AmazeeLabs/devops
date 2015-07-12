@@ -28,7 +28,7 @@
         },
         "root": "/var/www/xalps_ch/public_html",
         "uri": "http://$siteurl.us1.compact.amazee.io",
-        "branch": "live",
+        "branch": "prod",
         "before": {
           "deploy-symlink": [
             "deploy_before_deploy_symlink_tasks"

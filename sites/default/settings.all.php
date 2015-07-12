@@ -15,3 +15,6 @@
 # $conf['cache_backends'][] = 'sites/all/modules/redis/redis.autoload.inc';
 # $conf['cache_default_class'] = 'Redis_Cache';
 # $conf['cache_prefix'] = getenv('AMAZEEIO_SITENAME') . '_';
+
+// Uncomment to use Domains Module
+include DRUPAL_ROOT . '/sites/all/modules/domain/settings.inc';

@@ -11,6 +11,7 @@
 # $conf['cache_class_cache_page'] = 'VarnishCache';
 
 // Uncomment to use Redis.
+# $conf['redis_client_interface'] = 'Predis';
 # $conf['cache_backends'][] = 'sites/all/modules/redis/redis.autoload.inc';
 # $conf['cache_default_class'] = 'Redis_Cache';
 # $conf['cache_prefix'] = getenv('AMAZEEIO_SITENAME') . '_';

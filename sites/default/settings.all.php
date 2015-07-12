@@ -17,4 +17,4 @@
 # $conf['cache_prefix'] = getenv('AMAZEEIO_SITENAME') . '_';
 
 // Uncomment to use Domains Module
-include DRUPAL_ROOT . '/sites/all/modules/domain/settings.inc';
+// include DRUPAL_ROOT . '/sites/all/modules/domain/settings.inc';

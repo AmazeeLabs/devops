@@ -1,11 +1,30 @@
 {
+  "dev": {
+    "remote-host": "dev1.compact.amazee.io",
+    "remote-environment": "amazee.io",
+    "remote-user": "capetown2015_drupalcamp_co_za",
+    "path-aliases": {
+      "%drush-script": "/usr/local/bin/drush",
+      "%dump-dir": "/var/www/capetown2015_drupalcamp_co_za/"
+    },
+    "root": "/var/www/capetown2015_drupalcamp_co_za/public_html",
+    "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+    "deploy-via": "Pull",
+    "branch": "dev",
+    "after": {
+      "deploy-update-code": [
+        "deploy_gulp_compile_task",
+        "deploy_cache_css_js_task"
+      ]
+    }
+  },
   "prod": {
     "remote-host": "backend.zh1.single.amazee.io",
     "remote-environment": "amazee.io",
     "remote-user": "capetown2015_drupalcamp_co_za",
     "path-aliases": {
-        "%drush-script": "/usr/local/bin/drush",
-        "%dump-dir": "/var/www/capetown2015_drupalcamp_co_za/"
+      "%drush-script": "/usr/local/bin/drush",
+      "%dump-dir": "/var/www/capetown2015_drupalcamp_co_za/"
     },
     "root": "/var/www/$siteurl/public_html",
     "uri": "http://$siteurl.zh1.single.amazee.io",
@@ -25,5 +44,6 @@
       "deploy-update-code": [
         "deploy_gulp_build_task"
       ]
-    }  }
+    }
+  }
 }

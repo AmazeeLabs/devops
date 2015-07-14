@@ -1,5 +1,5 @@
 {
-  "zh1single": {
+  "prod": {
     "remote-host": "backend.zh1.single.amazee.io",
     "remote-user": "www-data",
     "path-aliases": {

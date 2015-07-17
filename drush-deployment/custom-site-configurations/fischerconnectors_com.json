@@ -1,3 +1,4 @@
+{  
   "prod1": {
       "remote-host": "backend1.zh1.cluster.amazee.io",
       "remote-environment": "cluster.amazee.io",
@@ -24,3 +25,4 @@
       "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
       "branch": "prod"
   }
+}

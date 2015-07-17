@@ -151,7 +151,7 @@ if (!function_exists("deploy_settings_php_task")) {
  */
 if (!function_exists("deploy_settings_local_php_task")) {
   function deploy_settings_local_php_task($d) {
-    if($d->sites[0]['remote-environment'] == 'amazee.io') {
+    if (strpos($d->sites[0]['remote-environment'], 'amazee.io') !== FALSE) {
       $d->run("cp /var/www/`whoami`/settings.local.php %s/sites/default/settings.local.php 2>/dev/null || :", $d->latest_release());
     }else {
       $d->run("cp /home/nfs_share/www-data/`whoami`/settings.local.php %s/sites/default/settings.local.php 2>/dev/null || :", $d->latest_release());
@@ -165,9 +165,13 @@ if (!function_exists("deploy_settings_local_php_task")) {
  */
 if (!function_exists("deploy_symlinks_task")) {
   function deploy_symlinks_task($d) {
-    if($d->sites[0]['remote-environment'] == 'amazee.io') {
+    if (strpos($d->sites[0]['remote-environment'], 'cluster.amazee.io') !== FALSE) {
+      $d->run("ln -s /var/www/`whoami`/shared/files %s/sites/default/files", $d->latest_release());
+    } 
+    else if (strpos($d->sites[0]['remote-environment'], 'amazee.io') !== FALSE) {
       $d->run("ln -s /var/www/`whoami`/files %s/sites/default/files", $d->latest_release());
-    }else {
+    }
+    else {
       $d->run("ln -s /home/nfs_share/www-data/`whoami`/files %s/sites/default/files", $d->latest_release());
     }
   }
@@ -236,7 +240,7 @@ if (!function_exists("deploy_newrelic_task")) {
  */
 if (!function_exists("deploy_apc_flush_task")) {
   function deploy_apc_flush_task($d) {
-    if($d->sites[0]['remote-environment'] == 'amazee.io') {
+    if (strpos($d->sites[0]['remote-environment'], 'amazee.io') !== FALSE) {
       //@TODO: Add the VSHN APC Flush here
     }else {
       $d->run_once("curl http://jenkins.amazeelabs.com/buildByToken/buildWithParameters?job=Amazee%%20APC%%20Flush\&token=AMAZEEREMOTE\&source=drush-deploy", $d->sites[0]['path-aliases']['%drush-script']);

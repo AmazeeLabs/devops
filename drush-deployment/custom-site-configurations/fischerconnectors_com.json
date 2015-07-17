@@ -1,18 +1,26 @@
-{
-  "seo": {
-    "remote-host": "amazeedev1.nine.ch",
-    "remote-user": "www-data",
-    "path-aliases": {
-      "%drush-script": "/home/www-data/drush/drush",
-      "%dump-dir": "/home/www-data/seo.fischerconnectors.com/"
-    },
-    "command-specific": {
-      "sql-sync": {
-        "no-cache": true,
-        "no-ordered-dump": true
-      }
-    },
-    "root": "/home/www-data/seo.fischerconnectors.com",
-    "uri": "http://seo.fischerconnectors.com.amazeedev1.nine.ch"
+  "prod1": {
+      "remote-host": "backend1.zh1.cluster.amazee.io",
+      "remote-environment": "cluster.amazee.io",
+      "remote-user": "fischerconnectors_com",
+      "path-aliases": {
+          "%drush-script": "/usr/local/bin/drush",
+          "%dump-dir": "/var/www/fischerconnectors_com/"
+      },
+      "root": "/var/www/fischerconnectors_com/public_html",
+      "uri": "http://www.fischerconnectors.com",
+      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+      "branch": "prod"
+  },
+  "prod2": {
+      "remote-host": "backend2.zh1.cluster.amazee.io",
+      "remote-environment": "cluster.amazee.io",
+      "remote-user": "fischerconnectors_com",
+      "path-aliases": {
+          "%drush-script": "/usr/local/bin/drush",
+          "%dump-dir": "/var/www/fischerconnectors_com/"
+       },
+      "root": "/var/www/fischerconnectors_com/public_html",
+      "uri": "http://www.fischerconnectors.com",
+      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+      "branch": "prod"
   }
-}

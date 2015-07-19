@@ -1,5 +1,5 @@
 {
-  "amazeeiodev": {
+  "dev": {
       "remote-host": "dev1.compact.amazee.io",
       "remote-environment": "amazee.io",
       "remote-user": "intergeneration_ch",
@@ -11,7 +11,8 @@
       "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
       "deploy-via": "Pull",
       "branch": "dev"
-  },"prod": {
+  },
+  "prod": {
     "remote-host": "backend.zh1.single.amazee.io",
     "remote-environment": "amazee.io",
     "remote-user": "intergeneration_ch",

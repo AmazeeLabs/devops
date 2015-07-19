@@ -12,7 +12,7 @@
       "deploy-via": "Pull",
       "branch": "dev"
   },
-  "prod": {
+  "prod_do_not_deploy": {
       "remote-host": "backend.zh1.single.amazee.io",
       "remote-environment": "amazee.io",
       "remote-user": "exped_com",

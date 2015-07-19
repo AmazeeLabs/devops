@@ -8,7 +8,7 @@
       "%dump-dir": "/var/www/amazeelabs_com/"
     },
     "root": "/var/www/amazeelabs_com/public_html",
-    "uri": "http://$siteurl.zh1.single.amazee.io",
+    "uri": "http://www.amazeelabs.com",
     "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
     "branch": "prod",
     "before": {

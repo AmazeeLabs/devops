@@ -1,5 +1,5 @@
 {
-  "amazeeiodev": {
+  "dev": {
       "remote-host": "dev1.compact.amazee.io",
       "remote-environment": "amazee.io",
       "remote-user": "modelgroup_com_dev",
@@ -10,7 +10,12 @@
       "root": "/var/www/modelgroup_com_dev/public_html",
       "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
       "deploy-via": "Pull",
-      "branch": "dev"
+      "branch": "dev",
+      "after": {
+        "deploy-update-code": [
+          "deploy_cache_css_js_task"
+        ]
+      }
   },"prod": {
       "remote-host": "backend.zh1.single.amazee.io",
       "remote-environment": "amazee.io",

@@ -27,6 +27,6 @@
       "root": "/var/www/modelgroup_com/public_html",
       "uri": "http://$siteurl.zh1.single.amazee.io",
       "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-      "branch": "prod",
+      "branch": "prod"
   }
 }

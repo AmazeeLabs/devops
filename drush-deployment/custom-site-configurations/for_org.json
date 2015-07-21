@@ -1,4 +1,30 @@
 {
+  "prod1": {
+      "remote-host": "backend1.zh1.cluster.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "for_org",
+      "path-aliases": {
+          "%drush-script": "/usr/local/bin/drush",
+          "%dump-dir": "/var/www/for_org/"
+      },
+      "root": "/var/www/for_org/public_html",
+      "uri": "http://www.for.org",
+      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+      "branch": "prod"
+  },
+  "prod2": {
+      "remote-host": "backend2.zh1.cluster.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "for_org",
+      "path-aliases": {
+          "%drush-script": "/usr/local/bin/drush",
+          "%dump-dir": "/var/www/for_org/"
+       },
+      "root": "/var/www/for_org/public_html",
+      "uri": "http://www.for.org",
+      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+      "branch": "prod"
+  },
   "amazeeiodev": {
     "remote-host": "dev1.compact.amazee.io",
     "remote-environment": "amazee.io",

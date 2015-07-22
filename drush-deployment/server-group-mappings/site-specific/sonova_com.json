@@ -2,5 +2,10 @@
     "prod": [
         "prod1",
         "prod2"
+    ],
+    "live": [
+        "web1",
+        "web5",
+        "web6"
     ]
 }

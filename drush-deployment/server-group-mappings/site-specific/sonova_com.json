@@ -1,7 +1,8 @@
 {
     "prod": [
         "prod1",
-        "prod2"
+        "prod2",
+        "prod3"
     ],
     "live": [
         "web1",

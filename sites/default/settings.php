@@ -49,6 +49,28 @@ if(getenv('AMAZEEIO_SITENAME')){
   );
 }
 
+### AMAZEE.IO SOLR connection
+if(getenv('AMAZEEIO_SOLR_HOST') && getenv('AMAZEEIO_SOLR_PORT')){
+  // Override search API server settings fetched from default configuration.
+  $conf['search_api_override_mode'] = 'load';
+  $conf['search_api_override_servers'] = array(
+    'solr' => array(
+      'name' => 'Amazee.io Solr - Environment:' . getenv('AMAZEEIO_SITE_ENVIRONMENT'),
+      'options' => array(
+        'host' => getenv('AMAZEEIO_SOLR_HOST'),
+        'port' => getenv('AMAZEEIO_SOLR_PORT'),
+        'path' => '/solr/'.getenv('AMAZEEIO_SITENAME').'/',
+        'http_user' => '',
+        'http_pass' => '',
+        'excerpt' => 0,
+        'retrieve_data' => 0,
+        'highlight_data' => 0,
+        'http_method' => 'POST',
+      ),
+    ),
+  );
+}
+
 ### Base URL
 if (getenv('AMAZEEIO_SITE_URL')) {
   $base_url = 'http://' . getenv('AMAZEEIO_SITE_URL');

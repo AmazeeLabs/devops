@@ -1,4 +1,4 @@
-{  
+{
   "prod1": {
       "remote-host": "backend1.zh1.cluster.amazee.io",
       "remote-environment": "cluster.amazee.io",
@@ -14,6 +14,19 @@
   },
   "prod2": {
       "remote-host": "backend2.zh1.cluster.amazee.io",
+      "remote-environment": "cluster.amazee.io",
+      "remote-user": "fischerconnectors_com",
+      "path-aliases": {
+          "%drush-script": "/usr/local/bin/drush",
+          "%dump-dir": "/var/www/fischerconnectors_com/"
+       },
+      "root": "/var/www/fischerconnectors_com/public_html",
+      "uri": "http://www.fischerconnectors.com",
+      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+      "branch": "prod"
+  },
+  "prod3": {
+      "remote-host": "backend3.zh1.cluster.amazee.io",
       "remote-environment": "cluster.amazee.io",
       "remote-user": "fischerconnectors_com",
       "path-aliases": {

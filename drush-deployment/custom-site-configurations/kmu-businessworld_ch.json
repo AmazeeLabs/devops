@@ -34,5 +34,18 @@
       "uri": "http://www.kmu-businessworld.ch",
       "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
       "branch": "prod"
+  },
+  "prod3": {
+      "remote-host": "backend3.zh1.cluster.amazee.io",
+      "remote-environment": "cluster.amazee.io",
+      "remote-user": "kmu-businessworld_ch",
+      "path-aliases": {
+          "%drush-script": "/usr/local/bin/drush",
+          "%dump-dir": "/var/www/kmu-businessworld_ch/"
+       },
+      "root": "/var/www/kmu-businessworld_ch/public_html",
+      "uri": "http://www.kmu-businessworld.ch",
+      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+      "branch": "prod"
   }
 }

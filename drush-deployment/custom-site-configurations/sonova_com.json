@@ -11,7 +11,7 @@
   },
   "prod1": {
       "remote-host": "backend1.zh1.cluster.amazee.io",
-      "remote-environment": "amazee.io",
+      "remote-environment": "cluster.amazee.io",
       "remote-user": "sonova_com",
       "path-aliases": {
           "%drush-script": "/usr/local/bin/drush",
@@ -24,7 +24,7 @@
   },
   "prod2": {
       "remote-host": "backend2.zh1.cluster.amazee.io",
-      "remote-environment": "amazee.io",
+      "remote-environment": "cluster.amazee.io",
       "remote-user": "sonova_com",
       "path-aliases": {
           "%drush-script": "/usr/local/bin/drush",

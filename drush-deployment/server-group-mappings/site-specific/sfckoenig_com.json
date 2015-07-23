@@ -1,0 +1,10 @@
+{
+  "dev": [
+    "dev1"
+  ],
+  "prod": [
+    "prod1",
+    "prod2",
+    "prod3"
+  ]
+}

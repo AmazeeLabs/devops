@@ -15,3 +15,7 @@ $base_url = "http://example.com";
 # $conf['cache'] = 1;
 # $conf['cache_lifetime'] = 0;
 # $conf['page_cache_maximum_age'] = 3600; // 1 hour
+
+// Uncomment to use Varnish.
+# $conf['cache_backends'][] = 'sites/all/modules/varnish/varnish.cache.inc';
+# $conf['cache_class_cache_page'] = 'VarnishCache';

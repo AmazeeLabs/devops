@@ -79,11 +79,6 @@ if (getenv('AMAZEEIO_SITE_URL')) {
 // Let the ultimate_cron work as usual on the core-cron command ("drush cron").
 $conf['ultimate_cron_check_schedule_on_core_cron'] = TRUE;
 
-// Last: this servers specific settings files.
-if (file_exists(__DIR__ . '/settings.all.php')) {
-  include __DIR__ . '/settings.all.php';
-}
-
 // Environment specific settings files.
 if(getenv('AMAZEEIO_SITE_ENVIRONMENT')){
   if (file_exists(__DIR__ . '/settings.' . getenv('AMAZEEIO_SITE_ENVIRONMENT') . '.php')) {
@@ -94,6 +89,12 @@ if(getenv('AMAZEEIO_SITE_ENVIRONMENT')){
 // Last: this servers specific settings files.
 if (file_exists(__DIR__ . '/settings.local.php')) {
   include __DIR__ . '/settings.local.php';
+}
+
+// Last: this servers specific settings files.
+// This file should be included last since it can hold the domain module include
+if (file_exists(__DIR__ . '/settings.all.php')) {
+  include __DIR__ . '/settings.all.php';
 }
 
 // To improve the performance, we use READ-COMMITTED isolation by default. To

@@ -6,10 +6,6 @@
  * This file should contain all settings.php configurations that are needed by all environments.
  */
 
-// Uncomment to use Varnish.
-# $conf['cache_backends'][] = 'sites/all/modules/varnish/varnish.cache.inc';
-# $conf['cache_class_cache_page'] = 'VarnishCache';
-
 // Uncomment to use Redis.
 # $conf['redis_client_interface'] = 'Predis';
 # $conf['cache_backends'][] = 'sites/all/modules/redis/redis.autoload.inc';

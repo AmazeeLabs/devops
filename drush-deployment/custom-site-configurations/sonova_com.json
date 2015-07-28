@@ -1,13 +1,16 @@
 {
-  "staging": {
-    "remote-host": "amazeedev1.nine.ch",
-    "remote-user": "www-data",
-    "path-aliases": {
-      "%drush-script": "/home/www-data/bin/drush",
-      "%dump-dir": "/home/www-data/staging.$siteurl/"
-    },
-    "root": "/home/www-data/staging.$siteurl",
-    "uri": "http://staging.$siteurl.amazeedev1.nine.ch"
+  "amazeeiodev": {
+      "remote-host": "dev1.compact.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "sonova_com_dev",
+      "path-aliases": {
+          "%drush-script": "/usr/local/bin/drush",
+          "%dump-dir": "/var/www/sonova_com_dev/"
+      },
+      "root": "/var/www/sonova_com_dev/public_html",
+      "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+      "deploy-via": "Pull",
+      "branch": "dev"
   },
   "prod1": {
       "remote-host": "backend1.zh1.cluster.amazee.io",

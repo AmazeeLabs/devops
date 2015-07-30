@@ -1,5 +1,5 @@
 {
-    "amazeeiodev": {
+    "dev": {
       "remote-host": "dev1.compact.amazee.io",
       "remote-environment": "amazee.io",
       "remote-user": "chymne_ch_dev",

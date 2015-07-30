@@ -3,10 +3,5 @@
         "prod1",
         "prod2",
         "prod3"
-    ],
-    "live": [
-        "web1",
-        "web5",
-        "web6"
     ]
 }

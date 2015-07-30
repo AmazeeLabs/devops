@@ -8,7 +8,8 @@
       "%dump-dir": "/var/www/andreasdenk_bike/"
     },
     "root": "/var/www/andreasdenk_bike/public_html",
-    "uri": "http://$siteurl.us1.compact.amazee.io"
+    "uri": "http://$siteurl.us1.compact.amazee.io",
+    "branch": "prod"
   },
   "dev": {
       "remote-host": "dev1.compact.amazee.io",

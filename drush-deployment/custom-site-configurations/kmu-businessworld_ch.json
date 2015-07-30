@@ -1,14 +1,4 @@
 {
-  "staging": {
-    "remote-host": "amazeedev1.nine.ch",
-    "remote-user": "www-data",
-    "path-aliases": {
-      "%drush-script": "/home/www-data/bin/drush",
-      "%dump-dir": "/home/www-data/staging.$siteurl/"
-    },
-    "root": "/home/www-data/staging.$siteurl",
-    "uri": "http://staging.$siteurl.amazeedev1.nine.ch"
-  },
   "prod1": {
       "remote-host": "backend1.zh1.cluster.amazee.io",
       "remote-environment": "cluster.amazee.io",

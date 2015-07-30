@@ -10,7 +10,22 @@
       "root": "/var/www/for_org/public_html",
       "uri": "http://www.for.org",
       "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-      "branch": "prod"
+      "branch": "prod",
+      "before": {
+        "deploy-symlink": [
+          "deploy_before_deploy_symlink_tasks"
+        ]
+      },
+      "after": {
+        "deploy-symlink": [
+          "deploy_cache_task",
+          "deploy_apc_flush_task",
+          "deploy_newrelic_task"
+        ],
+        "deploy-update-code": [
+          "deploy_cache_css_js_task"
+        ]
+      }      
   },
   "prod2": {
       "remote-host": "backend2.zh1.cluster.amazee.io",
@@ -23,7 +38,22 @@
       "root": "/var/www/for_org/public_html",
       "uri": "http://www.for.org",
       "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-      "branch": "prod"
+      "branch": "prod",
+      "before": {
+        "deploy-symlink": [
+          "deploy_before_deploy_symlink_tasks"
+        ]
+      },
+      "after": {
+        "deploy-symlink": [
+          "deploy_cache_task",
+          "deploy_apc_flush_task",
+          "deploy_newrelic_task"
+        ],
+        "deploy-update-code": [
+          "deploy_cache_css_js_task"
+        ]
+      }
   },
   "prod3": {
       "remote-host": "backend3.zh1.cluster.amazee.io",
@@ -36,7 +66,22 @@
       "root": "/var/www/for_org/public_html",
       "uri": "http://www.for.org",
       "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-      "branch": "prod"
+      "branch": "prod",
+      "before": {
+        "deploy-symlink": [
+          "deploy_before_deploy_symlink_tasks"
+        ]
+      },
+      "after": {
+        "deploy-symlink": [
+          "deploy_cache_task",
+          "deploy_apc_flush_task",
+          "deploy_newrelic_task"
+        ],
+        "deploy-update-code": [
+          "deploy_cache_css_js_task"
+        ]
+      }
   },
   "dev": {
     "remote-host": "dev1.compact.amazee.io",

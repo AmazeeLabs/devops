@@ -1,12 +1,4 @@
 {
-    "live": [
-        "web1",
-        "web5",
-        "web6"
-    ],
-    "dev": [
-        "dev1"
-    ],
     "prod": [
         "prod1",
         "prod2",

@@ -15,12 +15,12 @@
   "amazeeiodev": {
       "remote-host": "dev1.compact.amazee.io",
       "remote-environment": "amazee.io",
-      "remote-user": "venture_ch",
+      "remote-user": "venture_ch_dev",
       "path-aliases": {
           "%drush-script": "/usr/local/bin/drush",
-          "%dump-dir": "/var/www/venture_ch/"
+          "%dump-dir": "/var/www/venture_ch_dev/"
       },
-      "root": "/var/www/venture_ch/public_html",
+      "root": "/var/www/venture_ch_dev/public_html",
       "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
       "deploy-via": "Pull",
       "branch": "dev",

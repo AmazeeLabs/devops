@@ -12,7 +12,7 @@
       "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
       "branch": "prod"
   },
-  "amazeeiodev": {
+  "dev": {
       "remote-host": "dev1.compact.amazee.io",
       "remote-environment": "amazee.io",
       "remote-user": "venture_ch_dev",

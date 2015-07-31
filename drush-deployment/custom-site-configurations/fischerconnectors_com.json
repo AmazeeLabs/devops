@@ -37,5 +37,23 @@
       "uri": "http://www.fischerconnectors.com",
       "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
       "branch": "prod"
+  },
+  "amazeeiodev": {
+    "remote-host": "dev1.compact.amazee.io",
+    "remote-environment": "amazee.io",
+    "remote-user": "fischerconnectors_com_dev",
+    "path-aliases": {
+      "%drush-script": "/usr/local/bin/drush",
+      "%dump-dir": "/var/www/fischerconnectors_com_dev/"
+    },
+    "root": "/var/www/fischerconnectors_com_dev/public_html",
+    "uri": "http://$siteurl.dev1.compact.amazee.io",
+    "deploy-via": "Pull",
+    "branch": "dev",
+    "after": {
+      "deploy-update-code": [
+        "deploy_cache_css_js_task"
+      ]
+    }
   }
 }

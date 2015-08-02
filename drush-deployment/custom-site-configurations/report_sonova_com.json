@@ -11,5 +11,47 @@
       "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
       "deploy-via": "Pull",
       "branch": "dev"
+  },
+  "prod1": {
+      "remote-host": "backend1.zh1.cluster.amazee.io",
+      "remote-environment": "cluster.amazee.io",
+      "remote-user": "report_sonova_com",
+      "path-aliases": {
+          "%drush-script": "/usr/local/bin/drush",
+          "%dump-dir": "/var/www/report_sonova_com/"
+      },
+      "root": "/var/www/report_sonova_com/public_html/2015",
+      "uri": "http://report.sonova.com",
+      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+      "branch": "prod",
+      "deploy-via": "Pull"
+  },
+  "prod2": {
+      "remote-host": "backend2.zh1.cluster.amazee.io",
+      "remote-environment": "cluster.amazee.io",
+      "remote-user": "report_sonova_com",
+      "path-aliases": {
+          "%drush-script": "/usr/local/bin/drush",
+          "%dump-dir": "/var/www/report_sonova_com/"
+       },
+      "root": "/var/www/report_sonova_com/public_html/2015",
+      "uri": "http://report.sonova.com",
+      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+      "branch": "prod",
+      "deploy-via": "Pull"
+  },
+  "prod3": {
+      "remote-host": "backend3.zh1.cluster.amazee.io",
+      "remote-environment": "cluster.amazee.io",
+      "remote-user": "report_sonova_com",
+      "path-aliases": {
+          "%drush-script": "/usr/local/bin/drush",
+          "%dump-dir": "/var/www/report_sonova_com/"
+       },
+      "root": "/var/www/report_sonova_com/public_html/2015",
+      "uri": "http://report.sonova.com",
+      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+      "branch": "prod",
+      "deploy-via": "Pull"
   }
 }

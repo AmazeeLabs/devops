@@ -44,9 +44,9 @@
       "remote-user": "kmu-businessworld_ch_dev",
       "path-aliases": {
           "%drush-script": "/usr/local/bin/drush",
-          "%dump-dir": "/var/www/kmu-businessworld_ch_de/"
+          "%dump-dir": "/var/www/kmu-businessworld_ch_dev/"
       },
-      "root": "/var/www/kmu-businessworld_ch_de/public_html",
+      "root": "/var/www/kmu-businessworld_ch_dev/public_html",
       "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
       "deploy-via": "Pull",
       "branch": "dev"

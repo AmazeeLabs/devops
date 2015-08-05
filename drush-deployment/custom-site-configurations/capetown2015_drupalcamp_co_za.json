@@ -1,34 +1,32 @@
 {
   "dev": {
-    "remote-host": "dev1.compact.amazee.io",
+    "remote-host": "sa1.compact.amazee.io",
     "remote-environment": "amazee.io",
-    "remote-user": "capetown2015_drupalcamp_co_za",
+    "remote-user": "capetown2015_drupalcamp_dev",
     "path-aliases": {
       "%drush-script": "/usr/local/bin/drush",
-      "%dump-dir": "/var/www/capetown2015_drupalcamp_co_za/"
+      "%dump-dir": "/var/www/capetown2015_drupalcamp_dev/"
     },
-    "root": "/var/www/capetown2015_drupalcamp_co_za/public_html",
+    "root": "/var/www/capetown2015_drupalcamp_dev/public_html",
     "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
     "deploy-via": "Pull",
     "branch": "dev",
     "after": {
       "deploy-update-code": [
-        "deploy_gulp_compile_task",
         "deploy_cache_css_js_task"
       ]
     }
   },
   "prod": {
-    "remote-host": "backend.zh1.single.amazee.io",
+    "remote-host": "sa1.compact.amazee.io",
     "remote-environment": "amazee.io",
-    "remote-user": "capetown2015_drupalcamp_co_za",
+    "remote-user": "capetown2015_drupalcamp_prod",
     "path-aliases": {
       "%drush-script": "/usr/local/bin/drush",
-      "%dump-dir": "/var/www/capetown2015_drupalcamp_co_za/"
+      "%dump-dir": "/var/www/capetown2015_drupalcamp_prod/"
     },
-    "root": "/var/www/capetown2015_drupalcamp_co_za/public_html",
-    "uri": "http://$siteurl.zh1.single.amazee.io",
-    "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+    "root": "/var/www/capetown2015_drupalcamp_prod/public_html",
+    "uri": "http://$siteurl.sa1.compact.amazee.io",
     "branch": "prod",
     "before": {
       "deploy-symlink": [
@@ -40,9 +38,6 @@
         "deploy_cache_task",
         "deploy_apc_flush_task",
         "deploy_newrelic_task"
-      ],
-      "deploy-update-code": [
-        "deploy_gulp_build_task"
       ]
     }
   }

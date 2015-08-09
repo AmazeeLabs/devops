@@ -15,3 +15,6 @@ $base_url = "http://example.com";
 # $conf['cache'] = 1;
 # $conf['cache_lifetime'] = 0;
 # $conf['page_cache_maximum_age'] = 3600; // 1 hour
+
+// Error messages to display: None
+$conf['error_level'] = 0;

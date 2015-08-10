@@ -35,7 +35,7 @@
     },
     "after": {
       "deploy-symlink": [
-        "deploy_cache_task",
+        "deploy_cache_task_d8",
         "deploy_apc_flush_task",
         "deploy_newrelic_task"
       ]

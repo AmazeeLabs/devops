@@ -1,28 +1,21 @@
 {
   "dev": {
-        "remote-host": "sa1.compact.amazee.io",
-        "remote-environment": "amazee.io",
-        "remote-user": "connectiv_ch_dev",
-        "path-aliases": {
-            "%drush-script": "/usr/local/bin/drush",
-            "%dump-dir": "/var/www/connectiv_ch_dev/"
-        },
-        "root": "/var/www/connectiv_ch_dev/public_html",
-        "uri": "http://$siteurl.dev.sa1.compact.amazee.io",
-        "deploy-via": "Pull",
-        "branch": "dev"
+    "remote-host": "sa1.compact.amazee.io",
+    "remote-environment": "amazee.io",
+    "remote-user": "connectiv_ch_dev",
+    "path-aliases": {
+      "%drush-script": "/usr/local/bin/drush",
+      "%dump-dir": "/var/www/connectiv_ch_dev/"
     },
-  "prod": {
-      "remote-host": "backend.zh2.single.amazee.io",
-      "remote-environment": "amazee.io",
-      "remote-user": "connectiv_ch",
-      "path-aliases": {
-          "%drush-script": "/usr/local/bin/drush",
-          "%dump-dir": "/var/www/connectiv_ch/"
-      },
-      "root": "/var/www/connectiv_ch/public_html",
-      "uri": "http://$siteurl.zh2.single.amazee.io",
-      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-      "branch": "prod"
+    "root": "/var/www/connectiv_ch_dev/public_html",
+    "uri": "http://$siteurl.dev.sa1.compact.amazee.io",
+    "deploy-via": "Pull",
+    "branch": "dev",
+    "after": {
+      "deploy-update-code": [
+        "deploy_gulp_compile_task",
+        "deploy_cache_css_js_task"
+      ]
+    }
   }
 }

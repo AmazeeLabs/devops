@@ -11,7 +11,7 @@
       "uri": "http://$siteurl.zh2.single.amazee.io",
       "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
   },
-  "amazeeiodev": {
+  "dev": {
       "remote-host": "backend.zh2.single.amazee.io",
       "remote-environment": "amazee.io",
       "remote-user": "michelbruggmann_ch_dev",

@@ -40,8 +40,8 @@ else {
   }
 
   // Adding the default server definitions into all servers.
-  foreach ($servers_definition as $server => $server_definition) {
-    $aliases[$server] = $server_definition['servers'] + $server_definition_defaults;
+  foreach ($server_definition['servers'] as $server => $server_definition) {
+    $aliases[$server] = $server_definition + $server_definition_defaults;
   }
 
   if (is_array($$server_definition['groups'])) {

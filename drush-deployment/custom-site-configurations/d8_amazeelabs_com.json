@@ -1,11 +1,5 @@
 {
     "servers": {
-        "beta9": {
-            "remote-host": "amazeedev2.nine.ch",
-            "remote-user": "www-data",
-            "root": "/home/www-data/beta9.amazeelabs.com",
-            "uri": "http://beta9.amazeelabs.com.amazeedev2.nine.ch"
-        },
         "prod": {
             "remote-host": "backend.zh1.single.amazee.io",
             "remote-environment": "amazee.io",

@@ -113,7 +113,7 @@ if (!function_exists("deploy_symlinks_task")) {
   function deploy_symlinks_task($d) {
     if (strpos($d->sites[0]['remote-environment'], 'cluster.amazee.io') !== FALSE) {
       $d->run("ln -s ~/shared/files %s/sites/default/files", $d->latest_release());
-    } 
+    }
     else {
       $d->run("ln -s ~/files %s/sites/default/files", $d->latest_release());
     }

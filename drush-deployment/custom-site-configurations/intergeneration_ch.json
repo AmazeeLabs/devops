@@ -24,7 +24,7 @@
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
             "after": {
                 "deploy-update-code": [
-                    "deploy_gulp_build_task",
+                    "deploy_gulp_build_task"
                 ]
             }
         }

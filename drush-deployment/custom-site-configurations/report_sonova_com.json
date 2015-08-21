@@ -7,7 +7,10 @@
             "root": "/var/www/report_sonova_com_dev/public_html/2015",
             "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
-            "branch": "dev"
+            "branch": "dev",
+            "after": {
+                "deploy-update-code": []
+            }
         },
         "prod1": {
             "remote-host": "backend1.zh1.cluster.amazee.io",
@@ -16,7 +19,10 @@
             "root": "/var/www/report_sonova_com/public_html/2015",
             "uri": "http://report.sonova.com",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-            "deploy-via": "Pull"
+            "deploy-via": "Pull",
+            "after": {
+                "deploy-update-code": []
+            }
         },
         "prod2": {
             "remote-host": "backend2.zh1.cluster.amazee.io",
@@ -25,7 +31,10 @@
             "root": "/var/www/report_sonova_com/public_html/2015",
             "uri": "http://report.sonova.com",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-            "deploy-via": "Pull"
+            "deploy-via": "Pull",
+            "after": {
+                "deploy-update-code": []
+            }
         },
         "prod3": {
             "remote-host": "backend3.zh1.cluster.amazee.io",
@@ -34,7 +43,10 @@
             "root": "/var/www/report_sonova_com/public_html/2015",
             "uri": "http://report.sonova.com",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-            "deploy-via": "Pull"
+            "deploy-via": "Pull",
+            "after": {
+                "deploy-update-code": []
+            }
         }
     },
     "groups": {

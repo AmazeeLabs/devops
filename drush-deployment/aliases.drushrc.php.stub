@@ -4,12 +4,11 @@ if($sitename == 'CHANGEME')
 
 // Drush Deploy Options
 $options['application'] = 'drupal';
-$options['branch'] = "live";
+$options['branch'] = "prod";
 $options['keep-releases'] = 3;
 $options['deploy-via'] = 'RemoteCache';
 $options['git_enable_submodules'] = TRUE;
 
-// Drush Deploy Tasks (Taks are defined within deploy.drushrc.php)
 $options['before']['deploy-symlink'][] = 'deploy_before_deploy_symlink_tasks';
 $options['after']['deploy-symlink'][] = 'deploy_after_deploy_symlink_tasks';
 
@@ -27,78 +26,42 @@ $server_definition_defaults = array(
   )
 );
 
-global $is_amazeeio_migrated;
-if (!isset($is_amazeeio_migrated)) {
-  // Check if this site is alrady fully migrated to Amazee.IO
-  $is_amazeeio_migrated = json_decode(@file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/amazeeio-migration/'.$sitename.'.json?' . rand(0, 1000000)), TRUE);
-  if ($is_amazeeio_migrated['migrated'] == "TRUE") {
-    $is_amazeeio_migrated = TRUE;
-  } else {
-    $is_amazeeio_migrated = FALSE;
-  }
-  drush_log('Loading: https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/amazeeio-migration/'.$sitename.'.json?');
+$cache = drush_cache_get('amazeeio_aliases_' . $sitename);
+if (isset($cache->data)) {
+  $aliases = $cache->data;
 }
-
-// Servers Definition File contains the definition for all servers that exist.
-global $servers_definition;
-if (!isset($servers_definition)) {
-  $global_servers_definition = json_decode(@file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/servers_definition.json?' . rand(0, 1000000)), TRUE);
-  drush_log('Loading: https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/servers_definition.json?');
-
+else {
+  // Servers Definition File contains the definition for all servers that exist.
   // Try to fetch the custom overwrites for this site
-  $custom_site_configurations = json_decode(@file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/custom-site-configurations/'.$sitename.'.json?' . rand(0, 1000000)), TRUE);
+  $servers_definition = json_decode(@file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/custom-site-configurations/'.$sitename.'.json?' . rand(0, 1000000)), TRUE);
   drush_log('Loading: https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/custom-site-configurations/'.$sitename.'.json?');
 
+  // Adding the default server definitions into all servers.
+  foreach ($servers_definition['servers'] as $server => $server_definition) {
+    $aliases[$server] = $server_definition + $server_definition_defaults;
+  }
 
-  if (empty($custom_site_configurations)) {
-    // If there is no custom site configuration we just use the global one
-    $servers_definition = $global_servers_definition;
-  } else {
-    // If there is a custom site configuration we merge the global with the custom (custom will overwerite the global)
-
-    if ($is_amazeeio_migrated) {
-      // It is fully migrated, so don't load old global server definitions.
-      $servers_definition = $custom_site_configurations;
-    } else {
-      $servers_definition = array_merge($global_servers_definition, $custom_site_configurations);
+  if (is_array($servers_definition['groups'])) {
+    // Iterate through each group
+    foreach ($servers_definition['groups'] as $group_name => $group_servers) {
+      if (count($group_servers) == 1) {
+        // Only one server in this group, instead of creating an alias site list, we just create another site-alias with this name.
+        $aliases[$group_name] = $aliases[$group_servers[0]];
+      } else {
+        // For each actual server group, create an alias site list.
+        $aliases[$group_name] = array(
+          'site-list' => array_map(function($k){ return '@'.$k;}, $group_servers)
+        );
+      }
     }
   }
+
+  // Replace Site specifc variables like userid and siteurl from the generated array
+  $siteurl = str_replace('_', '.', $sitename);
+  array_walk_recursive($aliases, 'deploy_replace_sitespecifics', array('$sitename' => $sitename, '$siteurl' => $siteurl));
+
+  drush_cache_set('amazeeio_aliases_' . $sitename, $aliases);
 }
-
-// Adding the default server definitions into all servers.
-foreach ($servers_definition as $server => $server_definition) {
-  $aliases[$server] = $server_definition + $server_definition_defaults;
-}
-
-// Globally defined so we can prevent drush from making too many requests to Github.
-global $server_group_mappings;
-
-// Fetch the Server Group Mapping File. First try to load a site specific file, if this does not exist, use the default one
-if (!isset($server_group_mappings)) {
-  $server_group_mappings = json_decode(file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/server-group-mappings/site-specific/' . $sitename . '.json?' . rand(0, 1000000)), TRUE);
-  drush_log('Loading: https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/server-group-mappings/site-specific/' . $sitename . '.json?');
-  if (empty($server_group_mappings) && !$is_amazeeio_migrated) {
-    $server_group_mappings = json_decode(file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/server-group-mappings/default.json?' . rand(0, 1000000)), TRUE);
-    drush_log('Loading: https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/server-group-mappings/default.json?');
-  }
-}
-
-if (is_array($server_group_mappings)) {
-  // Iterate through each group
-  foreach ($server_group_mappings as $group_name => $group_servers) {
-    if (count($group_servers) == 1) {
-      // Only one server in this group, instead of creating an alias site list, we just create another site-alias with this name.
-      $aliases[$group_name] = $aliases[$group_servers[0]];
-    } else {
-      // For each actual server group, create an alias site list.
-      $aliases[$group_name] = array(
-        'site-list' => array_map(function($k){ return '@'.$k;}, $group_servers)
-      );
-    }
-  }
-}
-
-
 
 // function_exists, because this file is included multiple times in the same drush process.
 if (!function_exists('deploy_replace_sitespecifics')) {
@@ -107,9 +70,7 @@ if (!function_exists('deploy_replace_sitespecifics')) {
   }
 }
 
-// Replace Site specifc variables like userid and siteurl from the generated array
-$siteurl = str_replace('_', '.', $sitename);
-array_walk_recursive($aliases, 'deploy_replace_sitespecifics', array('$sitename' => $sitename, '$siteurl' => $siteurl));
+
 
 // Default Group of Tasks that should run before the new symlinks are created.
 // This function should be used to overwrite in site specific aliases.drushrc.php files
@@ -128,21 +89,10 @@ if (!function_exists("deploy_after_deploy_symlink_tasks")) {
       deploy_update_task($d);
       deploy_cache_task($d);
       deploy_newrelic_task($d);
-      deploy_apc_flush_task($d);
   }
 }
 
 
-/**
- * The task needs to be defined with a @task "decorator" in the comment block preceding it
- * @task
- * @mandatory
- */
-if (!function_exists("deploy_settings_php_task")) {
-  function deploy_settings_php_task($d) {
-    $d->run("cp /home/nfs_share/www-data/`whoami`/settings.php %s/sites/default/settings.php", $d->latest_release());
-  }
-}
 
 /**
  * The task needs to be defined with a @task "decorator" in the comment block preceding it
@@ -151,11 +101,7 @@ if (!function_exists("deploy_settings_php_task")) {
  */
 if (!function_exists("deploy_settings_local_php_task")) {
   function deploy_settings_local_php_task($d) {
-    if (strpos($d->sites[0]['remote-environment'], 'amazee.io') !== FALSE) {
-      $d->run("cp ~/settings.local.php %s/sites/default/settings.local.php 2>/dev/null || :", $d->latest_release());
-    }else {
-      $d->run("cp /home/nfs_share/www-data/`whoami`/settings.local.php %s/sites/default/settings.local.php 2>/dev/null || :", $d->latest_release());
-    }
+    $d->run("cp ~/settings.local.php %s/sites/default/settings.local.php 2>/dev/null || :", $d->latest_release());
   }
 }
 
@@ -168,11 +114,8 @@ if (!function_exists("deploy_symlinks_task")) {
     if (strpos($d->sites[0]['remote-environment'], 'cluster.amazee.io') !== FALSE) {
       $d->run("ln -s ~/shared/files %s/sites/default/files", $d->latest_release());
     } 
-    else if (strpos($d->sites[0]['remote-environment'], 'amazee.io') !== FALSE) {
-      $d->run("ln -s ~/files %s/sites/default/files", $d->latest_release());
-    }
     else {
-      $d->run("ln -s /home/nfs_share/www-data/`whoami`/files %s/sites/default/files", $d->latest_release());
+      $d->run("ln -s ~/files %s/sites/default/files", $d->latest_release());
     }
   }
 }
@@ -234,19 +177,6 @@ if (!function_exists("deploy_newrelic_task")) {
   }
 }
 
-/**
- * The task needs to be defined with a @task "decorator" in the comment block preceding it
- * @task
- */
-if (!function_exists("deploy_apc_flush_task")) {
-  function deploy_apc_flush_task($d) {
-    if (strpos($d->sites[0]['remote-environment'], 'amazee.io') !== FALSE) {
-      //@TODO: Add the VSHN APC Flush here
-    }else {
-      $d->run_once("curl http://jenkins.amazeelabs.com/buildByToken/buildWithParameters?job=Amazee%%20APC%%20Flush\&token=AMAZEEREMOTE\&source=drush-deploy", $d->sites[0]['path-aliases']['%drush-script']);
-    }
-  }
-}
 
 /**
  * The task needs to be defined with a @task "decorator" in the comment block preceding it

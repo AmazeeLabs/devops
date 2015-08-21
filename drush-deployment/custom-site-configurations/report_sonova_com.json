@@ -21,7 +21,9 @@
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
             "deploy-via": "Pull",
             "after": {
-                "deploy-update-code": []
+                "deploy-update-code": [
+                    "deploy_apc_flush_task"
+                ]
             }
         },
         "prod2": {
@@ -33,7 +35,9 @@
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
             "deploy-via": "Pull",
             "after": {
-                "deploy-update-code": []
+                "deploy-update-code": [
+                    "deploy_apc_flush_task"
+                ]
             }
         },
         "prod3": {
@@ -45,7 +49,9 @@
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
             "deploy-via": "Pull",
             "after": {
-                "deploy-update-code": []
+                "deploy-update-code": [
+                    "deploy_apc_flush_task"
+                ]
             }
         }
     },

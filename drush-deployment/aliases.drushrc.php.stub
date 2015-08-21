@@ -140,7 +140,7 @@ if (!function_exists("deploy_symlinks_task")) {
  */
 if (!function_exists("deploy_update_task")) {
   function deploy_update_task($d) {
-    $d->run_once("cd %s && %s updb -y", $d->latest_release(), $d->sites[0]['path-aliases']['%drush-script']);
+    $d->run_once("cd %s && drush updb -y", $d->latest_release());
   }
 }
 
@@ -151,7 +151,7 @@ if (!function_exists("deploy_update_task")) {
  */
 if (!function_exists("deploy_cache_task")) {
   function deploy_cache_task($d) {
-    $d->run_once("cd %s && %s cc all -y", $d->latest_release(), $d->sites[0]['path-aliases']['%drush-script']);
+    $d->run_once("cd %s && drush cc all -y", $d->latest_release());
   }
 }
 
@@ -161,7 +161,7 @@ if (!function_exists("deploy_cache_task")) {
  */
 if (!function_exists("deploy_cache_css_js_task")) {
   function deploy_cache_css_js_task($d) {
-    $d->run_once("cd %s && %s cc css-js -y", $d->latest_release(), $d->sites[0]['path-aliases']['%drush-script']);
+    $d->run_once("cd %s && drush cc css-js -y", $d->latest_release());
   }
 }
 
@@ -171,7 +171,7 @@ if (!function_exists("deploy_cache_css_js_task")) {
  */
 if (!function_exists("deploy_cache_task_d8")) {
   function deploy_cache_task_d8($d) {
-    $d->run_once("cd %s && %s cr -y", $d->latest_release(), $d->sites[0]['path-aliases']['%drush-script']);
+    $d->run_once("cd %s && drush cr -y", $d->latest_release());
   }
 }
 

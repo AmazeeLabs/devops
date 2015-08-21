@@ -32,7 +32,7 @@ if (isset($cache->data) && time() < $cache->expire && getenv('AMAZEEIO_IGNORE_DR
 else {
   // Servers Definition File contains the definition for all servers that exist.
   drush_log('Loading: https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/custom-site-configurations/'.$sitename.'.json?');
-  $json = file_get_contents('https://raw.github.com/AmazeeLabs/devops/amazeeio-cleanup/drush-deployment/custom-site-configurations/'.$sitename.'.json?' . rand(0, 1000000));
+  $json = file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/custom-site-configurations/'.$sitename.'.json?' . rand(0, 1000000));
   if ($json === FALSE) {
     // File cannot be loaded let's stop here.
     drush_log('Error while loading site configuration file: https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/custom-site-configurations/'.$sitename.'.json', 'warning');

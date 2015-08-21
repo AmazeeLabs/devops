@@ -4,10 +4,6 @@
             "remote-host": "dev1.compact.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "d8-starter_io",
-            "path-aliases": {
-                "%drush-script": "/usr/local/bin/drush",
-                "%dump-dir": "/var/www/d8-starter_io/"
-            },
             "root": "/var/www/d8-starter_io/public_html",
             "uri": "http://$siteurl.dev1.compact.amazee.io"
         }

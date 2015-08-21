@@ -4,10 +4,6 @@
             "remote-host": "dev1.compact.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "nsgroup_ch_dev",
-            "path-aliases": {
-                "%drush-script": "/usr/local/bin/drush",
-                "%dump-dir": "/var/www/nsgroup_ch_dev/"
-            },
             "root": "/var/www/nsgroup_ch_dev/public_html",
             "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
@@ -17,12 +13,8 @@
             "remote-host": "backend.zh1.single.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "nsgroup_ch",
-            "path-aliases": {
-                "%drush-script": "/usr/local/bin/drush",
-                "%dump-dir": "/var/www/nsgroup_ch/"
-            },
             "root": "/var/www/nsgroup_ch/public_html",
-            "uri": "http://$siteurl.zh1.single.amazee.io",
+            "uri": "http://$siteurl",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
             "branch": "prod"
         }

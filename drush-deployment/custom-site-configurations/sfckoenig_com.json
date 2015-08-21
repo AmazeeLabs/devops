@@ -4,10 +4,6 @@
             "remote-host": "dev1.compact.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "sfckoenig_dev",
-            "path-aliases": {
-                "%drush-script": "/usr/local/bin/drush",
-                "%dump-dir": "/var/www/sfckoenig_dev/"
-            },
             "root": "/var/www/sfckoenig_dev/public_html",
             "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
@@ -22,10 +18,6 @@
             "remote-host": "backend1.zh1.cluster.amazee.io",
             "remote-environment": "cluster.amazee.io",
             "remote-user": "sfckoenig_com",
-            "path-aliases": {
-                "%drush-script": "/usr/local/bin/drush",
-                "%dump-dir": "/var/www/sfckoenig_com/"
-            },
             "root": "/var/www/sfckoenig_com/public_html",
             "uri": "http://www.sfckoenig.com",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
@@ -35,10 +27,6 @@
             "remote-host": "backend2.zh1.cluster.amazee.io",
             "remote-environment": "cluster.amazee.io",
             "remote-user": "sfckoenig_com",
-            "path-aliases": {
-                "%drush-script": "/usr/local/bin/drush",
-                "%dump-dir": "/var/www/sfckoenig_com/"
-            },
             "root": "/var/www/sfckoenig_com/public_html",
             "uri": "http://www.sfckoenig.com",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
@@ -48,10 +36,6 @@
             "remote-host": "backend3.zh1.cluster.amazee.io",
             "remote-environment": "cluster.amazee.io",
             "remote-user": "sfckoenig_com",
-            "path-aliases": {
-                "%drush-script": "/usr/local/bin/drush",
-                "%dump-dir": "/var/www/sfckoenig_com/"
-            },
             "root": "/var/www/sfckoenig_com/public_html",
             "uri": "http://www.sfckoenig.com",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",

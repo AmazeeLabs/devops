@@ -4,10 +4,6 @@
             "remote-host": "sa1.compact.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "revenuered_com_dev",
-            "path-aliases": {
-                "%drush-script": "/usr/local/bin/drush",
-                "%dump-dir": "/var/www/revenuered_com_dev/"
-            },
             "root": "/var/www/revenuered_com_dev/public_html",
             "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",

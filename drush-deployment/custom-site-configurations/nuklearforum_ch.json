@@ -4,12 +4,8 @@
             "remote-host": "backend.zh2.single.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "nuklearforum_ch",
-            "path-aliases": {
-                "%drush-script": "/usr/local/bin/drush",
-                "%dump-dir": "/var/www/nuklearforum_ch/"
-            },
             "root": "/var/www/nuklearforum_ch/public_html",
-            "uri": "http://$siteurl.zh2.single.amazee.io",
+            "uri": "http://$siteurl",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
         }
     }

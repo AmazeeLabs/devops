@@ -4,10 +4,6 @@
             "remote-host": "us1.compact.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "jibes_amazeelabs_com",
-            "path-aliases": {
-                "%drush-script": "/usr/local/bin/drush",
-                "%dump-dir": "/var/www/jibes_amazeelabs_com/"
-            },
             "root": "/var/www/jibes_amazeelabs_com/public_html",
             "uri": "http://$siteurl.us1.compact.amazee.io"
         }

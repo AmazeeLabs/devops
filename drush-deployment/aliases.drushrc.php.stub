@@ -1,3 +1,4 @@
+<?php
 // Basic error handling
 if($sitename == 'CHANGEME')
   die("[ERROR] - Luke, you should change the Sitename in aliases.drushrc.php!\n");
@@ -9,14 +10,10 @@ $options['keep-releases'] = 3;
 $options['deploy-via'] = 'RemoteCache';
 $options['git_enable_submodules'] = TRUE;
 
-$options['before']['deploy-symlink'][] = 'deploy_before_deploy_symlink_tasks';
-$options['after']['deploy-symlink'][] = 'deploy_after_deploy_symlink_tasks';
-
 // Default server definition, which has no site specific elements
 $server_definition_defaults = array(
   'command-specific' => array (
     'sql-sync' => array (
-      'no-cache' => TRUE,
       'no-ordered-dump' => TRUE
     ),
   ),
@@ -27,18 +24,35 @@ $server_definition_defaults = array(
 );
 
 $cache = drush_cache_get('amazeeio_aliases_' . $sitename);
-if (isset($cache->data)) {
+
+// Drush does not respect the cache expire, so we need to check it ourselves.
+// Also if AMAZEEIO_IGNORE_DRUSHCACHE is set, we ignore the cache.
+if (isset($cache->data) && time() < $cache->expire && getenv('AMAZEEIO_IGNORE_DRUSHCACHE') === FALSE ) {
   $aliases = $cache->data;
 }
 else {
   // Servers Definition File contains the definition for all servers that exist.
-  // Try to fetch the custom overwrites for this site
-  $servers_definition = json_decode(@file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/custom-site-configurations/'.$sitename.'.json?' . rand(0, 1000000)), TRUE);
   drush_log('Loading: https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/custom-site-configurations/'.$sitename.'.json?');
+  $json = file_get_contents('https://raw.github.com/AmazeeLabs/devops/amazeeio-cleanup/drush-deployment/custom-site-configurations/'.$sitename.'.json?' . rand(0, 1000000));
+  if ($json === FALSE) {
+    // File cannot be loaded let's stop here.
+    drush_log('Error while loading site configuration file: https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/custom-site-configurations/'.$sitename.'.json', 'warning');
+    return;
+  }
+  $servers_definition = json_decode($json, TRUE);
+  
 
   // Adding the default server definitions into all servers.
   foreach ($servers_definition['servers'] as $server => $server_definition) {
     $aliases[$server] = $server_definition + $server_definition_defaults;
+
+    // Add default deploy-symlink tasks if they are not defined;
+    if (!isset($aliases[$server]['before']['deploy-symlink']) {
+      $aliases[$server]['before']['deploy-symlink'] = 'deploy_before_deploy_symlink_tasks';
+    }
+    if (!isset($aliases[$server]['after']['deploy-symlink']) {
+      $aliases[$server]['after']['deploy-symlink'] = 'deploy_after_deploy_symlink_tasks';
+    }    
   }
 
   if (is_array($servers_definition['groups'])) {
@@ -56,12 +70,13 @@ else {
     }
   }
 
-  // Replace Site specifc variables like userid and siteurl from the generated array
-  $siteurl = str_replace('_', '.', $sitename);
-  array_walk_recursive($aliases, 'deploy_replace_sitespecifics', array('$sitename' => $sitename, '$siteurl' => $siteurl));
-
-  drush_cache_set('amazeeio_aliases_' . $sitename, $aliases);
+  // Caching the aliases for 10 minutes.
+  drush_cache_set('amazeeio_aliases_' . $sitename, $aliases, 'default', time() + 600);
 }
+
+// Replace Site specifc variables like userid and siteurl from the generated array
+$siteurl = str_replace('_', '.', $sitename);
+array_walk_recursive($aliases, 'deploy_replace_sitespecifics', array('$sitename' => $sitename, '$siteurl' => $siteurl));
 
 // function_exists, because this file is included multiple times in the same drush process.
 if (!function_exists('deploy_replace_sitespecifics')) {
@@ -87,7 +102,6 @@ if (!function_exists("deploy_before_deploy_symlink_tasks")) {
 if (!function_exists("deploy_after_deploy_symlink_tasks")) {
   function deploy_after_deploy_symlink_tasks($d) {
       deploy_update_task($d);
-      deploy_cache_task($d);
       deploy_newrelic_task($d);
   }
 }
@@ -168,12 +182,21 @@ if (!function_exists("deploy_cache_task_d8")) {
  */
 if (!function_exists("deploy_newrelic_task")) {
   function deploy_newrelic_task($d) {
-    // Try to get the user from the LC_AMA_GITUSER environment variable
-    $username = getenv('LC_AMA_GITUSER');
-    // if we fail to do so take the user which runs the php process
-    if(!$username) { $username = get_current_user();}
-    $d->run_once('curl -H "x-api-key:'.$d->sites[0]['newrelic']['api-key'].'" -d "deployment[app_name]=' . $d->sites[0]['newrelic']['app-name'] . '" -d "deployment[user]='.$username.'" https://api.newrelic.com/deployments.xml
-  ', $d->sites[0]['path-aliases']['%drush-script']);
+    $deployment_info['app_name'] = $d->sites[0]['newrelic']['app-name'];
+
+    // Use getenv('LC_AMAZEEIO_USERNAME') or get_current_user()
+    $deployment_info['user'] = getenv('LC_AMAZEEIO_USERNAME') ? getenv('LC_AMAZEEIO_USERNAME') : get_current_user();
+
+    if (getenv('JENKINS_HOME')) {
+      $deployment_info['description'] = 'BUILD:' . getenv('BUILD_URL') . ' BRANCH:' . getenv('GIT_BRANCH');
+      $deployment_info['revision'] = getenv('GIT_COMMIT');
+    }
+
+    foreach ($deployment_info as $key => $value) {
+      $deployment_info_array[] = '-d "deployment[' . $key . ']=' . $value . '"';
+    }
+
+    $d->run_once('curl -H "x-api-key:'.$d->sites[0]['newrelic']['api-key'].'" '. implode(" ", $deployment_info_array) .' https://api.newrelic.com/deployments.xml');
   }
 }
 

@@ -4,10 +4,6 @@
             "remote-host": "dev1.compact.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "sigvaris_com_dev",
-            "path-aliases": {
-                "%drush-script": "/usr/local/bin/drush",
-                "%dump-dir": "/var/www/sigvaris_com_dev/"
-            },
             "root": "/var/www/sigvaris_com_dev/public_html",
             "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
@@ -16,10 +12,6 @@
         "sigvarisp": {
             "remote-host": "sigvarisp.nine.ch",
             "remote-user": "www-data",
-            "path-aliases": {
-                "%drush-script": "/usr/bin/drush",
-                "%dump-dir": "/home/www-data/$siteurl/"
-            },
             "root": "/home/www-data/$siteurl",
             "uri": "http://$siteurl.sigvarisp.nine.ch"
         },
@@ -27,10 +19,6 @@
             "remote-host": "dev1.compact.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "sigvaris_com_staging",
-            "path-aliases": {
-                "%drush-script": "/usr/local/bin/drush",
-                "%dump-dir": "/var/www/sigvaris_com_staging/"
-            },
             "root": "/var/www/sigvaris_com_staging/public_html",
             "uri": "http://$siteurl.staging.dev1.compact.amazee.io",
             "deploy-via": "Pull",

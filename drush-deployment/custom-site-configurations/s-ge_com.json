@@ -1,54 +1,63 @@
 {
-  "prod1": {
-    "remote-host": "backend1.zh1.cluster.amazee.io",
-    "remote-environment": "cluster.amazee.io",
-    "remote-user": "switzerland-ge_com",
-    "path-aliases": {
-        "%drush-script": "/usr/local/bin/drush",
-        "%dump-dir": "/var/www/switzerland-ge_com/"
+    "servers": {
+        "prod1": {
+            "remote-host": "backend1.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "switzerland-ge_com",
+            "path-aliases": {
+                "%drush-script": "/usr/local/bin/drush",
+                "%dump-dir": "/var/www/switzerland-ge_com/"
+            },
+            "root": "/var/www/switzerland-ge_com/public_html",
+            "uri": "http://www.s-ge.com",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "branch": "prod"
+        },
+        "prod2": {
+            "remote-host": "backend2.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "switzerland-ge_com",
+            "path-aliases": {
+                "%drush-script": "/usr/local/bin/drush",
+                "%dump-dir": "/var/www/switzerland-ge_com/"
+            },
+            "root": "/var/www/switzerland-ge_com/public_html",
+            "uri": "http://www.s-ge.com",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "branch": "prod"
+        },
+        "prod3": {
+            "remote-host": "backend3.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "switzerland-ge_com",
+            "path-aliases": {
+                "%drush-script": "/usr/local/bin/drush",
+                "%dump-dir": "/var/www/switzerland-ge_com/"
+            },
+            "root": "/var/www/switzerland-ge_com/public_html",
+            "uri": "http://www.s-ge.com",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "branch": "prod"
+        },
+        "dev": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "s-ge_com",
+            "path-aliases": {
+                "%drush-script": "/usr/local/bin/drush",
+                "%dump-dir": "/var/www/s-ge_com/"
+            },
+            "root": "/var/www/s-ge_com/public_html",
+            "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev"
+        }
     },
-    "root": "/var/www/switzerland-ge_com/public_html",
-    "uri": "http://www.s-ge.com",
-    "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-    "branch": "prod"
-  },
-  "prod2": {
-    "remote-host": "backend2.zh1.cluster.amazee.io",
-    "remote-environment": "cluster.amazee.io",
-    "remote-user": "switzerland-ge_com",
-    "path-aliases": {
-        "%drush-script": "/usr/local/bin/drush",
-        "%dump-dir": "/var/www/switzerland-ge_com/"
-     },
-    "root": "/var/www/switzerland-ge_com/public_html",
-    "uri": "http://www.s-ge.com",
-    "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-    "branch": "prod"
-  },
-  "prod3": {
-    "remote-host": "backend3.zh1.cluster.amazee.io",
-    "remote-environment": "cluster.amazee.io",
-    "remote-user": "switzerland-ge_com",
-    "path-aliases": {
-        "%drush-script": "/usr/local/bin/drush",
-        "%dump-dir": "/var/www/switzerland-ge_com/"
-     },
-    "root": "/var/www/switzerland-ge_com/public_html",
-    "uri": "http://www.s-ge.com",
-    "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-    "branch": "prod"
-  },
-  "dev": {
-    "remote-host": "dev1.compact.amazee.io",
-    "remote-environment": "amazee.io",
-    "remote-user": "s-ge_com",
-    "path-aliases": {
-        "%drush-script": "/usr/local/bin/drush",
-        "%dump-dir": "/var/www/s-ge_com/"
-    },
-    "root": "/var/www/s-ge_com/public_html",
-    "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
-    "deploy-via": "Pull",
-    "branch": "dev"
-  }
+    "groups": {
+        "prod": [
+            "prod1",
+            "prod2",
+            "prod3"
+        ]
+    }
 }

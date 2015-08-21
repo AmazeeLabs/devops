@@ -1,21 +1,23 @@
 {
-  "dev": {
-      "remote-host": "us1.compact.amazee.io",
-      "remote-environment": "amazee.io",
-      "remote-user": "wmf_org_dev",
-      "path-aliases": {
-          "%drush-script": "/usr/local/bin/drush",
-          "%dump-dir": "/var/www/wmf_org_dev/"
-      },
-      "root": "/var/www/wmf_org_dev/public_html",
-      "uri": "http://$siteurl.dev.us1.compact.amazee.io",
-      "deploy-via": "Pull",
-      "branch": "dev",
-      "after": {
-        "deploy-update-code": [
-          "deploy_gulp_compile_task",
-          "deploy_cache_css_js_task"
-        ]
-      }
-  }
+    "servers": {
+        "dev": {
+            "remote-host": "us1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "wmf_org_dev",
+            "path-aliases": {
+                "%drush-script": "/usr/local/bin/drush",
+                "%dump-dir": "/var/www/wmf_org_dev/"
+            },
+            "root": "/var/www/wmf_org_dev/public_html",
+            "uri": "http://$siteurl.dev.us1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev",
+            "after": {
+                "deploy-update-code": [
+                    "deploy_gulp_compile_task",
+                    "deploy_cache_css_js_task"
+                ]
+            }
+        }
+    }
 }

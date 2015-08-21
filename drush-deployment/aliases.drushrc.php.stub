@@ -48,10 +48,10 @@ else {
 
     // Add default deploy-symlink tasks if they are not defined;
     if (!isset($aliases[$server]['before']['deploy-symlink'])) {
-      $aliases[$server]['before']['deploy-symlink'] = 'deploy_before_deploy_symlink_tasks';
+      $aliases[$server]['before']['deploy-symlink'][] = 'deploy_before_deploy_symlink_tasks';
     }
     if (!isset($aliases[$server]['after']['deploy-symlink'])) {
-      $aliases[$server]['after']['deploy-symlink'] = 'deploy_after_deploy_symlink_tasks';
+      $aliases[$server]['after']['deploy-symlink'][] = 'deploy_after_deploy_symlink_tasks';
     }    
   }
 

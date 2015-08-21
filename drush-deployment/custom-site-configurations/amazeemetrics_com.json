@@ -1,49 +1,42 @@
 {
-    "dev": {
-        "remote-host": "dev1.compact.amazee.io",
-        "remote-environment": "amazee.io",
-        "remote-user": "amazeemetrics_com_dev",
-        "path-aliases": {
-            "%drush-script": "/usr/local/bin/drush",
-            "%dump-dir": "/var/www/amazeemetrics_com_dev/"
+    "servers": {
+        "dev": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "amazeemetrics_com_dev",
+            "root": "/var/www/amazeemetrics_com_dev/public_html",
+            "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev",
+            "after": {
+                "deploy-update-code": [
+                    "deploy_gulp_compile_task",
+                    "deploy_cache_css_js_task"
+                ]
+            }
         },
-        "root": "/var/www/amazeemetrics_com_dev/public_html",
-        "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
-        "deploy-via": "Pull",
-        "branch": "dev",
-        "after": {
-          "deploy-update-code": [
-            "deploy_gulp_compile_task",
-            "deploy_cache_css_js_task"
-          ]
-        }
-    },
-    "prod": {
-        "remote-host": "us1.compact.amazee.io",
-        "remote-environment": "amazee.io",
-        "remote-user": "amazeemetrics_com_live",
-        "path-aliases": {
-            "%drush-script": "/usr/local/bin/drush",
-            "%dump-dir": "/var/www/amazeemetrics_com_live/"
-        },
-        "root": "/var/www/amazeemetrics_com_live/public_html",
-        "uri": "http://www.amazeemetrics.com",
-        "branch": "prod",
-        "before": {
-          "deploy-symlink": [
-            "deploy_before_deploy_symlink_tasks"
-          ]
-        },
-        "after": {
-          "deploy-symlink": [
-            "deploy_cache_task",
-            "deploy_apc_flush_task",
-            "deploy_newrelic_task"
-          ],
-          "deploy-update-code": [
-            "deploy_gulp_build_task",
-            "deploy_cache_css_js_task"
-          ]
+        "prod": {
+            "remote-host": "us1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "amazeemetrics_com_live",
+            "root": "/var/www/amazeemetrics_com_live/public_html",
+            "uri": "http://www.amazeemetrics.com",
+            "before": {
+                "deploy-symlink": [
+                    "deploy_before_deploy_symlink_tasks"
+                ]
+            },
+            "after": {
+                "deploy-symlink": [
+                    "deploy_cache_task",
+                    "deploy_apc_flush_task",
+                    "deploy_newrelic_task"
+                ],
+                "deploy-update-code": [
+                    "deploy_gulp_build_task",
+                    "deploy_cache_css_js_task"
+                ]
+            }
         }
     }
 }

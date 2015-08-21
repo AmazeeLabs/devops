@@ -1,28 +1,22 @@
 {
-  "dev": {
-    "remote-host": "dev1.compact.amazee.io",
-    "remote-environment": "amazee.io",
-    "remote-user": "dgst_srf_ch",
-    "path-aliases": {
-      "%drush-script": "/usr/local/bin/drush",
-      "%dump-dir": "/var/www/dgst_srf_ch/"
-    },
-    "root": "/var/www/dgst_srf_ch/public_html",
-    "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
-    "deploy-via": "Pull",
-    "branch": "dev"
-  },
-  "prod": {
-    "remote-host": "backend.zh1.single.amazee.io",
-    "remote-environment": "amazee.io",
-    "remote-user": "dgst_srf_ch",
-    "path-aliases": {
-      "%drush-script": "/usr/local/bin/drush",
-      "%dump-dir": "/var/www/dgst_srf_ch/"
-    },
-    "root": "/var/www/dgst_srf_ch/public_html",
-    "uri": "http://$siteurl.zh1.single.amazee.io",
-    "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-    "branch": "prod"
-  }
+    "servers": {
+        "dev": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "dgst_srf_ch",
+            "root": "/var/www/dgst_srf_ch/public_html",
+            "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev"
+        },
+        "prod": {
+            "remote-host": "backend.zh1.single.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "dgst_srf_ch",
+            "root": "/var/www/dgst_srf_ch/public_html",
+            "uri": "http://$siteurl",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "branch": "prod"
+        }
+    }
 }

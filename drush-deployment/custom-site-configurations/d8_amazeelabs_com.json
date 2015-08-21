@@ -1,35 +1,25 @@
 {
-  "beta9": {
-    "remote-host": "amazeedev2.nine.ch",
-    "remote-user": "www-data",
-    "path-aliases": {
-      "%drush-script": "/home/www-data/bin/drush8",
-      "%dump-dir": "/home/www-data/beta9.amazeelabs.com"
-    },
-    "root": "/home/www-data/beta9.amazeelabs.com",
-    "uri": "http://beta9.amazeelabs.com.amazeedev2.nine.ch"
-  },
-  "zh1.single": {
-      "remote-host": "backend.zh1.single.amazee.io",
-      "remote-environment": "amazee.io",
-      "remote-user": "amazeelabs_com",
-      "path-aliases": {
-          "%drush-script": "/usr/local/bin/drush",
-          "%dump-dir": "/var/www/amazeelabs_com/"
-      },
-      "root": "/var/www/amazeelabs_com/public_html",
-      "uri": "http://$siteurl.zh1.single.amazee.io",
-      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
-  },
-  "dev1.compact": {
-      "remote-host": "dev1.compact.amazee.io",
-      "remote-environment": "amazee.io",
-      "remote-user": "amazeelabs_com",
-      "path-aliases": {
-          "%drush-script": "/usr/local/bin/drush",
-          "%dump-dir": "/var/www/amazeelabs_com/"
-      },
-      "root": "/var/www/amazeelabs_com/public_html",
-      "uri": "http://$siteurl.dev1.compact.amazee.io"
-  }
+    "servers": {
+        "beta9": {
+            "remote-host": "amazeedev2.nine.ch",
+            "remote-user": "www-data",
+            "root": "/home/www-data/beta9.amazeelabs.com",
+            "uri": "http://beta9.amazeelabs.com.amazeedev2.nine.ch"
+        },
+        "prod": {
+            "remote-host": "backend.zh1.single.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "amazeelabs_com",
+            "root": "/var/www/amazeelabs_com/public_html",
+            "uri": "http://$siteurl",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
+        },
+        "dev": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "amazeelabs_com",
+            "root": "/var/www/amazeelabs_com/public_html",
+            "uri": "http://$siteurl.dev1.compact.amazee.io"
+        }
+    }
 }

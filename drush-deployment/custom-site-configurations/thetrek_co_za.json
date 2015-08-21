@@ -1,39 +1,32 @@
 {
-  "dev": {
-    "remote-host": "dev1.compact.amazee.io",
-    "remote-environment": "amazee.io",
-    "remote-user": "thetrek_co_za_dev",
-    "path-aliases": {
-      "%drush-script": "/usr/local/bin/drush",
-      "%dump-dir": "/var/www/thetrek_co_za_dev/"
-    },
-    "root": "/var/www/thetrek_co_za_dev/public_html",
-    "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
-    "deploy-via": "Pull",
-    "branch": "dev"
-  },
-  "prod": {
-    "remote-host": "us1.compact.amazee.io",
-    "remote-environment": "amazee.io",
-    "remote-user": "thetrek_co_za",
-    "path-aliases": {
-      "%drush-script": "/usr/local/bin/drush",
-      "%dump-dir": "/var/www/thetrek_co_za/"
-    },
-    "root": "/var/www/thetrek_co_za/public_html",
-    "uri": "http://www.thetrek.co.za",
-    "branch": "prod",
-    "before": {
-      "deploy-symlink": [
-        "deploy_before_deploy_symlink_tasks"
-      ]
-    },
-    "after": {
-      "deploy-symlink": [
-        "deploy_cache_task",
-        "deploy_apc_flush_task",
-        "deploy_newrelic_task"
-      ]
+    "servers": {
+        "dev": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "thetrek_co_za_dev",
+            "root": "/var/www/thetrek_co_za_dev/public_html",
+            "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev"
+        },
+        "prod": {
+            "remote-host": "us1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "thetrek_co_za",
+            "root": "/var/www/thetrek_co_za/public_html",
+            "uri": "http://www.thetrek.co.za",
+            "before": {
+                "deploy-symlink": [
+                    "deploy_before_deploy_symlink_tasks"
+                ]
+            },
+            "after": {
+                "deploy-symlink": [
+                    "deploy_cache_task",
+                    "deploy_apc_flush_task",
+                    "deploy_newrelic_task"
+                ]
+            }
+        }
     }
-  }
 }

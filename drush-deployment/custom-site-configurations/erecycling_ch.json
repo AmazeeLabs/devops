@@ -1,32 +1,26 @@
 {
-  "prod": {
-    "remote-host": "us1.compact.amazee.io",
-    "remote-environment": "amazee.io",
-    "remote-user": "erecycling_ch",
-    "path-aliases": {
-      "%drush-script": "/usr/local/bin/drush",
-      "%dump-dir": "/var/www/erecycling_ch/"
-    },
-    "root": "/var/www/erecycling_ch/public_html",
-    "uri": "http://$siteurl.us1.compact.amazee.io",
-    "branch": "prod"
-  },
-  "dev": {
-    "remote-host": "dev1.compact.amazee.io",
-    "remote-environment": "amazee.io",
-    "remote-user": "erecycling_ch_dev",
-    "path-aliases": {
-        "%drush-script": "/usr/local/bin/drush",
-        "%dump-dir": "/var/www/erecycling_ch_dev/"
-    },
-    "root": "/var/www/erecycling_ch_dev/public_html",
-    "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
-    "deploy-via": "Pull",
-    "branch": "dev",
-    "after": {
-      "deploy-update-code": [
-        "deploy_cache_css_js_task"
-      ]
+    "servers": {
+        "prod": {
+            "remote-host": "us1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "erecycling_ch",
+            "root": "/var/www/erecycling_ch/public_html",
+            "uri": "http://$siteurl",
+            "branch": "prod"
+        },
+        "dev": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "erecycling_ch_dev",
+            "root": "/var/www/erecycling_ch_dev/public_html",
+            "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev",
+            "after": {
+                "deploy-update-code": [
+                    "deploy_cache_css_js_task"
+                ]
+            }
+        }
     }
-  }
 }

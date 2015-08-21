@@ -1,12 +1,10 @@
 {
-  "dev2": {
-    "remote-host": "amazeedev2.nine.ch",
-    "remote-user": "www-data",
-    "path-aliases": {
-      "%drush-script": "/home/www-data/bin/drush8",
-      "%dump-dir": "/home/www-data/$siteurl/"
-    },
-    "root": "/home/www-data/$siteurl",
-    "uri": "http://$siteurl.amazeedev2.nine.ch"
-  }
+    "servers": {
+        "dev2": {
+            "remote-host": "amazeedev2.nine.ch",
+            "remote-user": "www-data",
+            "root": "/home/www-data/$siteurl",
+            "uri": "http://$siteurl.amazeedev2.nine.ch"
+        }
+    }
 }

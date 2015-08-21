@@ -1,5 +1,5 @@
 {
-  "us1.compact": {
+  "prod": {
     "remote-host": "us1.compact.amazee.io",
     "remote-user": "amazee_com_live",
     "path-aliases": {

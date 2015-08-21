@@ -9,7 +9,7 @@
     "root": "/home/www-data/beta9.amazeelabs.com",
     "uri": "http://beta9.amazeelabs.com.amazeedev2.nine.ch"
   },
-  "zh1.single": {
+  "prod": {
       "remote-host": "backend.zh1.single.amazee.io",
       "remote-environment": "amazee.io",
       "remote-user": "amazeelabs_com",
@@ -21,7 +21,7 @@
       "uri": "http://$siteurl.zh1.single.amazee.io",
       "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
   },
-  "dev1.compact": {
+  "dev": {
       "remote-host": "dev1.compact.amazee.io",
       "remote-environment": "amazee.io",
       "remote-user": "amazeelabs_com",

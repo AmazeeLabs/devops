@@ -1,5 +1,5 @@
 {
-  "dev1.compact": {
+  "dev": {
       "remote-host": "dev1.compact.amazee.io",
       "remote-environment": "amazee.io",
       "remote-user": "d8-starter_io",

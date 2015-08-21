@@ -22,10 +22,6 @@
             "remote-host": "backend1.zh1.cluster.amazee.io",
             "remote-environment": "cluster.amazee.io",
             "remote-user": "chymne_ch",
-            "path-aliases": {
-                "%drush-script": "/usr/local/bin/drush",
-                "%dump-dir": "/var/www/chymne_ch/"
-            },
             "root": "/var/www/chymne_ch/public_html",
             "uri": "http://www.chymne.ch",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",

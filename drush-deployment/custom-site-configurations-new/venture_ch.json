@@ -1,0 +1,35 @@
+{
+    "servers": {
+        "prod": {
+            "remote-host": "backend.zh1.single.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "venture_ch",
+            "path-aliases": {
+                "%drush-script": "/usr/local/bin/drush",
+                "%dump-dir": "/var/www/venture_ch/"
+            },
+            "root": "/var/www/venture_ch/public_html",
+            "uri": "http://www.venture.ch",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "branch": "prod"
+        },
+        "dev": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "venture_ch_dev",
+            "path-aliases": {
+                "%drush-script": "/usr/local/bin/drush",
+                "%dump-dir": "/var/www/venture_ch_dev/"
+            },
+            "root": "/var/www/venture_ch_dev/public_html",
+            "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev",
+            "after": {
+                "deploy-update-code": [
+                    "deploy_cache_css_js_task"
+                ]
+            }
+        }
+    }
+}

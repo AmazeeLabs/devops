@@ -1,0 +1,52 @@
+{
+    "servers": {
+        "dev": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "u-blox_com_dev",
+            "path-aliases": {
+                "%drush-script": "/usr/local/bin/drush",
+                "%dump-dir": "/var/www/u-blox_com_dev/"
+            },
+            "root": "/var/www/u-blox_com_dev/public_html",
+            "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev",
+            "after": {
+                "deploy-update-code": [
+                    "deploy_gulp_compile_task",
+                    "deploy_cache_css_js_task"
+                ]
+            }
+        },
+        "performance": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "u-blox_com_performance",
+            "path-aliases": {
+                "%drush-script": "/usr/local/bin/drush",
+                "%dump-dir": "/var/www/u-blox_com_performance/"
+            },
+            "root": "/var/www/u-blox_com_performance/public_html",
+            "uri": "http://$siteurl.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev",
+            "after": {
+                "deploy-update-code": [
+                    "deploy_gulp_compile_task",
+                    "deploy_cache_css_js_task"
+                ]
+            }
+        },
+        "ublox.prod": {
+            "remote-host": "195.34.89.148",
+            "remote-user": "amazee",
+            "path-aliases": {
+                "%drush-script": "/usr/bin/drush",
+                "%dump-dir": "/var/www/ublox/"
+            },
+            "root": "/var/www/ublox",
+            "uri": "http://testsite.u-blox.com"
+        }
+    }
+}

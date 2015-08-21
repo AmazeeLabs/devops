@@ -1,0 +1,16 @@
+{
+    "servers": {
+        "prod": {
+            "remote-host": "backend.zh2.single.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "entrepreneurshipinstitute_ch",
+            "path-aliases": {
+                "%drush-script": "/usr/local/bin/drush",
+                "%dump-dir": "/var/www/entrepreneurshipinstitute_ch/"
+            },
+            "root": "/var/www/entrepreneurshipinstitute_ch/public_html",
+            "uri": "http://$siteurl.zh2.single.amazee.io",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
+        }
+    }
+}

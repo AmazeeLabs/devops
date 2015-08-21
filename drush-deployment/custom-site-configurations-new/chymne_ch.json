@@ -1,0 +1,68 @@
+{
+    "servers": {
+        "dev": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "chymne_ch_dev",
+            "path-aliases": {
+                "%drush-script": "/usr/local/bin/drush",
+                "%dump-dir": "/var/www/chymne_ch_dev/"
+            },
+            "root": "/var/www/chymne_ch_dev/public_html",
+            "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev",
+            "after": {
+                "deploy-update-code": [
+                    "deploy_cache_css_js_task"
+                ]
+            }
+        },
+        "prod1": {
+            "remote-host": "backend1.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "chymne_ch",
+            "path-aliases": {
+                "%drush-script": "/usr/local/bin/drush",
+                "%dump-dir": "/var/www/chymne_ch/"
+            },
+            "root": "/var/www/chymne_ch/public_html",
+            "uri": "http://www.chymne.ch",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "branch": "prod"
+        },
+        "prod2": {
+            "remote-host": "backend2.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "chymne_ch",
+            "path-aliases": {
+                "%drush-script": "/usr/local/bin/drush",
+                "%dump-dir": "/var/www/chymne_ch/"
+            },
+            "root": "/var/www/chymne_ch/public_html",
+            "uri": "http://www.chymne.ch",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "branch": "prod"
+        },
+        "prod3": {
+            "remote-host": "backend3.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "chymne_ch",
+            "path-aliases": {
+                "%drush-script": "/usr/local/bin/drush",
+                "%dump-dir": "/var/www/chymne_ch/"
+            },
+            "root": "/var/www/chymne_ch/public_html",
+            "uri": "http://www.chymne.ch",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "branch": "prod"
+        }
+    },
+    "groups": {
+        "prod": [
+            "prod1",
+            "prod2",
+            "prod3"
+        ]
+    }
+}

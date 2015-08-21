@@ -4,9 +4,7 @@ if($sitename == 'CHANGEME')
 
 // Drush Deploy Options
 $options['application'] = 'drupal';
-$options['branch'] = "prod";
 $options['keep-releases'] = 3;
-$options['deploy-via'] = 'RemoteCache';
 $options['git_enable_submodules'] = TRUE;
 
 // Default server definition, which has no site specific elements
@@ -19,7 +17,9 @@ $server_definition_defaults = array(
   'newrelic' => array (
     'api-key' => $options['newrelic-api-key'],
     'app-name' => '$siteurl'
-  )
+  ),
+  'deploy-via' => 'RemoteCache',
+  'branch' => 'prod',
 );
 
 $cache = drush_cache_get('amazeeio_aliases_' . $sitename);
@@ -45,13 +45,20 @@ else {
   foreach ($servers_definition['servers'] as $server => $server_definition) {
     $aliases[$server] = $server_definition + $server_definition_defaults;
 
-    // Add default deploy-symlink tasks if they are not defined;
-    if (!isset($aliases[$server]['before']['deploy-symlink'])) {
-      $aliases[$server]['before']['deploy-symlink'][] = 'deploy_before_deploy_symlink_tasks';
+    if ($aliases[$server]['deploy-via'] == 'RemoteCache') {
+      // Add default deploy-symlink tasks if they are not defined for RemoteCache method
+      if (!isset($aliases[$server]['before']['deploy-symlink'])) {
+        $aliases[$server]['before']['deploy-symlink'][] = 'deploy_before_deploy_symlink_tasks';
+      }
+      if (!isset($aliases[$server]['after']['deploy-symlink'])) {
+        $aliases[$server]['after']['deploy-symlink'][] = 'deploy_after_deploy_symlink_tasks';
+      }
     }
-    if (!isset($aliases[$server]['after']['deploy-symlink'])) {
-      $aliases[$server]['after']['deploy-symlink'][] = 'deploy_after_deploy_symlink_tasks';
-    }    
+    elseif ($aliases[$server]['deploy-via'] == 'Pull')
+      if (!isset($aliases[$server]['after']['deploy-update-code'])) {
+        $aliases[$server]['after']['deploy-update-code'][] = 'deploy_cache_css_js_task';
+      }
+    }
   }
 
   if (is_array($servers_definition['groups'])) {

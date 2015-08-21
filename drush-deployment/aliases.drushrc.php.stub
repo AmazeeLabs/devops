@@ -1,4 +1,3 @@
-<?php
 // Basic error handling
 if($sitename == 'CHANGEME')
   die("[ERROR] - Luke, you should change the Sitename in aliases.drushrc.php!\n");

@@ -54,7 +54,7 @@ else {
         $aliases[$server]['after']['deploy-symlink'][] = 'deploy_after_deploy_symlink_tasks';
       }
     }
-    elseif ($aliases[$server]['deploy-via'] == 'Pull')
+    elseif ($aliases[$server]['deploy-via'] == 'Pull') {
       if (!isset($aliases[$server]['after']['deploy-update-code'])) {
         $aliases[$server]['after']['deploy-update-code'][] = 'deploy_cache_css_js_task';
       }

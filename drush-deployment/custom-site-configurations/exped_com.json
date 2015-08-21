@@ -22,17 +22,7 @@
             "root": "/var/www/exped_com/public_html",
             "uri": "http://www.exped.com",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-            "before": {
-                "deploy-symlink": [
-                    "deploy_before_deploy_symlink_tasks"
-                ]
-            },
             "after": {
-                "deploy-symlink": [
-                    "deploy_cache_task",
-                    "deploy_apc_flush_task",
-                    "deploy_newrelic_task"
-                ],
                 "deploy-update-code": [
                     "deploy_gulp_build_task"
                 ]

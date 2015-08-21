@@ -22,63 +22,7 @@
             "root": "/var/www/gottardo2016_ch/public_html",
             "uri": "http://www.gottardo2016.ch",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-            "before": {
-                "deploy-symlink": [
-                    "deploy_before_deploy_symlink_tasks"
-                ]
-            },
             "after": {
-                "deploy-symlink": [
-                    "deploy_cache_task_d8",
-                    "deploy_apc_flush_task",
-                    "deploy_newrelic_task"
-                ],
-                "deploy-update-code": [
-                    "deploy_gulp_build_task"
-                ]
-            }
-        },
-        "galleratest1": {
-            "remote-host": "backend1.zh1.cluster.amazee.io",
-            "remote-environment": "amazee.io",
-            "remote-user": "gottardo2016_ch",
-            "root": "/var/www/gottardo2016_ch/public_html",
-            "uri": "http://www.gottardo2016.ch",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-            "before": {
-                "deploy-symlink": [
-                    "deploy_before_deploy_symlink_tasks"
-                ]
-            },
-            "after": {
-                "deploy-symlink": [
-                    "deploy_cache_task_d8",
-                    "deploy_apc_flush_task",
-                    "deploy_newrelic_task"
-                ],
-                "deploy-update-code": [
-                    "deploy_gulp_build_task"
-                ]
-            }
-        },
-        "galleratest2": {
-            "remote-host": "backend2.zh1.cluster.amazee.io",
-            "remote-environment": "amazee.io",
-            "remote-user": "gottardo2016_ch",
-            "root": "/var/www/gottardo2016_ch/public_html",
-            "uri": "http://www.gottardo2016.ch",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-            "before": {
-                "deploy-symlink": [
-                    "deploy_before_deploy_symlink_tasks"
-                ]
-            },
-            "after": {
-                "deploy-symlink": [
-                    "deploy_cache_task_d8",
-                    "deploy_apc_flush_task",
-                    "deploy_newrelic_task"
-                ],
                 "deploy-update-code": [
                     "deploy_gulp_build_task"
                 ]

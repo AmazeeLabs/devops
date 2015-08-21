@@ -21,17 +21,7 @@
             "remote-user": "capetown2015_drupalcamp_prod",
             "root": "/var/www/capetown2015_drupalcamp_prod/public_html",
             "uri": "http://$siteurl",
-            "before": {
-                "deploy-symlink": [
-                    "deploy_before_deploy_symlink_tasks"
-                ]
-            },
             "after": {
-                "deploy-symlink": [
-                    "deploy_cache_task_d8",
-                    "deploy_apc_flush_task",
-                    "deploy_newrelic_task"
-                ],
                 "deploy-update-code": [
                     "deploy_gulp_build_task",
                     "deploy_cache_css_js_task"

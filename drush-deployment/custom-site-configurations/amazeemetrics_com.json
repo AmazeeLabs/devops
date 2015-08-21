@@ -21,17 +21,7 @@
             "remote-user": "amazeemetrics_com_live",
             "root": "/var/www/amazeemetrics_com_live/public_html",
             "uri": "http://www.amazeemetrics.com",
-            "before": {
-                "deploy-symlink": [
-                    "deploy_before_deploy_symlink_tasks"
-                ]
-            },
             "after": {
-                "deploy-symlink": [
-                    "deploy_cache_task",
-                    "deploy_apc_flush_task",
-                    "deploy_newrelic_task"
-                ],
                 "deploy-update-code": [
                     "deploy_gulp_build_task",
                     "deploy_cache_css_js_task"

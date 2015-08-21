@@ -14,19 +14,7 @@
             "remote-environment": "amazee.io",
             "remote-user": "thetrek_co_za",
             "root": "/var/www/thetrek_co_za/public_html",
-            "uri": "http://www.thetrek.co.za",
-            "before": {
-                "deploy-symlink": [
-                    "deploy_before_deploy_symlink_tasks"
-                ]
-            },
-            "after": {
-                "deploy-symlink": [
-                    "deploy_cache_task",
-                    "deploy_apc_flush_task",
-                    "deploy_newrelic_task"
-                ]
-            }
+            "uri": "http://www.thetrek.co.za"
         }
     }
 }

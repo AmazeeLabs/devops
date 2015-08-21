@@ -226,3 +226,13 @@ if (!function_exists("deploy_gulp_build_task")) {
     $d->run("cd %s && npm install && npm run gulp -- build", $d->latest_release());
   }
 }
+
+/**
+ * The task needs to be defined with a @task "decorator" in the comment block preceding it
+ * @task
+ */
+if (!function_exists("deploy_apc_flush_task")) {
+  function deploy_apc_flush_task($d) {
+    // Empty for legacy reasons, we don't need apc flush anymore
+  }
+}

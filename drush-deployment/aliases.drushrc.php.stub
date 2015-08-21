@@ -202,7 +202,7 @@ if (!function_exists("deploy_newrelic_task")) {
       $deployment_info_array[] = '-d "deployment[' . $key . ']=' . $value . '"';
     }
 
-    $d->run_once('curl -H "x-api-key:'.$d->sites[0]['newrelic']['api-key'].'" '. implode(" ", $deployment_info_array) .' https://api.newrelic.com/deployments.xml');
+    $d->run_once('curl -H "x-api-key:'.$d->sites[0]['newrelic']['api-key'].'" '. implode(" ", $deployment_info_array) .' https://api.newrelic.com/deployments.xml', $d->latest_release());
   }
 }
 
@@ -224,5 +224,15 @@ if (!function_exists("deploy_gulp_compile_task")) {
 if (!function_exists("deploy_gulp_build_task")) {
   function deploy_gulp_build_task($d) {
     $d->run("cd %s && npm install && npm run gulp -- build", $d->latest_release());
+  }
+}
+
+/**
+ * The task needs to be defined with a @task "decorator" in the comment block preceding it
+ * @task
+ */
+if (!function_exists("deploy_apc_flush_task")) {
+  function deploy_apc_flush_task($d) {
+    // Empty for legacy reasons, we don't need apc flush anymore
   }
 }

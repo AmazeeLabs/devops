@@ -82,7 +82,7 @@ else {
   }
 
   // Caching the aliases for 10 minutes.
-  //drush_cache_set($cid, $aliases, 'default', time() + 600);
+  drush_cache_set($cid, $aliases, 'default', time() + 600);
 }
 
 // Replace Site specifc variables like userid and siteurl from the generated array

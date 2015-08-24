@@ -22,11 +22,16 @@ $server_definition_defaults = array(
   'branch' => 'prod',
 );
 
+// If AMAZEEIO_IGNORE_DRUSHCACHE is set, we clear the cache first
+if (getenv('AMAZEEIO_IGNORE_DRUSHCACHE') !== FALSE) {
+  drush_cache_clear_all('amazeeio_aliases_' . $sitename);
+  drush_log("cleared alias cache for " . $sitename);
+}
+
 $cache = drush_cache_get('amazeeio_aliases_' . $sitename);
 
 // Drush does not respect the cache expire, so we need to check it ourselves.
-// Also if AMAZEEIO_IGNORE_DRUSHCACHE is set, we ignore the cache.
-if (isset($cache->data) && time() < $cache->expire && getenv('AMAZEEIO_IGNORE_DRUSHCACHE') === FALSE ) {
+if (isset($cache->data) && time() < $cache->expire) {
   $aliases = $cache->data;
 }
 else {

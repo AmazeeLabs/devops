@@ -22,16 +22,16 @@ $server_definition_defaults = array(
   'branch' => 'prod',
 );
 
-// If AMAZEEIO_IGNORE_DRUSHCACHE is set, we clear the cache first
-if (getenv('AMAZEEIO_IGNORE_DRUSHCACHE') !== FALSE) {
-  drush_cache_clear_all('amazeeio_aliases_' . $sitename);
-  drush_log("cleared alias cache for " . $sitename);
+$cid = 'amazeeio_aliases_' . $sitename;
+
+if (getenv('JENKINS_HOME')) {
+  $cid = $cid . "_" . getenv('BUILD_NUMBER');
 }
 
-$cache = drush_cache_get('amazeeio_aliases_' . $sitename);
+$cache = drush_cache_get($cid);
 
 // Drush does not respect the cache expire, so we need to check it ourselves.
-if (isset($cache->data) && time() < $cache->expire) {
+if (isset($cache->data) && time() < $cache->expire && getenv('AMAZEEIO_IGNORE_DRUSHCACHE') === FALSE) {
   $aliases = $cache->data;
 }
 else {
@@ -82,7 +82,7 @@ else {
   }
 
   // Caching the aliases for 10 minutes.
-  //drush_cache_set('amazeeio_aliases_' . $sitename, $aliases, 'default', time() + 600);
+  //drush_cache_set($cid, $aliases, 'default', time() + 600);
 }
 
 // Replace Site specifc variables like userid and siteurl from the generated array

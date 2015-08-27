@@ -21,7 +21,13 @@
             "remote-user": "chymne_ch",
             "root": "/var/www/chymne_ch/public_html",
             "uri": "http://www.chymne.ch",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "after": {
+                "deploy-update-code": [
+                    "deploy_gulp_build_task",
+                    "deploy_cache_css_js_task"
+                ]
+            }
         },
         "prod2": {
             "remote-host": "backend2.zh1.cluster.amazee.io",
@@ -29,7 +35,13 @@
             "remote-user": "chymne_ch",
             "root": "/var/www/chymne_ch/public_html",
             "uri": "http://www.chymne.ch",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "after": {
+                "deploy-update-code": [
+                    "deploy_gulp_build_task",
+                    "deploy_cache_css_js_task"
+                ]
+            }
         },
         "prod3": {
             "remote-host": "backend3.zh1.cluster.amazee.io",
@@ -37,7 +49,13 @@
             "remote-user": "chymne_ch",
             "root": "/var/www/chymne_ch/public_html",
             "uri": "http://www.chymne.ch",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "after": {
+                "deploy-update-code": [
+                    "deploy_gulp_build_task",
+                    "deploy_cache_css_js_task"
+                ]
+            }
         }
     },
     "groups": {

@@ -7,7 +7,12 @@
             "root": "/var/www/swissfoundations_ch/public_html",
             "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
-            "branch": "dev"
+            "branch": "dev",
+            "after": {
+                "deploy-symlink": [
+                    "deploy_cache_task",
+                    "deploy_newrelic_task"
+                ]
         },
         "prod": {
             "remote-host": "backend.zh1.single.amazee.io",
@@ -17,10 +22,10 @@
             "uri": "http://www.swissfoundations.ch",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
             "after": {
-                "deploy-update-code": [
-                    "deploy_cache_task"
+                "deploy-symlink": [
+                    "deploy_cache_task",
+                    "deploy_newrelic_task"
                 ]
-            }
         }
     }
 }

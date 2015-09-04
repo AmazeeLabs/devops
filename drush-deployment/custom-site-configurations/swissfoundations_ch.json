@@ -13,6 +13,7 @@
                     "deploy_cache_task",
                     "deploy_newrelic_task"
                 ]
+            }
         },
         "prod": {
             "remote-host": "backend.zh1.single.amazee.io",
@@ -26,6 +27,7 @@
                     "deploy_cache_task",
                     "deploy_newrelic_task"
                 ]
+            }
         }
     }
 }

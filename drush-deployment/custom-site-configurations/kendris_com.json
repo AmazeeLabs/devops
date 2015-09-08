@@ -56,7 +56,7 @@
                     "deploy_cache_css_js_task"
                 ]
             }
-        },
+        }
     },
     "groups": {
         "prod": [

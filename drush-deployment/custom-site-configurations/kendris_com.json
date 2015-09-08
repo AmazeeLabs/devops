@@ -57,12 +57,12 @@
                 ]
             }
         },
-        "groups": {
-            "prod": [
-                "prod1",
-                "prod2",
-                "prod3"
-            ]
-        }
+    },
+    "groups": {
+        "prod": [
+            "prod1",
+            "prod2",
+            "prod3"
+        ]
     }
 }

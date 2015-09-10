@@ -16,7 +16,13 @@
             "root": "/var/www/sonova_com_dev/public_html",
             "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
-            "branch": "dev"
+            "branch": "dev",
+            "after": {
+                "deploy-update-code": [
+                    "deploy_gulp_compile_task",
+                    "deploy_cache_css_js_task"
+                ]
+            }
         },
         "prod1": {
             "remote-host": "backend1.zh1.cluster.amazee.io",

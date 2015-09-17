@@ -50,7 +50,7 @@
             "remote-environment": "amazee.io",
             "remote-user": "fischerconnectors_com_dev",
             "root": "/var/www/fischerconnectors_com_dev/public_html",
-            "uri": "http://$siteurl.dev1.compact.amazee.io",
+            "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "dev",
             "after": {

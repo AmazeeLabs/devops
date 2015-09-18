@@ -11,7 +11,8 @@
             "after": {
                 "deploy-update-code": [
                     "deploy_gulp_compile_task",
-                    "deploy_cache_css_js_task"
+                    "deploy_cache_css_js_task",
+                    "deploy_cache_task_d8"
                 ]
             }
         }

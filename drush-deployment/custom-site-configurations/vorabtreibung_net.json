@@ -7,6 +7,14 @@
             "root": "/var/www/vorabtreibung_net/public_html",
             "uri": "http://$siteurl",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
+        },
+        "dev": {
+            "remote-host": "backend.zh2.single.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "vorabtreibung_net_dev",
+            "root": "/var/www/vorabtreibung_net/public_html",
+            "uri": "http://vorabtreibung.net.dev.zh2.single.amazee.io",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
         }
     }
 }

@@ -14,7 +14,9 @@
             "remote-user": "vorabtreibung_net_dev",
             "root": "/var/www/vorabtreibung_net/public_html",
             "uri": "http://vorabtreibung.net.dev.zh2.single.amazee.io",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "deploy-via": "Pull",
+            "branch": "dev"
         }
     }
 }

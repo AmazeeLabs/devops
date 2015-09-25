@@ -101,6 +101,7 @@ if (file_exists(__DIR__ . '/settings.local.php')) {
 // $conf['custom_disallow_read_committed_isolation'] = TRUE;
 // in the settings.local.php.
 // See https://www.drupal.org/node/1650930 for more info.
+// Remove this block on Amazee.io Cluster environment
 if ($databases['default']['default']['driver'] == 'mysql' && empty($conf['custom_disallow_read_committed_isolation'])) {
   $databases['default']['default']['init_commands']['isolation'] = 'SET SESSION tx_isolation="READ-COMMITTED"';
 }

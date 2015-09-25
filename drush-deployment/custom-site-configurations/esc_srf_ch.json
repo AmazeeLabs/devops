@@ -9,14 +9,6 @@
             "deploy-via": "Pull",
             "branch": "dev"
         },
-        "prod": {
-            "remote-host": "backend.zh1.single.amazee.io",
-            "remote-environment": "amazee.io",
-            "remote-user": "esc_srf_ch",
-            "root": "/var/www/esc_srf_ch/public_html",
-            "uri": "http://$siteurl",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
-        },
         "prod1": {
             "remote-host": "backend1.zh1.cluster.amazee.io",
             "remote-environment": "cluster.amazee.io",
@@ -43,7 +35,7 @@
         }
     },
     "groups": {
-        "prodcluster": [
+        "prod": [
             "prod1",
             "prod2",
             "prod3"

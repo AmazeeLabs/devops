@@ -1,0 +1,11 @@
+{
+    "servers": {
+        "dev": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "socialmediagipfel_ch",
+            "root": "/var/www/socialmediagipfel_ch/public_html",
+            "uri": "http://$siteurl.dev1.compact.amazee.io"
+        }
+    }
+}

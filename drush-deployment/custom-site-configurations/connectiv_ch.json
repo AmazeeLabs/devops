@@ -14,6 +14,14 @@
                     "deploy_cache_css_js_task"
                 ]
             }
+        },
+        "prod": {
+            "remote-host": "backend.zh1.single.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "connectiv_ch",
+            "root": "/var/www/connectiv_ch/public_html",
+            "uri": "http://amazee.io",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
         }
     }
 }

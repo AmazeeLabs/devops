@@ -31,13 +31,7 @@
             "root": "/var/www/sonova_com/public_html",
             "uri": "http://www.sonova.com",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-            "branch": "prod",
-            "after": {
-                "deploy-update-code": [
-                    "deploy_gulp_compile_task",
-                    "deploy_cache_css_js_task"
-                ]
-            }
+            "branch": "prod"
         },
         "prod2": {
             "remote-host": "backend2.zh1.cluster.amazee.io",
@@ -46,13 +40,7 @@
             "root": "/var/www/sonova_com/public_html",
             "uri": "http://www.sonova.com",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-            "branch": "prod",
-            "after": {
-                "deploy-update-code": [
-                    "deploy_gulp_compile_task",
-                    "deploy_cache_css_js_task"
-                ]
-            }
+            "branch": "prod"
         },
         "prod3": {
             "remote-host": "backend3.zh1.cluster.amazee.io",
@@ -61,13 +49,7 @@
             "root": "/var/www/sonova_com/public_html",
             "uri": "http://www.sonova.com",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-            "branch": "prod",
-            "after": {
-                "deploy-update-code": [
-                    "deploy_gulp_compile_task",
-                    "deploy_cache_css_js_task"
-                ]
-            }
+            "branch": "prod"
         }
     },
     "groups": {

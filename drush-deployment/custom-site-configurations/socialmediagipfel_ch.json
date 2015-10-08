@@ -5,7 +5,8 @@
             "remote-environment": "amazee.io",
             "remote-user": "socialmediagipfel_ch",
             "root": "/var/www/socialmediagipfel_ch/public_html",
-            "uri": "http://$siteurl.dev1.compact.amazee.io"
+            "uri": "http://$siteurl.dev1.compact.amazee.io",
+            "branch": "dev"
         }
     }
 }

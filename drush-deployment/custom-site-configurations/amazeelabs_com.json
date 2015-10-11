@@ -32,7 +32,6 @@
             "remote-host": "test1.compact.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "amazeelabs_com",
-            "root": "/var/www/amazeelabs_com/public_html",
             "uri": "http://www.amazeelabs.com"
         }
     }

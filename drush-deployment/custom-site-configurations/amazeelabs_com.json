@@ -32,7 +32,8 @@
             "remote-host": "test1.compact.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "amazeelabs_com",
-            "uri": "http://www.amazeelabs.com"
+            "uri": "http://www.amazeelabs.com",
+            "branch": "ansible_deploy"
         }
     }
 }

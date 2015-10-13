@@ -35,6 +35,12 @@
             "remote-user": "amazee",
             "root": "/var/www/ublox",
             "uri": "http://testsite.u-blox.com"
+        },
+        "ublox.dev": {
+            "remote-host": "ch-thl-vm-028.u-blox.com",
+            "remote-user": "u-blox_com_dev",
+            "root": "/var/www/u-blox_com_dev/public_html",
+            "uri": "http://u-blox.com.dev.ublox1.compact.amazee.io"
         }
     }
 }

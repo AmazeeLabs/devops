@@ -5,7 +5,8 @@
             "remote-environment": "amazee.io",
             "remote-user": "assessment_dev",
             "root": "/var/www/assessment_dev/public_html",
-            "uri": "http://assessment.dev1.compact.amazee.io"
+            "uri": "http://assessment.dev1.compact.amazee.io",
+            "deploy-via": "Pull"
         }
     }
 }

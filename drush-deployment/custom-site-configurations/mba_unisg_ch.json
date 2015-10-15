@@ -1,20 +1,21 @@
 {
-    "servers": {
-        "dev": {
-            "remote-host": "dev1.compact.amazee.io",
-            "remote-environment": "amazee.io",
-            "remote-user": "mba_unisg_ch",
-            "root": "/var/www/mba_unisg_ch/public_html",
-            "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
-            "deploy-via": "Pull",
-            "branch": "dev",
-            "after": {
-                "deploy-update-code": [
-                    "deploy_gulp_compile_task",
-                    "deploy_cache_css_js_task",
-                    "deploy_cache_task_d8"
-                ]
-            }
-        }
+  "servers": {
+    "dev": {
+      "remote-host": "dev1.compact.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "mba_unisg_ch",
+      "root": "/var/www/mba_unisg_ch/public_html",
+      "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+      "deploy-via": "Pull",
+      "branch": "dev"
+    },
+    "prod": {
+      "remote-host": "backend.zh1.single.amazee.io",
+      "remote-user": "mba_unisg_ch",
+      "root": "/var/www/mba_unisg_ch/public_html",
+      "uri": "http://www.mba.unisg.ch",
+      "branch": "prod",
+      "deploy-via": "RemoteCache"
     }
+  }
 }

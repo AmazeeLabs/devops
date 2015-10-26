@@ -31,10 +31,10 @@
             }
         },
         "ublox.prod": {
-            "remote-host": "195.34.89.148",
+            "remote-host": "www.u-blox.com",
             "remote-user": "amazee",
             "root": "/var/www/ublox",
-            "uri": "http://testsite.u-blox.com"
+            "uri": "http://www.u-blox.com"
         },
         "ublox.dev": {
             "remote-host": "ch-thl-vm-028.u-blox.com",

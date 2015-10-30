@@ -15,6 +15,21 @@
                 ]
             }
         },
+        "staging": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "kendris_com_staging",
+            "root": "/var/www/kendris_com_staging/public_html",
+            "uri": "http://$siteurl.staging.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "staging",
+            "after": {
+                "deploy-update-code": [
+                    "deploy_gulp_compile_task",
+                    "deploy_cache_css_js_task"
+                ]
+            }
+        },
         "prod1": {
             "remote-host": "backend1.zh1.cluster.amazee.io",
             "remote-environment": "cluster.amazee.io",

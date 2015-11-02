@@ -1,0 +1,13 @@
+{
+    "servers": {
+        "dev": {
+            "remote-host": "sa1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "thelady_co_za",
+            "root": "/var/www/thelady_co_za/public_html",
+            "uri": "http://$siteurl.dev.sa1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev"
+        }
+    }
+}

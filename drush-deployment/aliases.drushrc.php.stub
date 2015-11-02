@@ -218,7 +218,7 @@ if (!function_exists("deploy_newrelic_task")) {
  */
 if (!function_exists("deploy_gulp_compile_task")) {
   function deploy_gulp_compile_task($d) {
-    $d->run("cd %s && npm update && npm run bower -- install && npm run gulp -- compile", $d->latest_release());
+    $d->run("cd %s && npm install && npm run bower -- install && npm run gulp -- compile", $d->latest_release());
   }
 }
 

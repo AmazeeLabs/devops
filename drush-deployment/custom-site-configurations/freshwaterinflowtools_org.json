@@ -1,0 +1,20 @@
+{
+    "servers": {
+        "dev": {
+            "remote-host": "us1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "freshwater_dev",
+            "root": "/var/www/freshwater_dev/public_html",
+            "uri": "http://$siteurl.dev.us1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev"
+        },
+        "prod": {
+            "remote-host": "us1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "freshwater_prod",
+            "root": "/var/www/freshwater_prod/public_html",
+            "uri": "http://www.freshwaterinflow.org"
+        }
+    }
+}

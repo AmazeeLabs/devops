@@ -5,7 +5,9 @@
             "remote-environment": "amazee.io",
             "remote-user": "d8-starter_io",
             "root": "/var/www/d8-starter_io/public_html",
-            "uri": "http://$siteurl.dev1.compact.amazee.io"
+            "uri": "http://$siteurl.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev"
         }
     }
 }

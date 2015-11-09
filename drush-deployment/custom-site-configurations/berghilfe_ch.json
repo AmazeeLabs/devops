@@ -9,4 +9,5 @@
             "deploy-via": "Pull",
             "branch": "dev"
         }
+    }
 }

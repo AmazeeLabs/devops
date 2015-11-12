@@ -1,20 +1,13 @@
 {
     "servers": {
         "dev": {
-            "remote-host": "us1.compact.amazee.io",
+            "remote-host": "dev1.compact.amazee.io",
             "remote-environment": "amazee.io",
-            "remote-user": "kaazo_dev",
-            "root": "/var/www/kaazo_dev/public_html",
-            "uri": "http://$siteurl.dev.us1.compact.amazee.io",
+            "remote-user": "kaazo_com",
+            "root": "/var/www/kaazo_com/public_html",
+            "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "dev"
-        },
-        "prod": {
-            "remote-host": "us1.compact.amazee.io",
-            "remote-environment": "amazee.io",
-            "remote-user": "kaazo_prod",
-            "root": "/var/www/kaazo_prod/public_html",
-            "uri": "http://www.kaazo.com"
         }
     }
 }

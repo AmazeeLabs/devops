@@ -21,8 +21,8 @@
         "master": {
             "remote-host": "attribute1.compact.amazee.io",
             "remote-environment": "amazee.io",
-            "remote-user": "sibylleberg_com_prod",
-            "root": "/var/www/sibylleberg_com_prod/public_html",
+            "remote-user": "attribute_ch_prod",
+            "root": "/var/www/attribute_ch_prod/public_html",
             "uri": "http://$siteurl",
             "branch": "master"
         }

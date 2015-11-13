@@ -1,14 +1,5 @@
 {
     "servers": {
-        "develop_old": {
-            "remote-host": "dev1.compact.amazee.io",
-            "remote-environment": "amazee.io",
-            "remote-user": "attribute_ch_dev",
-            "root": "/var/www/attribute_ch_dev/public_html",
-            "uri": "http://$siteurl.develop.dev1.compact.amazee.io",
-            "deploy-via": "Pull",
-            "branch": "develop"
-        },
         "develop": {
             "remote-host": "attribute1.compact.amazee.io",
             "remote-environment": "amazee.io",

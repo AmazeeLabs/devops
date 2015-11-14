@@ -3,8 +3,8 @@
         "develop": {
             "remote-host": "attribute1.compact.amazee.io",
             "remote-environment": "amazee.io",
-            "remote-user": "joergboner.ch_dev",
-            "root": "/var/www/joergboner.ch_dev/public_html",
+            "remote-user": "friction_ch_dev",
+            "root": "/var/www/friction_ch_dev/public_html",
             "uri": "http://$siteurl.develop.attribute1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "develop"
@@ -12,8 +12,8 @@
         "master": {
             "remote-host": "attribute1.compact.amazee.io",
             "remote-environment": "amazee.io",
-            "remote-user": "joergboner.ch_prod",
-            "root": "/var/www/joergboner.ch_prod/public_html",
+            "remote-user": "friction_ch_prod",
+            "root": "/var/www/friction_ch_prod/public_html",
             "uri": "http://$siteurl",
             "branch": "master"
         }

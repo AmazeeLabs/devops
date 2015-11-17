@@ -4,7 +4,7 @@
             "remote-host": "attribute1.compact.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "editionpatrickfrey_com_dev",
-            "root": "/var/www/editionpatrickfrey.com_dev/public_html",
+            "root": "/var/www/editionpatrickfrey_com_dev/public_html",
             "uri": "http://$siteurl.develop.attribute1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "develop"
@@ -13,7 +13,7 @@
             "remote-host": "attribute1.compact.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "editionpatrickfrey_com_prod",
-            "root": "/var/www/editionpatrickfrey.com_prod/public_html",
+            "root": "/var/www/editionpatrickfrey_com_prod/public_html",
             "uri": "http://$siteurl",
             "branch": "master"
         }

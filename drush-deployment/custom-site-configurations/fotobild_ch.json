@@ -3,7 +3,7 @@
         "develop": {
             "remote-host": "attribute1.compact.amazee.io",
             "remote-environment": "amazee.io",
-            "remote-user": "fotobild.ch_dev",
+            "remote-user": "fotobild_ch_dev",
             "root": "/var/www/fotobild.ch_dev/public_html",
             "uri": "http://$siteurl.develop.attribute1.compact.amazee.io",
             "deploy-via": "Pull",
@@ -12,7 +12,7 @@
         "master": {
             "remote-host": "attribute1.compact.amazee.io",
             "remote-environment": "amazee.io",
-            "remote-user": "fotobild.ch_prod",
+            "remote-user": "fotobild_ch_prod",
             "root": "/var/www/fotobild.ch_prod/public_html",
             "uri": "http://$siteurl",
             "branch": "master"

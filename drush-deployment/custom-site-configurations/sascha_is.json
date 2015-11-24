@@ -8,6 +8,14 @@
             "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "dev"
-        }      
+        },
+        "interact_swisscom_com-prod": {
+            "remote-host": "swisscom1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "interact_swisscom_com",
+            "root": "/var/www/interact_swisscom_com/public_html",
+            "uri": "http://developer.interactor.swisscom.ch",
+            "branch": "prod"
+        }
     }
 }

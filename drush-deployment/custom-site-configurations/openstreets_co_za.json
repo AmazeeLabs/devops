@@ -1,0 +1,13 @@
+{
+    "servers": {
+        "dev": {
+            "remote-host": "sa1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "openstreets_co_za_dev",
+            "root": "/var/www/openstreets_co_za_dev/public_html",
+            "uri": "http://$siteurl.sa1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev"
+        }
+    }
+}

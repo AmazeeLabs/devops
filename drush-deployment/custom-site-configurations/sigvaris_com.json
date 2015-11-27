@@ -29,6 +29,7 @@
             "remote-user": "www-sigvariscom",
             "root": "/home/www-sigvariscom/sigvaris.com/public_html",
             "uri": "http://sigvaris.com.sigvaris01.nine.ch",
+            "deploy-via": "Pull",
             "branch": "live "
         }
     }

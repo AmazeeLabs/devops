@@ -23,6 +23,14 @@
             "uri": "http://$siteurl.staging.dev1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "staging"
+        },
+        "sigvaris01": {
+            "remote-host": "sigvaris01.nine.ch",
+            "remote-user": "www-sigvariscom",
+            "root": "/home/www-sigvariscom/sigvaris.com/public_html",
+            "uri": "http://sigvaris.com.sigvaris01.nine.ch",
+            "deploy-via": "Pull",
+            "branch": "dev"
         }
     }
 }

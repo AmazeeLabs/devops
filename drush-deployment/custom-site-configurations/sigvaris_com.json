@@ -24,7 +24,7 @@
             "deploy-via": "Pull",
             "branch": "staging"
         },
-        "live": {
+        "newlive": {
             "remote-host": "sigvaris01.nine.ch",
             "remote-user": "www-sigvariscom",
             "root": "/home/www-sigvariscom/sigvaris.com/public_html",

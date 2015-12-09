@@ -1,0 +1,10 @@
+{
+    "servers": {
+        "prod": {
+            "remote-host": "sigvaris01.nine.ch",
+            "remote-user": "www-stemmerlibrary",
+            "root": "/home/www-stemmerlibrary/stemmerlibrary.com",
+            "uri": "http://$siteurl"
+        }
+    }
+}

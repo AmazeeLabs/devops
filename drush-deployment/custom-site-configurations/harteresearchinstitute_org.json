@@ -5,7 +5,7 @@
             "remote-environment": "amazee.io",
             "remote-user": "harteresearchinstitute_org",
             "root": "/var/www/harteresearchinstitute_org/public_html",
-            "uri": "http://harteresearchinstitute.org",
+            "uri": "http://harteresearchinstitute.org"
         },
         "dev": {
             "remote-host": "us1.compact.amazee.io",

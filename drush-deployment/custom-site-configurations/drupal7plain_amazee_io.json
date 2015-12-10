@@ -1,0 +1,13 @@
+{
+    "servers": {
+        "dev1.compact": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "drupal7plain_amazee_io",
+            "root": "/var/www/drupal7plain_amazee_io/public_html",
+            "uri": "http://drupal7plain.test1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev"
+        }
+    }
+}

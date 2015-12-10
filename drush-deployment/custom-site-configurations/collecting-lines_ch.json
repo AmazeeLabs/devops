@@ -15,7 +15,7 @@
             "remote-user": "collecting-lines_ch_prod",
             "root": "/var/www/collecting-lines_ch_prod/public_html",
             "uri": "http://$siteurl",
-            "branch": "master"
+            "branch": "1.x"
         }
     }
 }

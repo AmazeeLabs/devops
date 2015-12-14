@@ -30,7 +30,7 @@
             "root": "/home/www-sigvariscom/sigvaris.com",
             "uri": "http://sigvaris.com.sigvaris01.nine.ch",
             "deploy-via": "Pull",
-            "branch": "prod "
+            "branch": "prod"
         }
     }
 }

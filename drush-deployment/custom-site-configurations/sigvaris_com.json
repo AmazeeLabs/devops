@@ -24,13 +24,13 @@
             "deploy-via": "Pull",
             "branch": "staging"
         },
-        "newlive": {
+        "prod": {
             "remote-host": "sigvaris01.nine.ch",
             "remote-user": "www-sigvariscom",
-            "root": "/home/www-sigvariscom/sigvaris.com/public_html",
+            "root": "/home/www-sigvariscom/sigvaris.com",
             "uri": "http://sigvaris.com.sigvaris01.nine.ch",
             "deploy-via": "Pull",
-            "branch": "live "
+            "branch": "prod "
         }
     }
 }

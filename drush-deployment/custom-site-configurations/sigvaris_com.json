@@ -23,7 +23,7 @@
             "remote-user": "www-sigvariscom",
             "root": "/home/www-sigvariscom/sigvaris.com",
             "uri": "http://sigvaris.com.sigvaris01.nine.ch",
-            "deploy-via": "Pull",
+            "deploy-via": "PullProd",
             "branch": "prod"
         }
     }

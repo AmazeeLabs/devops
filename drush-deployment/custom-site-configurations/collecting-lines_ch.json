@@ -9,7 +9,7 @@
             "deploy-via": "Pull",
             "branch": "develop"
         },
-        "master": {
+        "1.x": {
             "remote-host": "attribute1.compact.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "collecting-lines_ch_prod",

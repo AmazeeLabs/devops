@@ -31,7 +31,7 @@
             "root": "/var/www/sonova_com_staging/public_html",
             "uri": "http://$siteurl.staging.dev1.compact.amazee.io",
             "deploy-via": "Pull",
-            "branch": "dev",
+            "branch": "staging",
             "after": {
                 "deploy-update-code": [
                     "deploy_gulp_compile_task",

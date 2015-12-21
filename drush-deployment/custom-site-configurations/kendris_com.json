@@ -71,13 +71,28 @@
                     "deploy_cache_css_js_task"
                 ]
             }
+        },
+        "prod4": {
+            "remote-host": "backend4.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "kendris_com",
+            "root": "/var/www/kendris_com/public_html",
+            "uri": "http://www.kendris.com",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "after": {
+                "deploy-update-code": [
+                    "deploy_gulp_build_task",
+                    "deploy_cache_css_js_task"
+                ]
+            }
         }
     },
     "groups": {
         "prod": [
             "prod1",
             "prod2",
-            "prod3"
+            "prod3",
+            "prod4"
         ]
     }
 }

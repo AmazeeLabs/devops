@@ -45,6 +45,21 @@
                 ]
             }
         },
+        "prod4": {
+            "remote-host": "backend4.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "fischerconnectors_com",
+            "root": "/var/www/fischerconnectors_com/public_html",
+            "uri": "http://www.fischerconnectors.com",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "branch": "prod",
+            "after": {
+                "deploy-update-code": [
+                    "deploy_gulp_build_task",
+                    "deploy_cache_css_js_task"
+                ]
+            }
+        },
         "dev": {
             "remote-host": "dev1.compact.amazee.io",
             "remote-environment": "amazee.io",
@@ -65,7 +80,8 @@
         "prod": [
             "prod1",
             "prod2",
-            "prod3"
+            "prod3",
+            "prod4"
         ]
     }
 }

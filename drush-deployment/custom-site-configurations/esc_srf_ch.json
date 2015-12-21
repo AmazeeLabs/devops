@@ -32,13 +32,22 @@
             "root": "/var/www/esc_srf_ch/public_html",
             "uri": "http://esc.srf.ch",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
+        },
+        "prod4": {
+            "remote-host": "backend4.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "esc_srf_ch",
+            "root": "/var/www/esc_srf_ch/public_html",
+            "uri": "http://esc.srf.ch",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
         }
     },
     "groups": {
         "prod": [
             "prod1",
             "prod2",
-            "prod3"
+            "prod3",
+            "prod4"
         ]
     }
 }

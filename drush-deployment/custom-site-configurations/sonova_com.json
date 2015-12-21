@@ -50,13 +50,23 @@
             "uri": "http://www.sonova.com",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
             "branch": "prod"
+        },
+        "prod4": {
+            "remote-host": "backend4.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "sonova_com",
+            "root": "/var/www/sonova_com/public_html",
+            "uri": "http://www.sonova.com",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "branch": "prod"
         }
     },
     "groups": {
         "prod": [
             "prod1",
             "prod2",
-            "prod3"
+            "prod3",
+            "prod4"
         ]
     }
 }

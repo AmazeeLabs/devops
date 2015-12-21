@@ -66,6 +66,28 @@
                 ]
             }
         },
+        "prod4": {
+            "remote-host": "backend4.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "for_org",
+            "root": "/var/www/for_org/public_html",
+            "uri": "http://www.for.org",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "before": {
+                "deploy-symlink": [
+                    "deploy_before_deploy_symlink_tasks"
+                ]
+            },
+            "after": {
+                "deploy-symlink": [
+                    "deploy_apc_flush_task",
+                    "deploy_newrelic_task"
+                ],
+                "deploy-update-code": [
+                    "deploy_gulp_build_task"
+                ]
+            }
+        },
         "dev": {
             "remote-host": "dev1.compact.amazee.io",
             "remote-environment": "amazee.io",
@@ -86,7 +108,8 @@
         "prod": [
             "prod1",
             "prod2",
-            "prod3"
+            "prod3",
+            "prod4"
         ]
     }
 }

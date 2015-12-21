@@ -8,11 +8,14 @@
       "deploy-via": "PullProd",
       "branch": "prod"
     },
-    "oldprod": {
-      "remote-host": "sigvarisp.nine.ch",
-      "remote-user": "www-data",
-      "root": "/home/www-data/stemmerlibrary.com",
-      "uri": "http://$siteurl"
+    "dev": {
+        "remote-host": "dev1.compact.amazee.io",
+        "remote-environment": "amazee.io",
+        "remote-user": "stemmerlibrary_com",
+        "root": "/var/www/stemmerlibrary_com",
+        "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+        "deploy-via": "Pull",
+        "branch": "dev"
     }
   }
 }

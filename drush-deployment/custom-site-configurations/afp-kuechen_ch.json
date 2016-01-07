@@ -5,7 +5,7 @@
       "remote-environment": "amazee.io",
       "remote-user": "afp-kuechen_ch",
       "root": "/var/www/afp-kuechen_ch/public_html",
-      "uri": "http://www.$siteurl.dev.dev1.compact.amazee.io",
+      "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
       "deploy-via": "Pull",
       "branch": "dev"
     },
@@ -14,7 +14,7 @@
       "remote-environment": "amazee.io",
       "remote-user": "afp-kuechen_ch",
       "root": "/var/www/afp-kuechen_ch/public_html",
-      "uri": "http://$siteurl",
+      "uri": "http://www.$siteurl",
       "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
       "branch": "prod"
     }

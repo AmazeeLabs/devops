@@ -17,7 +17,6 @@
             "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "dev"
-            }
         },
         "staging": {
             "remote-host": "dev1.compact.amazee.io",

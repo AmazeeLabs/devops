@@ -16,7 +16,7 @@
             "root": "/var/www/zuerich_com_staging/public_html",
             "uri": "http://$siteurl.staging.dev1.compact.amazee.io",
             "deploy-via": "Pull",
-            "branch": "dev"
+            "branch": "staging"
         },
         "gulp": {
             "remote-host": "dev1.compact.amazee.io",
@@ -25,7 +25,7 @@
             "root": "/var/www/zuerich_com_gulp/public_html",
             "uri": "http://$siteurl.gulp.dev1.compact.amazee.io",
             "deploy-via": "Pull",
-            "branch": "dev"
+            "branch": "gulp"
         }        
     }
 }

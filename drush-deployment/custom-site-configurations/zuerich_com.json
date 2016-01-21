@@ -8,6 +8,24 @@
             "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "dev"
-        }
+        },
+        "staging": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "zuerich_com_staging",
+            "root": "/var/www/zuerich_com_staging/public_html",
+            "uri": "http://$siteurl.staging.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev"
+        },
+        "gulp": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "zuerich_com_gulp",
+            "root": "/var/www/zuerich_com_gulp/public_html",
+            "uri": "http://$siteurl.gulp.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev"
+        }        
     }
 }

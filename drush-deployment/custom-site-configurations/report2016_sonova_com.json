@@ -1,0 +1,72 @@
+{
+    "servers": {
+        "dev": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "report_sonova_com_dev",
+            "root": "/var/www/report_sonova_com_dev/public_html/2016",
+            "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev",
+            "after": {
+                "deploy-update-code": []
+            }
+        },
+        "prod1": {
+            "remote-host": "backend1.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "report_sonova_com",
+            "root": "/var/www/report_sonova_com/public_html/2016",
+            "uri": "http://report.sonova.com",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "deploy-via": "Pull",
+            "after": {
+                "deploy-update-code": []
+            }
+        },
+        "prod2": {
+            "remote-host": "backend2.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "report_sonova_com",
+            "root": "/var/www/report_sonova_com/public_html/2016",
+            "uri": "http://report.sonova.com",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "deploy-via": "Pull",
+            "after": {
+                "deploy-update-code": []
+            }
+        },
+        "prod3": {
+            "remote-host": "backend3.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "report_sonova_com",
+            "root": "/var/www/report_sonova_com/public_html/2016",
+            "uri": "http://report.sonova.com",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "deploy-via": "Pull",
+            "after": {
+                "deploy-update-code": []
+            }
+        },
+        "prod4": {
+            "remote-host": "backend4.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "report_sonova_com",
+            "root": "/var/www/report_sonova_com/public_html/2016",
+            "uri": "http://report.sonova.com",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "deploy-via": "Pull",
+            "after": {
+                "deploy-update-code": []
+            }
+        }
+    },
+    "groups": {
+        "prod-disabled": [
+            "prod1",
+            "prod2",
+            "prod3",
+            "prod4"
+        ]
+    }
+}

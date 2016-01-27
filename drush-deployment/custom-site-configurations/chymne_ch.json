@@ -71,7 +71,7 @@
         ]
       }
     },
-    "prod-single": {
+    "prod": {
       "remote-host": "backend.zh1.single.amazee.io",
       "remote-environment": "amazee.io",
       "remote-user": "chymne_ch",
@@ -87,7 +87,7 @@
     }
   },
   "groups": {
-    "prod": [
+    "prod-cluster": [
       "prod1",
       "prod2",
       "prod3",

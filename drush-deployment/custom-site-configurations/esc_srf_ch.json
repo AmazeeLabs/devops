@@ -43,7 +43,7 @@
         }
     },
     "groups": {
-        "prod": [
+        "prod-cluster": [
             "prod1",
             "prod2",
             "prod3",

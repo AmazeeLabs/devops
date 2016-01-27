@@ -40,6 +40,20 @@
             "root": "/var/www/esc_srf_ch/public_html",
             "uri": "http://esc.srf.ch",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
+        },
+        "prod": {
+          "remote-host": "backend.zh1.single.amazee.io",
+          "remote-environment": "amazee.io",
+          "remote-user": "esc_srf_ch",
+          "root": "/var/www/esc_srf_ch/public_html",
+            "uri": "http://esc.srf.ch",
+          "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+          "after": {
+            "deploy-update-code": [
+              "deploy_gulp_build_task",
+              "deploy_cache_css_js_task"
+            ]
+          }
         }
     },
     "groups": {

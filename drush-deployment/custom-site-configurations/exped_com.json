@@ -18,8 +18,8 @@
     "staging": {
       "remote-host": "dev1.compact.amazee.io",
       "remote-environment": "amazee.io",
-      "remote-user": "staging_exped_com",
-      "root": "/var/www/staging_exped_com/public_html",
+      "remote-user": "exped_com_staging",
+      "root": "/var/www/exped_com_staging/public_html",
       "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
       "deploy-via": "Pull",
       "branch": "staging",

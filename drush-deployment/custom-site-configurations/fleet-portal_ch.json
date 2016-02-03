@@ -1,14 +1,21 @@
-
 {
-    "servers": {
-        "dev": {
-            "remote-host": "dev1.compact.amazee.io",
-            "remote-environment": "amazee.io",
-            "remote-user": "fleet-portal_ch",
-            "root": "/var/www/fleet-portal_ch/public_html",
-            "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
-            "deploy-via": "Pull",
-            "branch": "dev"
-        }
+  "servers": {
+    "dev": {
+      "remote-host": "dev1.compact.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "fleet-portal_ch",
+      "root": "/var/www/fleet-portal_ch/public_html",
+      "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+      "deploy-via": "Pull",
+      "branch": "dev"
+    },
+    "prod": {
+      "remote-host": "backend.zh1.single.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "fleet-portal_ch",
+      "root": "/var/www/fleet-portal_ch/public_html",
+      "uri": "http://$siteurl",
+      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
     }
+  }
 }

@@ -7,13 +7,16 @@
             "root": "/var/www/resourceaward_org/public_html",
             "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
-            "branch": "dev",
-            "after": {
-                "deploy-update-code": [
-                    "deploy_gulp_compile_task",
-                    "deploy_cache_css_js_task"
-                ]
-            }
+            "branch": "dev"
+        },
+        "dropguard": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "resourceaward_org_dropguard",
+            "root": "/var/www/resourceaward_org_dropguard/public_html",
+            "uri": "http://$siteurl.dropguard.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev"
         },
         "prod": {
             "remote-host": "backend.zh1.single.amazee.io",
@@ -21,12 +24,7 @@
             "remote-user": "resourceaward_org",
             "root": "/var/www/resourceaward_org/public_html",
             "uri": "http://www.resourceaward.org",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-            "after": {
-                "deploy-update-code": [
-                    "deploy_gulp_build_task"
-                ]
-            }
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
         }
     }
 }

@@ -16,7 +16,7 @@
             "root": "/var/www/resourceaward_org_dropguard/public_html",
             "uri": "http://$siteurl.dropguard.dev1.compact.amazee.io",
             "deploy-via": "Pull",
-            "branch": "dev"
+            "branch": "dropguard"
         },
         "prod": {
             "remote-host": "backend.zh1.single.amazee.io",

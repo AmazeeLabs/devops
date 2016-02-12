@@ -18,7 +18,7 @@
             "remote-user": "report_sonova_com",
             "root": "/var/www/report_sonova_com/public_html/2016",
             "uri": "http://report.sonova.com",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
             "deploy-via": "Pull",
             "after": {
                 "deploy-update-code": []
@@ -30,7 +30,7 @@
             "remote-user": "report_sonova_com",
             "root": "/var/www/report_sonova_com/public_html/2016",
             "uri": "http://report.sonova.com",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
             "deploy-via": "Pull",
             "after": {
                 "deploy-update-code": []
@@ -42,7 +42,7 @@
             "remote-user": "report_sonova_com",
             "root": "/var/www/report_sonova_com/public_html/2016",
             "uri": "http://report.sonova.com",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
             "deploy-via": "Pull",
             "after": {
                 "deploy-update-code": []
@@ -54,7 +54,7 @@
             "remote-user": "report_sonova_com",
             "root": "/var/www/report_sonova_com/public_html/2016",
             "uri": "http://report.sonova.com",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
             "deploy-via": "Pull",
             "after": {
                 "deploy-update-code": []

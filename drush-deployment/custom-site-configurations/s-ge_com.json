@@ -6,7 +6,7 @@
             "remote-user": "switzerland-ge_com",
             "root": "/var/www/switzerland-ge_com/public_html",
             "uri": "http://www.s-ge.com",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
             "branch": "prod"
         },
         "prod2": {
@@ -15,7 +15,7 @@
             "remote-user": "switzerland-ge_com",
             "root": "/var/www/switzerland-ge_com/public_html",
             "uri": "http://www.s-ge.com",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
             "branch": "prod"
         },
         "prod3": {
@@ -24,7 +24,7 @@
             "remote-user": "switzerland-ge_com",
             "root": "/var/www/switzerland-ge_com/public_html",
             "uri": "http://www.s-ge.com",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
             "branch": "prod"
         },
         "prod4": {
@@ -33,7 +33,7 @@
             "remote-user": "switzerland-ge_com",
             "root": "/var/www/switzerland-ge_com/public_html",
             "uri": "http://www.s-ge.com",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
             "branch": "prod"
         },
         "dev": {

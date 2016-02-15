@@ -24,7 +24,7 @@
             "remote-user": "resourceaward_org",
             "root": "/var/www/resourceaward_org/public_html",
             "uri": "http://www.resourceaward.org",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend2.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
         }
     }
 }

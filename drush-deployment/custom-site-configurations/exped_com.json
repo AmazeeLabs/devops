@@ -7,13 +7,7 @@
       "root": "/var/www/exped_com_dev/public_html",
       "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
       "deploy-via": "Pull",
-      "branch": "dev",
-      "after": {
-        "deploy-update-code": [
-          "deploy_gulp_compile_task",
-          "deploy_cache_css_js_task"
-        ]
-      }
+      "branch": "dev"
     },
     "staging": {
       "remote-host": "dev1.compact.amazee.io",
@@ -22,13 +16,7 @@
       "root": "/var/www/exped_com_staging/public_html",
       "uri": "http://$siteurl.staging.dev1.compact.amazee.io",
       "deploy-via": "Pull",
-      "branch": "staging",
-      "after": {
-        "deploy-update-code": [
-          "deploy_gulp_compile_task",
-          "deploy_cache_css_js_task"
-        ]
-      }
+      "branch": "staging"
     },
     "prod": {
       "remote-host": "backend.zh1.single.amazee.io",
@@ -36,13 +24,7 @@
       "remote-user": "exped_com",
       "root": "/var/www/exped_com/public_html",
       "uri": "http://www.exped.com",
-      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend2.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-      "after": {
-        "deploy-update-code": [
-          "deploy_gulp_build_task",
-          "deploy_cache_css_js_task"
-        ]
-      }
+      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend2.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
     }
   }
 }

@@ -15,12 +15,7 @@
             "root": "/var/www/erecycling_ch_dev/public_html",
             "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
-            "branch": "dev",
-            "after": {
-                "deploy-update-code": [
-                    "deploy_cache_css_js_task"
-                ]
-            }
+            "branch": "dev"
         }
     }
 }

@@ -7,13 +7,7 @@
       "root": "/var/www/connectiv_ch_dev/public_html",
       "uri": "http://$siteurl.dev.sa1.compact.amazee.io",
       "deploy-via": "Pull",
-      "branch": "dev",
-      "after": {
-        "deploy-update-code": [
-          "deploy_gulp_compile_task",
-          "deploy_cache_css_js_task"
-        ]
-      }
+      "branch": "dev"
     },
     "prod": {
       "remote-host": "backend.zh1.single.amazee.io",
@@ -21,13 +15,7 @@
       "remote-user": "connectiv_ch",
       "root": "/var/www/connectiv_ch/public_html",
       "uri": "http://www.connectiv.ch",
-      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend2.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
-      "after": {
-        "deploy-update-code": [
-          "deploy_gulp_compile_task",
-          "deploy_cache_css_js_task"
-        ]
-      }
+      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend2.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
     }
   }
 }

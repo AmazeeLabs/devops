@@ -32,7 +32,7 @@
             "remote-environment": "cluster.amazee.io",
             "remote-user": "zuerich_com",
             "root": "/var/www/zuerich_com/public_html",
-            "uri": "http://www.zueric.com",
+            "uri": "http://www.zuerich.com",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
             "branch": "prod"
         },
@@ -41,7 +41,7 @@
             "remote-environment": "cluster.amazee.io",
             "remote-user": "zuerich_com",
             "root": "/var/www/zuerich_com/public_html",
-            "uri": "http://www.zueric.com",
+            "uri": "http://www.zuerich.com",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
             "branch": "prod"
         },
@@ -50,7 +50,7 @@
             "remote-environment": "cluster.amazee.io",
             "remote-user": "zuerich_com",
             "root": "/var/www/zuerich_com/public_html",
-            "uri": "http://www.zueric.com",
+            "uri": "http://www.zuerich.com",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
             "branch": "prod"
         },
@@ -59,7 +59,7 @@
             "remote-environment": "cluster.amazee.io",
             "remote-user": "zuerich_com",
             "root": "/var/www/zuerich_com/public_html",
-            "uri": "http://www.zueric.com",
+            "uri": "http://www.zuerich.com",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
             "branch": "prod"
         }

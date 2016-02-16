@@ -1,0 +1,13 @@
+{
+    "servers": {
+        "dev": {
+            "remote-host": "sa1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "localsearch_ch_dev",
+            "root": "/var/www/localsearch_ch_dev/public_html",
+            "uri": "http://$siteurl.dev.sa1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev"
+        }
+    }
+}

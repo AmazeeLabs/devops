@@ -6,7 +6,7 @@
             "remote-environment": "amazee.io",
             "remote-user": "sbb-zufriedenheit_ch",
             "root": "/var/www/sbb-zufriedenheit_ch/public_html",
-            "uri": "http://$siteurl.dev1.compact.amazee.io",
+            "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "dev"
         }

@@ -15,6 +15,15 @@
                 ]
             }
         },
+        "dropguard": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "u-blox_com_dropguard",
+            "root": "/var/www/u-blox_com_dropguard/public_html",
+            "uri": "http://$siteurl.dropguard.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dropguard"
+        },        
         "performance": {
             "remote-host": "dev1.compact.amazee.io",
             "remote-environment": "amazee.io",

@@ -27,6 +27,15 @@
             "deploy-via": "Pull",
             "branch": "gulp"
         },
+        "dropguard": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "zuerich_com_dropguard",
+            "root": "/var/www/zuerich_com_dropguard/public_html",
+            "uri": "http://$siteurl.dropguard.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dropguard"
+        },        
         "prod1": {
             "remote-host": "backend1.zh1.cluster.amazee.io",
             "remote-environment": "cluster.amazee.io",

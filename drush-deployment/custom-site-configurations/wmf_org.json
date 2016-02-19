@@ -7,13 +7,7 @@
             "root": "/var/www/wmf_org_dev/public_html",
             "uri": "http://$siteurl.dev.us1.compact.amazee.io",
             "deploy-via": "Pull",
-            "branch": "dev",
-            "after": {
-                "deploy-update-code": [
-                    "deploy_gulp_compile_task",
-                    "deploy_cache_css_js_task"
-                ]
-            }
+            "branch": "dev"
         },
         "prod": {
             "remote-host": "us1.compact.amazee.io",
@@ -21,13 +15,7 @@
             "remote-user": "wmf_org",
             "root": "/var/www/wmf_org/public_html",
             "uri": "http://$siteurl",
-            "branch": "prod",
-            "after": {
-                "deploy-update-code": [
-                    "deploy_gulp_build_task",
-                    "deploy_cache_css_js_task"
-                ]
-            }
+            "branch": "prod"
         }
     }
 }

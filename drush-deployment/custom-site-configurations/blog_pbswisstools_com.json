@@ -10,6 +10,15 @@
             "deploy-via": "Pull",
             "branch": "dev"
         },
+        "dropguard": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "blog_pbswisstools_com_dg",
+            "root": "/var/www/blog_pbswisstools_com_dg/public_html",
+            "uri": "http://$siteurl.dropguard.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dropguard"
+        },
         "prod": {
             "remote-host": "backend.zh2.single.amazee.io",
             "remote-environment": "amazee.io",

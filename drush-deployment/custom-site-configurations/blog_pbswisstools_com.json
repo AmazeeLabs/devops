@@ -11,11 +11,12 @@
             "branch": "dev"
         },
         "dropguard": {
-            "remote-host": "dev1.compact.amazee.io",
+            "remote-host": "backend.zh2.single.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "blog_pbswisstools_com_dg",
             "root": "/var/www/blog_pbswisstools_com_dg/public_html",
-            "uri": "http://$siteurl.dropguard.dev1.compact.amazee.io",
+            "uri": "http://$siteurl.dropguard.zh2.single.amazee.io",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
             "deploy-via": "Pull",
             "branch": "dropguard"
         },

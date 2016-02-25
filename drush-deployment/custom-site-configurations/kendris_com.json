@@ -30,6 +30,12 @@
                 ]
             }
         },
+        "prod-securitytest": {
+            "remote-host": "kendris1.compact.amazee.io",
+            "remote-user": "kendris_com",
+            "root": "/var/www/kendris_com/public_html",
+            "uri": "http://www.kendris.com"
+        },        
         "prod1": {
             "remote-host": "backend1.zh1.cluster.amazee.io",
             "remote-environment": "cluster.amazee.io",

@@ -43,6 +43,14 @@
                 ]
             }
         },
+        "php7": {
+            "remote-host": "zh1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "amazeelabs_com",
+            "root": "/var/www/amazeelabs_com/public_html",
+            "uri": "http://$siteurl",
+            "branch": "prod"
+        },
         "ansible_deploy": {
             "remote-host": "test1.compact.amazee.io",
             "remote-environment": "amazee.io",

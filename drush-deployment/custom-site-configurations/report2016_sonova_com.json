@@ -7,10 +7,7 @@
             "root": "/var/www/report_sonova_com_dev/public_html/2016",
             "uri": "http://report.sonova.com.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
-            "branch": "dev",
-            "after": {
-                "deploy-update-code": []
-            }
+            "branch": "dev"
         }
     }
 }

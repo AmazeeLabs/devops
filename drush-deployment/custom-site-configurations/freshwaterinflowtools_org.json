@@ -14,7 +14,8 @@
             "remote-environment": "amazee.io",
             "remote-user": "freshwater_prod",
             "root": "/var/www/freshwater_prod/public_html",
-            "uri": "http://www.freshwaterinflow.org"
+            "uri": "http://www.freshwaterinflow.org",
+            "deploy-via": "RemoteCache"
         }
     }
 }

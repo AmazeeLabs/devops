@@ -15,7 +15,7 @@
             "remote-user": "tvn_com_prod",
             "root": "/var/www/tvn_com_prod/public_html",
             "uri": "http://www.tvn.com",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend2.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend2.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
         }
     }
 }

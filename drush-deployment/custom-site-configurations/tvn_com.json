@@ -10,13 +10,12 @@
             "branch": "develop"
         },
         "master": {
-            "remote-host": "backend.zh1.single.amazee.io",
+            "remote-host": "zh1.compact.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "tvn_com_prod",
             "root": "/var/www/tvn_com_prod/public_html",
             "uri": "http://www.tvn.com",
-            "branch": "master",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend2.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
+            "branch": "master"
         }
     }
 }

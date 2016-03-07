@@ -18,14 +18,14 @@
       "deploy-via": "Pull",
       "branch": "staging"
     },
-    "megamenue": {
+    "megamenu": {
       "remote-host": "dev1.compact.amazee.io",
       "remote-environment": "amazee.io",
-      "remote-user": "zuerich_com_megamenue",
-      "root": "/var/www/zuerich_com_megamenue/public_html",
-      "uri": "http://$siteurl.megamenue.dev1.compact.amazee.io",
+      "remote-user": "zuerich_com_megamenu",
+      "root": "/var/www/zuerich_com_megamenu/public_html",
+      "uri": "http://$siteurl.megamenu.dev1.compact.amazee.io",
       "deploy-via": "Pull",
-      "branch": "megamenue"
+      "branch": "megamenu"
     },
     "gulp": {
       "remote-host": "dev1.compact.amazee.io",

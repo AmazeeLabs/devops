@@ -9,6 +9,50 @@
             "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "dev"
+        },
+        "prod1": {
+            "remote-host": "backend1.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "sbb-zufriedenheit_ch",
+            "root": "/var/www/sbb-zufriedenheit_ch/public_html",
+            "uri": "http://sbb-zufriedenheit.ch/",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "branch": "prod"
+        },
+        "prod2": {
+            "remote-host": "backend2.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "sbb-zufriedenheit_ch",
+            "root": "/var/www/sbb-zufriedenheit_ch/public_html",
+            "uri": "http://sbb-zufriedenheit.ch/",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "branch": "prod"
+        },
+        "prod3": {
+            "remote-host": "backend3.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "sbb-zufriedenheit_ch",
+            "root": "/var/www/sbb-zufriedenheit_ch/public_html",
+            "uri": "http://sbb-zufriedenheit.ch/",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "branch": "prod"
+        },
+        "prod4": {
+            "remote-host": "backend4.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "sbb-zufriedenheit_ch",
+            "root": "/var/www/sbb-zufriedenheit_ch/public_html",
+            "uri": "http://sbb-zufriedenheit.ch/",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "branch": "prod"
         }
+    },
+    "groups": {
+        "prod": [
+            "prod1",
+            "prod2",
+            "prod3",
+            "prod4"
+        ]
     }
 }

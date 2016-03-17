@@ -9,7 +9,16 @@
       "deploy-via": "Pull",
       "branch": "dev"
     },
-    "prod": {
+    "staging": {
+      "remote-host": "dev1.compact.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "afp-kuechen_ch_staging",
+      "root": "/var/www/afp-kuechen_ch_staging/public_html",
+      "uri": "http://$siteurl.staging.dev1.compact.amazee.io",
+      "deploy-via": "Pull",
+      "branch": "staging"
+    },
+      "prod": {
       "remote-host": "backend.zh1.single.amazee.io",
       "remote-environment": "amazee.io",
       "remote-user": "afp-kuechen_ch",

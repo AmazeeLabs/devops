@@ -7,7 +7,7 @@
             "root": "/var/www/ypsomed_com_dev/public_html",
             "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
-            "branch": "dev",
+            "branch": "dev"
         }
     }
 }

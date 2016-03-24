@@ -4,7 +4,7 @@
             "remote-host": "dev1.compact.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "ypsomed_com_dev",
-            "root": "/var/www/ypsomed_com_dev/public_html",
+            "root": "/var/www/ypsomed_com_dev/public_html/web",
             "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "dev"

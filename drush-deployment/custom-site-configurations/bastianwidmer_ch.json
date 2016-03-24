@@ -1,6 +1,6 @@
 {
     "servers": {
-        "test1.compact": {
+        "dev": {
             "remote-host": "test1.compact.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "bastianwidmer_ch",

@@ -16,6 +16,15 @@
             "root": "/var/www/another_ink_master/public_html/web",
             "uri": "http://www.another.ink",
             "branch": "master"
-        }
+        },
+        "tvn_com-develop": {
+            "remote-host": "zh1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "tvn_com_develop",
+            "root": "/var/www/tvn_com_develop/public_html/web",
+            "uri": "http://$siteurl.develop.zh1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "develop"
+        }    
     }
 }

@@ -15,7 +15,7 @@
       "remote-user": "connectiv_ch",
       "root": "/var/www/connectiv_ch/public_html",
       "uri": "http://www.connectiv.ch",
-      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend2.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
+      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend2.zh1.single.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\""
     }
   }
 }

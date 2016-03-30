@@ -15,7 +15,7 @@
             "remote-user": "anno1914_srf_ch",
             "root": "/var/www/anno1914_srf_ch/public_html",
             "uri": "http://$siteurl",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend2.zh1.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend2.zh1.single.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
             "branch": "prod"
         }
     }

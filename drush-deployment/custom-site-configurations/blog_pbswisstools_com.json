@@ -6,7 +6,7 @@
             "remote-user": "blog_pbswisstools_com_dev",
             "root": "/var/www/blog_pbswisstools_com_dev/public_html",
             "uri": "http://$siteurl.dev.zh2.single.amazee.io",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
             "deploy-via": "Pull",
             "branch": "dev"
         },
@@ -16,7 +16,7 @@
             "remote-user": "blog_pbswisstools_com_dg",
             "root": "/var/www/blog_pbswisstools_com_dg/public_html",
             "uri": "http://$siteurl.dropguard.zh2.single.amazee.io",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
             "deploy-via": "Pull",
             "branch": "dropguard"
         },
@@ -26,7 +26,7 @@
             "remote-user": "blog_pbswisstools_com",
             "root": "/var/www/blog_pbswisstools_com/public_html",
             "uri": "http://$siteurl",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
             "branch": "prod"
         }
     }

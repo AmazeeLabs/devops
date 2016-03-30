@@ -6,7 +6,7 @@
             "remote-user": "nuklearforum_ch_dev",
             "root": "/var/www/nuklearforum_ch_dev/public_html",
             "uri": "http://$siteurl.dev.zh2.single.amazee.io",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
             "deploy-via": "Pull",
             "branch": "dev"
         },
@@ -16,7 +16,7 @@
             "remote-user": "nuklearforum_ch",
             "root": "/var/www/nuklearforum_ch/public_html",
             "uri": "http://$siteurl",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
             "branch": "prod"
         }
     }

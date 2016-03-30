@@ -35,14 +35,14 @@
             "remote-user": "kendris_com",
             "root": "/var/www/kendris_com/public_html",
             "uri": "http://www.kendris.com"
-        },        
+        },
         "prod1": {
             "remote-host": "backend1.zh1.cluster.amazee.io",
             "remote-environment": "cluster.amazee.io",
             "remote-user": "kendris_com",
             "root": "/var/www/kendris_com/public_html",
             "uri": "http://www.kendris.com",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
             "after": {
                 "deploy-update-code": [
                     "deploy_gulp_build_task",
@@ -56,7 +56,7 @@
             "remote-user": "kendris_com",
             "root": "/var/www/kendris_com/public_html",
             "uri": "http://www.kendris.com",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
             "after": {
                 "deploy-update-code": [
                     "deploy_gulp_build_task",
@@ -70,7 +70,7 @@
             "remote-user": "kendris_com",
             "root": "/var/www/kendris_com/public_html",
             "uri": "http://www.kendris.com",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
             "after": {
                 "deploy-update-code": [
                     "deploy_gulp_build_task",
@@ -84,7 +84,7 @@
             "remote-user": "kendris_com",
             "root": "/var/www/kendris_com/public_html",
             "uri": "http://www.kendris.com",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
             "after": {
                 "deploy-update-code": [
                     "deploy_gulp_build_task",

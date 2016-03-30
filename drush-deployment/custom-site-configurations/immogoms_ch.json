@@ -6,7 +6,7 @@
             "remote-user": "immogoms_ch",
             "root": "/var/www/immogoms_ch/public_html",
             "uri": "http://$siteurl",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\""
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\""
         }
     }
 }

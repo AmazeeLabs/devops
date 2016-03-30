@@ -16,7 +16,7 @@
             "remote-user": "sbb-zufriedenheit_ch",
             "root": "/var/www/sbb-zufriedenheit_ch/public_html",
             "uri": "http://sbb-zufriedenheit.ch/",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
             "branch": "prod"
         },
         "prod2": {
@@ -25,7 +25,7 @@
             "remote-user": "sbb-zufriedenheit_ch",
             "root": "/var/www/sbb-zufriedenheit_ch/public_html",
             "uri": "http://sbb-zufriedenheit.ch/",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
             "branch": "prod"
         },
         "prod3": {
@@ -34,7 +34,7 @@
             "remote-user": "sbb-zufriedenheit_ch",
             "root": "/var/www/sbb-zufriedenheit_ch/public_html",
             "uri": "http://sbb-zufriedenheit.ch/",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
             "branch": "prod"
         },
         "prod4": {
@@ -43,7 +43,7 @@
             "remote-user": "sbb-zufriedenheit_ch",
             "root": "/var/www/sbb-zufriedenheit_ch/public_html",
             "uri": "http://sbb-zufriedenheit.ch/",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $AMAZEEIO_SSH_OPTIONS 2> /dev/null\"",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
             "branch": "prod"
         }
     },

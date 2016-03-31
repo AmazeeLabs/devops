@@ -32,6 +32,15 @@
             "uri": "http://www.for.org",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\""
         },
+        "staging": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "for_org_staging",
+            "root": "/var/www/for_org_staging/public_html",
+            "uri": "http://$siteurl.staging.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "staging"
+        },
         "dev": {
             "remote-host": "dev1.compact.amazee.io",
             "remote-environment": "amazee.io",

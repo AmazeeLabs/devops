@@ -8,6 +8,14 @@
             "uri": "http://$siteurl.dev1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "dev"
-        }
+        },
+        "ansible_refactor_test": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "mysite",
+            "root": "/var/www/mysite/public_html",
+            "uri": "http://$siteurl.dev1.compact.amazee.io",
+            "branch": "dev"
+        }        
     }
 }

@@ -1,0 +1,13 @@
+{
+  "servers": {
+    "dev": {
+      "remote-host": "us1.compact.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "gulfbase_org_dev",
+      "root": "/var/www/gulfbase_org_dev/public_html",
+      "uri": "http://$siteurl.us1.compact.amazee.io",
+      "deploy-via": "Pull",
+      "branch": "dev"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "servers": {
+    "dev": {
+      "remote-host": "dev1.compact.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "forster-kuechen_ch",
+      "root": "/var/www/forster-kuechen_ch/public_html",
+      "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+      "deploy-via": "Pull",
+      "branch": "dev"
+    }
+  }
+}

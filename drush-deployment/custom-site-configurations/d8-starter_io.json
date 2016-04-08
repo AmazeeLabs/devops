@@ -17,6 +17,15 @@
             "uri": "http://$siteurl.test1.compact.amazee.io",
             "deploy-via": "Pull",            
             "branch": "ansible_refactor_test"
+        },
+        "apparmor_test": {
+            "remote-host": "test1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "drupal7full_amazee_io",
+            "root": "/var/www/drupal7full_amazee_io/public_html",
+            "uri": "http://drupal7full.test1.compact.amazee.io",
+            "deploy-via": "Pull",            
+            "branch": "apparmor_test"
         }        
     }
 }

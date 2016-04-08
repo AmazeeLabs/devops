@@ -24,7 +24,6 @@
             "remote-user": "drupal7full_amazee_io",
             "root": "/var/www/drupal7full_amazee_io/public_html",
             "uri": "http://drupal7full.test1.compact.amazee.io",
-            "deploy-via": "Pull",            
             "branch": "apparmor_test"
         }        
     }

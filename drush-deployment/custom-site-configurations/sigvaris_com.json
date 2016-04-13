@@ -22,7 +22,7 @@
             "remote-host": "sigvaris01.nine.ch",
             "remote-user": "www-sigvariscom",
             "root": "/home/www-sigvariscom/sigvaris.com/public_html",
-            "base_path": "/home/www-sigvariscom/sigvaris.com",
+            "base-path": "/home/www-sigvariscom/sigvaris.com",
             "uri": "http://sigvaris.com.sigvaris01.nine.ch",
             "deploy-via": "Pull",
             "branch": "prod"

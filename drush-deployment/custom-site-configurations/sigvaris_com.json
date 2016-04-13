@@ -4,7 +4,7 @@
             "remote-host": "dev1.compact.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "sigvaris_com_dev",
-            "root": "/var/www/sigvaris_com_dev",
+            "root": "/var/www/sigvaris_com_dev/public_html",
             "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "dev"
@@ -13,7 +13,7 @@
             "remote-host": "dev1.compact.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "sigvaris_com_staging",
-            "root": "/var/www/sigvaris_com_staging",
+            "root": "/var/www/sigvaris_com_staging/public_html",
             "uri": "http://$siteurl.staging.dev1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "staging"
@@ -21,9 +21,10 @@
         "prod": {
             "remote-host": "sigvaris01.nine.ch",
             "remote-user": "www-sigvariscom",
-            "root": "/home/www-sigvariscom/sigvaris.com",
+            "root": "/home/www-sigvariscom/sigvaris.com/public_html",
+            "base_path": "/home/www-sigvariscom/sigvaris.com",
             "uri": "http://sigvaris.com.sigvaris01.nine.ch",
-            "deploy-via": "PullProd",
+            "deploy-via": "Pull",
             "branch": "prod"
         }
     }

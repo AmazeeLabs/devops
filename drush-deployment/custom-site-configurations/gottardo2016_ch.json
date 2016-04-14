@@ -22,22 +22,7 @@
             "root": "/var/www/gottardo2016_ch_staging/public_html",
             "uri": "http://$siteurl.staging.dev1.compact.amazee.io",
             "deploy-via": "Pull",
-            "branch": "GOTTARDO-191-d8",
-            "after": {
-                "deploy-update-code": [
-                    "deploy_gulp_compile_task",
-                    "deploy_cache_css_js_task"
-                ]
-            }
-        },
-        "GOTTARDO-191-d8": {
-            "remote-host": "dev1.compact.amazee.io",
-            "remote-environment": "amazee.io",
-            "remote-user": "gottardo2016_ch_staging",
-            "root": "/var/www/gottardo2016_ch_staging/public_html",
-            "uri": "http://$siteurl.staging.dev1.compact.amazee.io",
-            "deploy-via": "Pull",
-            "branch": "GOTTARDO-191-d8",
+            "branch": "staging",
             "after": {
                 "deploy-update-code": [
                     "deploy_gulp_compile_task",

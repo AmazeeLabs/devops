@@ -6,7 +6,7 @@
             "remote-user": "performance_d7_noapc_amazee_io",
             "root": "/var/www/performance_d7_noapc_amazee_io/public_html",
             "uri": "http://performance.d7.noapc.test1.compact.amazee.io",
-            "branch": "master"
+            "branch": "performance_d7_noapc_amazee_io"
         }
     }
 }

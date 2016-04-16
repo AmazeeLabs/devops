@@ -1,12 +1,12 @@
 {
     "servers": {
-        "performance_d7_noapc_amazee_io": {
+        "performance_d7_noapc_fpmsmall_us1_amazee_io": {
             "remote-host": "test1.compact.amazee.io",
             "remote-environment": "amazee.io",
-            "remote-user": "performance_d7_noapc_amazee_io",
-            "root": "/var/www/performance_d7_noapc_amazee_io/public_html",
-            "uri": "http://performance.d7.noapc.test1.compact.amazee.io",
-            "branch": "performance_d7_noapc_amazee_io"
+            "remote-user": "performance_d7_noapc_fpmsmall_amazee_io",
+            "root": "/var/www/performance_d7_noapc_fpmsmall_amazee_io/public_html",
+            "uri": "http://performance.d7.noapc.fpmsmall.test1.compact.amazee.io",
+            "branch": "performance_d7_noapc_fpmsmall_us1_amazee_io"
         },
         "performance_d7_noapc_us1_amazee_io": {
             "remote-host": "us1.compact.amazee.io",
@@ -15,6 +15,58 @@
             "root": "/var/www/performance_d7_noapc_amazee_io/public_html",
             "uri": "http://performance.d7.noapc.us1.compact.amazee.io",
             "branch": "performance_d7_noapc_us1_amazee_io"
+        },
+        "performance_d7_apc_us1_amazee_io": {
+            "remote-host": "us1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "performance_d7_apc_amazee_io",
+            "root": "/var/www/performance_d7_apc_amazee_io/public_html",
+            "uri": "http://performance.d7.apc.us1.compact.amazee.io",
+            "branch": "performance_d7_apc_us1_amazee_io"
+        },
+        "prod1": {
+            "remote-host": "backend1.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "performance_d7_noapc_amazee_io",
+            "root": "/var/www/performance_d7_noapc_amazee_io/public_html",
+            "uri": "http://performance.d7.noapc.zh1.cluster.amazee.io/",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
+            "branch": "prod"
+        },
+        "prod2": {
+            "remote-host": "backend2.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "performance_d7_noapc_amazee_io",
+            "root": "/var/www/performance_d7_noapc_amazee_io/public_html",
+            "uri": "http://performance.d7.noapc.zh1.cluster.amazee.io/",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
+            "branch": "prod"
+        },
+        "prod3": {
+            "remote-host": "backend3.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "performance_d7_noapc_amazee_io",
+            "root": "/var/www/performance_d7_noapc_amazee_io/public_html",
+            "uri": "http://performance.d7.noapc.zh1.cluster.amazee.io/",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
+            "branch": "prod"
+        },
+        "prod4": {
+            "remote-host": "backend4.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "performance_d7_noapc_amazee_io",
+            "root": "/var/www/performance_d7_noapc_amazee_io/public_html",
+            "uri": "http://performance.d7.noapc.zh1.cluster.amazee.io/",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
+            "branch": "prod"
         }        
+    },
+    "groups": {
+        "prod": [
+            "prod1",
+            "prod2",
+            "prod3",
+            "prod4"
+        ]
     }
 }

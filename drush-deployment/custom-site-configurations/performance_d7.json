@@ -63,8 +63,8 @@
     },
     "groups": {
         "prod": [
-            "prod1",
             "prod2",
+            "prod1",
             "prod3",
             "prod4"
         ]

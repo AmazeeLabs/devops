@@ -5,7 +5,7 @@
             "remote-host": "zh1.compact.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "gotthard_sbb_ch_dev",
-            "root": "/var/www/gotthard_sbb_ch_dev/public_html/web",
+            "root": "/var/www/gotthard_sbb_ch_dev/public_html",
             "uri": "http://$siteurl.dev.zh1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "dev"

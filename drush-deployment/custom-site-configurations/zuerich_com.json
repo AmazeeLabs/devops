@@ -45,6 +45,15 @@
       "deploy-via": "Pull",
       "branch": "dropguard"
     },
+    "home": {
+      "remote-host": "dev1.compact.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "zuerich_com_home",
+      "root": "/var/www/zuerich_com_home/public_html",
+      "uri": "http://$siteurl.home.dev1.compact.amazee.io",
+      "deploy-via": "Pull",
+      "branch": "home"
+    },    
     "ZT-128-footer": {
       "remote-host": "dev1.compact.amazee.io",
       "remote-environment": "amazee.io",

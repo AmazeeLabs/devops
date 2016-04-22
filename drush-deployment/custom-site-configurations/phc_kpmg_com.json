@@ -1,13 +1,13 @@
 {
-    "servers": {
-        "dev": {
-            "remote-host": "dev1.compact.amazee.io",
-            "remote-environment": "amazee.io",
-            "remote-user": "phc_kpmg_com",
-            "root": "/var/www/phc_kpmg_com/public_html",
-            "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
-            "deploy-via": "Pull",
-            "branch": "dev"
-        }
+  "servers": {
+    "dev": {
+      "remote-host": "dev1.compact.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "phc_kpmg_com",
+      "root": "/var/www/phc_kpmg_com/public_html",
+      "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+      "deploy-via": "Pull",
+      "branch": "dev"
     }
+  }
 }

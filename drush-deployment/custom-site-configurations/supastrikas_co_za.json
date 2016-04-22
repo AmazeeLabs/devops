@@ -8,6 +8,15 @@
             "uri": "http://$siteurl.dev.sa1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "dev"
+        },
+        "prod": {
+            "remote-host": "sa1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "supastrikas_co_za_prod",
+            "root": "/var/www/supastrikas_co_za_prod/public_html",
+            "uri": "http://$siteurl.dev.sa1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev"
         }
     }
 }

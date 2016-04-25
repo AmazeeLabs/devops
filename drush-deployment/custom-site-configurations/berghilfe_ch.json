@@ -16,6 +16,15 @@
             "root": "/var/www/berghilfe_ch/public_html",
             "uri": "http://www.berghilfe.ch",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend2.zh1.single.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\""
+        },
+        "staging": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "berghilfe_ch_staging",
+            "root": "/var/www/berghilfe_ch_staging/public_html",
+            "uri": "http://$siteurl.staging.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "staging"
         }
     }
 }

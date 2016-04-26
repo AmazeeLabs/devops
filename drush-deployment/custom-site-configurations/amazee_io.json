@@ -17,15 +17,6 @@
             "deploy-via": "Pull",
             "branch": "dev"
         },
-        "other-structure": {
-            "remote-host": "dev1.compact.amazee.io",
-            "remote-environment": "amazee.io",
-            "remote-user": "amazee_io_other_structure",
-            "root": "/var/www/amazee_io_other_structure/public_html",
-            "uri": "http://$siteurl.other-structure.dev1.compact.amazee.io",
-            "deploy-via": "Pull",
-            "branch": "other-structure"
-        },
         "version3": {
             "remote-host": "dev1.compact.amazee.io",
             "remote-environment": "amazee.io",

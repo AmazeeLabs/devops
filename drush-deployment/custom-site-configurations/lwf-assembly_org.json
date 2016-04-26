@@ -3,8 +3,8 @@
     "dev": {
       "remote-host": "sa1.compact.amazee.io",
       "remote-environment": "amazee.io",
-      "remote-user": "lwf-assembly_org",
-      "root": "/var/www/lwf-assembly_org/public_html",
+      "remote-user": "lwf-assembly_org_dev",
+      "root": "/var/www/lwf-assembly_org_dev/public_html",
       "uri": "http://$siteurl.dev.sa1.compact.amazee.io",
       "deploy-via": "Pull",
       "branch": "dev"

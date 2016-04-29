@@ -10,6 +10,15 @@
             "deploy-via": "Pull",
             "branch": "dev"
         },
+        "dropguard": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "sbb-zufriedenheit_ch_dg",
+            "root": "/var/www/sbb-zufriedenheit_ch_dg/public_html",
+            "uri": "http://$siteurl.dropguard.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev"
+        },
         "prod1": {
             "remote-host": "backend1.zh1.cluster.amazee.io",
             "remote-environment": "cluster.amazee.io",

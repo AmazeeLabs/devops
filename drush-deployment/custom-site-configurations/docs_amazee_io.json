@@ -1,0 +1,13 @@
+{
+  "servers": {
+    "dev": {
+      "remote-host": "zh1.compact.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "docs_amazee_io",
+      "root": "/var/www/docs_amazee_io/public_html",
+      "uri": "http://$siteurl.zh1.compact.amazee.io",
+      "deploy-via": "Pull",
+      "branch": "dev"
+    }
+  }
+}

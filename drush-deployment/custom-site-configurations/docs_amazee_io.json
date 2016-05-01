@@ -1,11 +1,12 @@
 {
   "servers": {
     "master": {
-      "remote-host": "zh1.compact.amazee.io",
+      "remote-host": "backend.zh1.single.amazee.io",
       "remote-environment": "amazee.io",
       "remote-user": "docs_amazee_io",
       "root": "/var/www/docs_amazee_io/public_html",
       "uri": "http://$siteurl.zh1.compact.amazee.io",
+      "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend2.zh1.single.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
       "deploy-via": "Pull",
       "branch": "master"
     }

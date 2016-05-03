@@ -44,7 +44,6 @@
             "remote-environment": "cluster.amazee.io",
             "remote-user": "sonova_com",
             "root": "/var/www/sonova_com/public_html",
-            "uri": "http://www.sonova.com",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
             "branch": "prod"
         },

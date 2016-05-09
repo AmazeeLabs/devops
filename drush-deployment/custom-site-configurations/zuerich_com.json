@@ -18,6 +18,15 @@
       "deploy-via": "Pull",
       "branch": "staging"
     },
+    "beta": {
+      "remote-host": "dev1.compact.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "zuerich_com_beta",
+      "root": "/var/www/zuerich_com_beta/public_html",
+      "uri": "http://$siteurl.beta.dev1.compact.amazee.io",
+      "deploy-via": "Pull",
+      "branch": "beta"
+    },
     "megamenu": {
       "remote-host": "dev1.compact.amazee.io",
       "remote-environment": "amazee.io",
@@ -53,7 +62,7 @@
       "uri": "http://$siteurl.home.dev1.compact.amazee.io",
       "deploy-via": "Pull",
       "branch": "home"
-    },    
+    },
     "ZT-128-footer": {
       "remote-host": "dev1.compact.amazee.io",
       "remote-environment": "amazee.io",

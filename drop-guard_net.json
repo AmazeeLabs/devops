@@ -1,0 +1,13 @@
+{
+    "servers": {
+        "dev": {
+            "remote-host": "zh1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "drop-guard_net",
+            "root": "/var/www/drop-guard_net/public_html",
+            "uri": "http://$siteurl.develop.zh1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "develop"
+        }
+    }
+}

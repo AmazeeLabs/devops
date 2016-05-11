@@ -7,7 +7,7 @@
             "root": "/var/www/drop-guard_com_dev/public_html",
             "uri": "http://$siteurl.develop.zh1.compact.amazee.io",
             "deploy-via": "Pull",
-            "branch": "develop"
+            "branch": "dev"
         }
     }
 }

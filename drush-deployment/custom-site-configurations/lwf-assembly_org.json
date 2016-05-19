@@ -15,7 +15,6 @@
       "remote-user": "lwf-assembly_org_prod",
       "root": "/var/www/lwf-assembly_org_prod/public_html",
       "uri": "http://$siteurl",
-      "deploy-via": "Pull",
       "branch": "dev"
     }
   }

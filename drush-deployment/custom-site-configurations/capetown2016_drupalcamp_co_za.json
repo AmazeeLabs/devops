@@ -1,0 +1,32 @@
+{
+    "servers": {
+        "dev": {
+            "remote-host": "sa1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "capetown2016_drupalcamp_dev",
+            "root": "/var/www/capetown2016_drupalcamp_dev/public_html",
+            "uri": "http://$siteurl.dev.sa1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev",
+            "after": {
+                "deploy-update-code": [
+                    "deploy_gulp_compile_task",
+                    "deploy_cache_css_js_task"
+                ]
+            }
+        },
+        "prod": {
+            "remote-host": "sa1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "capetown2016_drupalcamp_prod",
+            "root": "/var/www/capetown2016_drupalcamp_prod/public_html",
+            "uri": "http://$siteurl",
+            "after": {
+                "deploy-update-code": [
+                    "deploy_gulp_build_task",
+                    "deploy_cache_css_js_task"
+                ]
+            }
+        }
+    }
+}

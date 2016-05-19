@@ -9,6 +9,15 @@
       "deploy-via": "Pull",
       "branch": "dev"
     },
+    "landing-pages": {
+      "remote-host": "dev1.compact.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "fleet-portal_ch_landing-pages",
+      "root": "/var/www/fleet-portal_ch_landing-pages/public_html",
+      "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+      "deploy-via": "Pull",
+      "branch": "landing-pages"
+    },
     "prod": {
       "remote-host": "backend.zh1.single.amazee.io",
       "remote-environment": "amazee.io",

@@ -14,7 +14,7 @@
       "remote-environment": "amazee.io",
       "remote-user": "fleet-portal_ch_landing-pages",
       "root": "/var/www/fleet-portal_ch_landing-pages/public_html",
-      "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+      "uri": "http://$siteurl.landing-pages.dev1.compact.amazee.io",
       "deploy-via": "Pull",
       "branch": "landing-pages"
     },

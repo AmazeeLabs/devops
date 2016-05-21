@@ -1,51 +1,51 @@
 {
     "servers": {
-        "cluster_fail_after_deploy1": {
+        "cluster_production_fail_after_deploy1": {
             "remote-host": "backend1.zh1.cluster.amazee.io",
             "remote-user": "ansible_testing_production",
             "root": "/var/www/ansible_testing_production/public_html",
             "uri": "http://ansible_testing_production",
-            "branch": "cluster_fail_after_deploy"
+            "branch": "cluster_production_fail_after_deploy"
         },
-        "cluster_fail_after_deploy2": {
+        "cluster_production_fail_after_deploy2": {
             "remote-host": "backend2.zh1.cluster.amazee.io"
         },
-        "cluster_fail_after_deploy3": {
+        "cluster_production_fail_after_deploy3": {
             "remote-host": "backend3.zh1.cluster.amazee.io"
         },
-        "cluster_fail_after_deploy4": {
+        "cluster_production_fail_after_deploy4": {
             "remote-host": "backend4.zh1.cluster.amazee.io"
         },
-        "cluster_fail_before_deploy1": {
+        "cluster_production_fail_before_deploy1": {
             "remote-host": "backend1.zh1.cluster.amazee.io",
             "remote-user": "ansible_testing_production",
             "root": "/var/www/ansible_testing_production/public_html",
             "uri": "http://ansible_testing_production",
-            "branch": "fail_before_deploy"
+            "branch": "cluster_production_fail_before_deploy"
         },
-        "cluster_fail_before_deploy2": {
+        "cluster_production_fail_before_deploy2": {
             "remote-host": "backend2.zh1.cluster.amazee.io"
         },
-        "cluster_fail_before_deploy3": {
+        "cluster_production_fail_before_deploy3": {
             "remote-host": "backend3.zh1.cluster.amazee.io"
         },
-        "cluster_fail_before_deploy4": {
+        "cluster_production_fail_before_deploy4": {
             "remote-host": "backend4.zh1.cluster.amazee.io"
         },
-        "cluster_success1": {
+        "cluster_production_success1": {
             "remote-host": "backend1.zh1.cluster.amazee.io",
             "remote-user": "ansible_testing_production",
             "root": "/var/www/ansible_testing_production/public_html",
             "uri": "http://ansible_testing_production",
-            "branch": "cluster_success"
+            "branch": "cluster_production_success"
         },
-        "cluster_success2": {
+        "cluster_production_success2": {
             "remote-host": "backend2.zh1.cluster.amazee.io"
         },
-        "cluster_success3": {
+        "cluster_production_success3": {
             "remote-host": "backend3.zh1.cluster.amazee.io"
         },
-        "cluster_success4": {
+        "cluster_production_success4": {
             "remote-host": "backend4.zh1.cluster.amazee.io"
         },
         "compact_development_fail_after_deploy": {
@@ -95,23 +95,23 @@
         }
     },
     "groups": {
-        "cluster_fail_before_deploy": [
+        "cluster_production_fail_before_deploy": [
             "cluster_fail_after_deploy1",
             "cluster_fail_after_deploy2",
             "cluster_fail_after_deploy3",
             "cluster_fail_after_deploy4"
         ],
-        "cluster_fail_after_deploy": [
-            "cluster_fail_after_deploy1",
-            "cluster_fail_after_deploy2",
-            "cluster_fail_after_deploy3",
-            "cluster_fail_after_deploy4"
+        "cluster_production_fail_after_deploy": [
+            "cluster_production_fail_after_deploy1",
+            "cluster_production_fail_after_deploy2",
+            "cluster_production_fail_after_deploy3",
+            "cluster_production_fail_after_deploy4"
         ],
-        "cluster_success": [
-            "cluster_success1",
-            "cluster_success2",
-            "cluster_success3",
-            "cluster_success4"
+        "cluster_production_success": [
+            "cluster_production_success1",
+            "cluster_production_success2",
+            "cluster_production_success3",
+            "cluster_production_success4"
         ]
     }
 }

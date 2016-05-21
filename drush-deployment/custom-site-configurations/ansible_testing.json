@@ -96,10 +96,10 @@
     },
     "groups": {
         "cluster_production_fail_before_deploy": [
-            "cluster_production_fail_after_deploy1",
-            "cluster_production_fail_after_deploy2",
-            "cluster_production_fail_after_deploy3",
-            "cluster_production_fail_after_deploy4"
+            "cluster_production_fail_before_deploy1",
+            "cluster_production_fail_before_deploy2",
+            "cluster_production_fail_before_deploy3",
+            "cluster_production_fail_before_deploy4"
         ],
         "cluster_production_fail_after_deploy": [
             "cluster_production_fail_after_deploy1",

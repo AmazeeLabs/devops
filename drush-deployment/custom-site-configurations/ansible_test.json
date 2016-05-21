@@ -1,0 +1,48 @@
+{
+    "servers": {
+        "fail_after_deploy1": {
+            "remote-host": "backend1.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "ansible_test",
+            "root": "/var/www/ansible_test/public_html",
+            "uri": "http://ansible_test",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
+            "branch": "fail_after_deploy"
+        },
+        "fail_after_deploy2": {
+            "remote-host": "backend2.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "ansible_test",
+            "root": "/var/www/ansible_test/public_html",
+            "uri": "http://ansible_test",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
+            "branch": "fail_after_deploy"
+        },
+        "fail_after_deploy3": {
+            "remote-host": "backend3.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "ansible_test",
+            "root": "/var/www/ansible_test/public_html",
+            "uri": "http://ansible_test",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
+            "branch": "fail_after_deploy"
+        },
+        "fail_after_deploy4": {
+            "remote-host": "backend4.zh1.cluster.amazee.io",
+            "remote-environment": "cluster.amazee.io",
+            "remote-user": "ansible_test",
+            "root": "/var/www/ansible_test/public_html",
+            "uri": "http://ansible_test",
+            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
+            "branch": "fail_after_deploy"
+        }
+    },
+    "groups": {
+        "fail_after_deploy": [
+            "fail_after_deploy1",
+            "fail_after_deploy2",
+            "fail_after_deploy3",
+            "fail_after_deploy4"
+        ]
+    }
+}

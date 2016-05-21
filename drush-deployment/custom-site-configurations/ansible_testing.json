@@ -93,16 +93,16 @@
     },
     "groups": {
         "cluster_fail_before_deploy": [
-            "fail_before_deploy1",
-            "fail_before_deploy2",
-            "fail_before_deploy3",
-            "fail_before_deploy4"
+            "cluster_fail_after_deploy1",
+            "cluster_fail_after_deploy2",
+            "cluster_fail_after_deploy3",
+            "cluster_fail_after_deploy4"
         ],
         "cluster_fail_after_deploy": [
-            "fail_after_deploy1",
-            "fail_after_deploy2",
-            "fail_after_deploy3",
-            "fail_after_deploy4"
+            "cluster_fail_after_deploy1",
+            "cluster_fail_after_deploy2",
+            "cluster_fail_after_deploy3",
+            "cluster_fail_after_deploy4"
         ],
         "cluster_success": [
             "cluster_success1",

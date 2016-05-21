@@ -49,42 +49,45 @@
             "remote-host": "backend4.zh1.cluster.amazee.io"
         },
         "compact_development_fail_after_deploy": {
-            "remote-host": "test1.compact.cluster.amazee.io",
+            "remote-host": "test1.compact.amazee.io",
             "remote-user": "ansible_testing_development",
             "root": "/var/www/ansible_testing_development/public_html",
             "uri": "http://ansible_testing_development",
+            "deploy-via": "Pull",
             "branch": "compact_development_fail_after_deploy"
         },
         "compact_development_fail_before_deploy": {
-            "remote-host": "test1.compact.cluster.amazee.io",
+            "remote-host": "test1.compact.amazee.io",
             "remote-user": "ansible_testing_development",
             "root": "/var/www/ansible_testing_development/public_html",
             "uri": "http://ansible_testing_development",
+            "deploy-via": "Pull",
             "branch": "compact_development_fail_before_deploy"
         },
         "compact_development_success": {
-            "remote-host": "test1.compact.cluster.amazee.io",
+            "remote-host": "test1.compact.amazee.io",
             "remote-user": "ansible_testing_development",
             "root": "/var/www/ansible_testing_development/public_html",
             "uri": "http://ansible_testing_development",
+            "deploy-via": "Pull",
             "branch": "compact_development_success"
         },
         "compact_production_fail_after_deploy": {
-            "remote-host": "test1.compact.cluster.amazee.io",
+            "remote-host": "test1.compact.amazee.io",
             "remote-user": "ansible_testing_production",
             "root": "/var/www/ansible_testing_production/public_html",
             "uri": "http://ansible_testing_production",
             "branch": "compact_production_fail_after_deploy"
         },
         "compact_production_fail_before_deploy": {
-            "remote-host": "test1.compact.cluster.amazee.io",
+            "remote-host": "test1.compact.amazee.io",
             "remote-user": "ansible_testing_production",
             "root": "/var/www/ansible_testing_production/public_html",
             "uri": "http://ansible_testing_production",
             "branch": "compact_production_fail_before_deploy"
         },
         "compact_production_success": {
-            "remote-host": "test1.compact.cluster.amazee.io",
+            "remote-host": "test1.compact.amazee.io",
             "remote-user": "ansible_testing_production",
             "root": "/var/www/ansible_testing_production/public_html",
             "uri": "http://ansible_testing_production",

@@ -3,8 +3,8 @@
     "dev": {
       "remote-host": "dev1.compact.amazee.io",
       "remote-environment": "amazee.io",
-      "remote-user": "fahrplanrechner_mythos-gotthard",
-      "root": "/var/www/fahrplanrechner_mythos-gotthard/public_html",
+      "remote-user": "fahrplanrechner_mythosgottard",
+      "root": "/var/www/fahrplanrechner_mythosgottard/public_html",
       "uri": "http://$siteurl.dev.zh1.compact.amazee.io",
       "deploy-via": "Pull",
       "branch": "dev"
@@ -12,32 +12,32 @@
     "prod1": {
       "remote-host": "backend1.zh1.cluster.amazee.io",
       "remote-environment": "cluster.amazee.io",
-      "remote-user": "fahrplanrechner_mythos-gotthard",
-      "root": "/var/www/fahrplanrechner_mythos-gotthard/public_html",
+      "remote-user": "fahrplanrechner_mythosgottard",
+      "root": "/var/www/fahrplanrechner_mythosgottard/public_html",
       "uri": "http://fahrplanrechner.mythos-gotthard.ch",
       "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\""
     },
     "prod2": {
       "remote-host": "backend2.zh1.cluster.amazee.io",
       "remote-environment": "cluster.amazee.io",
-      "remote-user": "fahrplanrechner_mythos-gotthard",
-      "root": "/var/www/fahrplanrechner_mythos-gotthard/public_html",
+      "remote-user": "fahrplanrechner_mythosgottard",
+      "root": "/var/www/fahrplanrechner_mythosgottard/public_html",
       "uri": "http://fahrplanrechner.mythos-gotthard.ch",
       "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\""
     },
     "prod3": {
       "remote-host": "backend3.zh1.cluster.amazee.io",
       "remote-environment": "cluster.amazee.io",
-      "remote-user": "fahrplanrechner_mythos-gotthard",
-      "root": "/var/www/fahrplanrechner_mythos-gotthard/public_html",
+      "remote-user": "fahrplanrechner_mythosgottard",
+      "root": "/var/www/fahrplanrechner_mythosgottard/public_html",
       "uri": "http://fahrplanrechner.mythos-gotthard.ch",
       "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\""
     },
     "prod4": {
       "remote-host": "backend4.zh1.cluster.amazee.io",
       "remote-environment": "cluster.amazee.io",
-      "remote-user": "fahrplanrechner_mythos-gotthard",
-      "root": "/var/www/fahrplanrechner_mythos-gotthard/public_html",
+      "remote-user": "fahrplanrechner_mythosgottard",
+      "root": "/var/www/fahrplanrechner_mythosgottard/public_html",
       "uri": "http://fahrplanrechner.mythos-gotthard.ch",
       "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend1.zh1.cluster.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\""
     }

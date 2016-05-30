@@ -1,55 +1,52 @@
 {
-    "servers": {
-        "dev": {
-            "remote-host": "dev1.compact.amazee.io",
-            "remote-environment": "amazee.io",
-            "remote-user": "u-blox_com_dev",
-            "root": "/var/www/u-blox_com_dev/public_html",
-            "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
-            "deploy-via": "Pull",
-            "branch": "dev",
-            "after": {
-                "deploy-update-code": [
-                    "deploy_gulp_compile_task",
-                    "deploy_cache_css_js_task"
-                ]
-            }
-        },
-        "dropguard": {
-            "remote-host": "dev1.compact.amazee.io",
-            "remote-environment": "amazee.io",
-            "remote-user": "u-blox_com_dropguard",
-            "root": "/var/www/u-blox_com_dropguard/public_html",
-            "uri": "http://$siteurl.dropguard.dev1.compact.amazee.io",
-            "deploy-via": "Pull",
-            "branch": "dropguard"
-        },        
-        "performance": {
-            "remote-host": "dev1.compact.amazee.io",
-            "remote-environment": "amazee.io",
-            "remote-user": "u-blox_com_performance",
-            "root": "/var/www/u-blox_com_performance/public_html",
-            "uri": "http://$siteurl.dev1.compact.amazee.io",
-            "deploy-via": "Pull",
-            "branch": "dev",
-            "after": {
-                "deploy-update-code": [
-                    "deploy_gulp_compile_task",
-                    "deploy_cache_css_js_task"
-                ]
-            }
-        },
-        "ublox.prod": {
-            "remote-host": "www.u-blox.com",
-            "remote-user": "amazee",
-            "root": "/var/www/ublox",
-            "uri": "http://www.u-blox.com"
-        },
-        "ublox.dev": {
-            "remote-host": "ch-thl-vm-028.u-blox.com",
-            "remote-user": "u-blox_com_dev",
-            "root": "/var/www/u-blox_com_dev/public_html",
-            "uri": "http://u-blox.com.dev.ublox1.compact.amazee.io"
-        }
+  "servers": {
+    "dev": {
+      "remote-host": "dev1.compact.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "u-blox_com_dev",
+      "root": "/var/www/u-blox_com_dev/public_html",
+      "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+      "deploy-via": "Pull",
+      "branch": "dev"
+    },
+    "ubloxdev": {
+      "remote-host": "dev1.compact.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "u-blox_com_ubloxdev",
+      "root": "/var/www/u-blox_com_ubloxdev/public_html",
+      "uri": "http://$siteurl.ubloxdev.dev1.compact.amazee.io",
+      "deploy-via": "Pull",
+      "branch": "ubloxdev"
+    },
+    "dropguard": {
+      "remote-host": "dev1.compact.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "u-blox_com_dropguard",
+      "root": "/var/www/u-blox_com_dropguard/public_html",
+      "uri": "http://$siteurl.dropguard.dev1.compact.amazee.io",
+      "deploy-via": "Pull",
+      "branch": "dropguard"
+    },
+    "performance": {
+      "remote-host": "dev1.compact.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "u-blox_com_performance",
+      "root": "/var/www/u-blox_com_performance/public_html",
+      "uri": "http://$siteurl.dev1.compact.amazee.io",
+      "deploy-via": "Pull",
+      "branch": "dev"
+    },
+    "ublox.prod": {
+      "remote-host": "www.u-blox.com",
+      "remote-user": "amazee",
+      "root": "/var/www/ublox",
+      "uri": "http://www.u-blox.com"
+    },
+    "ublox.dev": {
+      "remote-host": "ch-thl-vm-028.u-blox.com",
+      "remote-user": "u-blox_com_dev",
+      "root": "/var/www/u-blox_com_dev/public_html",
+      "uri": "http://u-blox.com.dev.ublox1.compact.amazee.io"
     }
+  }
 }

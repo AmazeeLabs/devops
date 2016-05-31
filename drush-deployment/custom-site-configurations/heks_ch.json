@@ -8,6 +8,15 @@
             "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "dev"
+        },
+        "prototype": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "intzrh_271_prototype",
+            "root": "/var/www/intzrh_271_prototype/public_html",
+            "uri": "http://$siteurl.prototype.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "prototype"
         }
     }
 }

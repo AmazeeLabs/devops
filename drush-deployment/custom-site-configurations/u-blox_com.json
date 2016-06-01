@@ -9,14 +9,14 @@
       "deploy-via": "Pull",
       "branch": "dev"
     },
-    "ubloxdev": {
+    "feature/test": {
       "remote-host": "dev1.compact.amazee.io",
       "remote-environment": "amazee.io",
       "remote-user": "u-blox_com_ubloxdev",
       "root": "/var/www/u-blox_com_ubloxdev/public_html",
       "uri": "http://$siteurl.ubloxdev.dev1.compact.amazee.io",
       "deploy-via": "Pull",
-      "branch": "ubloxdev"
+      "branch": "feature/test"
     },
     "dropguard": {
       "remote-host": "dev1.compact.amazee.io",

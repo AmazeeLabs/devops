@@ -36,6 +36,14 @@
       "deploy-via": "Pull",
       "branch": "dev"
     },
+    "prod": {
+      "remote-host": "ublox1.compact.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "u-blox_com",
+      "root": "/var/www/u-blox_com/public_html",
+      "uri": "http://$siteurl",
+      "branch": "prod"
+    },
     "ublox.prod": {
       "remote-host": "www.u-blox.com",
       "remote-user": "amazee",

@@ -42,7 +42,7 @@
       "remote-user": "u-blox_com",
       "root": "/var/www/u-blox_com/public_html",
       "uri": "http://$siteurl",
-      "branch": "prod"
+      "branch": "prod_amazeeio"
     },
     "ublox.prod": {
       "remote-host": "www.u-blox.com",

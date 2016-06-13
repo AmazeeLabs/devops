@@ -1,0 +1,21 @@
+{
+    "servers": {
+        "dev": {
+            "remote-host": "sa1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "supastrikas_com_dev",
+            "root": "/var/www/supastrikas_com_dev/public_html",
+            "uri": "http://$siteurl.dev.sa1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev"
+        },
+        "prod": {
+            "remote-host": "sa1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "supastrikas_com_prod",
+            "root": "/var/www/supastrikas_com_prod/public_html",
+            "uri": "http://www.supastrikas.co.za",
+            "branch": "prod"
+        }
+    }
+}

@@ -5,7 +5,7 @@
       "remote-environment": "amazee.io",
       "remote-user": "luks_ch",
       "root": "/var/www/luks_ch/public_html",
-      "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+      "uri": "http://neu.luks.ch",
       "deploy-via": "Pull",
       "branch": "dev"
     }

@@ -14,7 +14,7 @@
             "remote-environment": "amazee.io",
             "remote-user": "supastrikas_com_prod",
             "root": "/var/www/supastrikas_com_prod/public_html",
-            "uri": "http://www.supastrikas.co.za",
+            "uri": "http://www.supastrikas.com",
             "branch": "prod"
         }
     }

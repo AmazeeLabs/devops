@@ -27,6 +27,15 @@
       "deploy-via": "Pull",
       "branch": "beta"
     },
+    "deploytest": {
+      "remote-host": "dev1.compact.amazee.io",
+      "remote-environment": "amazee.io",
+      "remote-user": "zuerich_com_deploytest",
+      "root": "/var/www/zuerich_com_deploytest/public_html",
+      "uri": "http://$siteurl.deploytest.dev1.compact.amazee.io",
+      "deploy-via": "Pull",
+      "branch": "staging"
+    },
     "megamenu": {
       "remote-host": "dev1.compact.amazee.io",
       "remote-environment": "amazee.io",

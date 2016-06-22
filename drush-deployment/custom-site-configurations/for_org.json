@@ -49,6 +49,15 @@
             "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "dev"
+        },
+        "test": {
+            "remote-host": "test1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "for_org",
+            "root": "/var/www/for_org/public_html",
+            "uri": "http://$siteurl.dev.test1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "test"
         }
     },
     "groups": {

@@ -1,0 +1,12 @@
+{
+    "servers": {
+        "dev": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "restricted_bash",
+            "root": "/var/www/restricted_bash/public_html",
+            "uri": "http://$siteurl.test1.compact.amazee.io",
+            "branch": "dev"
+        }
+    }
+}

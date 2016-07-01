@@ -8,6 +8,23 @@
             "uri": "http://$siteurl.test.zh1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "test"
-        }
+        },
+        "development": {
+            "remote-host": "uk1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "addtoevent_co_uk_development",
+            "root": "/var/www/addtoevent_co_uk_addtoevent_co_uk_development/public_html/public",
+            "uri": "http://$siteurl.development.zh1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "development"
+        },
+        "master": {
+            "remote-host": "uk1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "addtoevent_co_uk_master",
+            "root": "/var/www/addtoevent_co_uk_addtoevent_co_uk_master/public_html/public",
+            "uri": "http://$siteurl.master.zh1.compact.amazee.io",
+            "branch": "master"
+        }          
     }
 }

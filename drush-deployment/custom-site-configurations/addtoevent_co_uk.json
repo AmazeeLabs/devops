@@ -18,6 +18,33 @@
             "deploy-via": "Pull",
             "branch": "development"
         },
+        "mandrillstats": {
+            "remote-host": "uk1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "addtoevent_co_uk_mandrillstats",
+            "root": "/var/www/addtoevent_co_uk_mandrillstats/public_html/public",
+            "uri": "http://$siteurl.mandrillstats.zh1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "mandrillstats"
+        },
+        "hotfixes": {
+            "remote-host": "uk1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "addtoevent_co_uk_hotfixes",
+            "root": "/var/www/addtoevent_co_uk_hotfixes/public_html/public",
+            "uri": "http://$siteurl.hotfixes.zh1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "hotfixes"
+        },
+        "reviews": {
+            "remote-host": "uk1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "addtoevent_co_uk_reviews",
+            "root": "/var/www/addtoevent_co_uk_reviews/public_html/public",
+            "uri": "http://$siteurl.reviews.zh1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "reviews"
+        },
         "master": {
             "remote-host": "uk1.compact.amazee.io",
             "remote-environment": "amazee.io",
@@ -25,6 +52,6 @@
             "root": "/var/www/addtoevent_co_uk_master/public_html/public",
             "uri": "http://$siteurl.master.zh1.compact.amazee.io",
             "branch": "master"
-        }          
+        }
     }
 }

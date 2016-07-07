@@ -1,0 +1,28 @@
+{
+  "servers": {
+    "dev": {
+      "remote-host": "zh1.compact.amazee.io",
+      "remote-user": "brentadvicefund_dev",
+      "root": "/var/www/brentadvicefund_dev/public_html",
+      "uri": "http://$siteurl.dev.zh1.compact.amazee.io",
+      "branch": "dev",
+      "deploy-via": "Pull"
+    },
+    "test": {
+      "remote-host": "zh1.compact.amazee.io",
+      "remote-user": "brentadvicefund_test",
+      "root": "/var/www/brentadvicefund_test/public_html",
+      "uri": "http://$siteurl.test.zh1.compact.amazee.io",
+      "branch": "test",
+      "deploy-via": "Pull"
+    },
+    "master": {
+      "remote-host": "zh1.compact.amazee.io",
+      "remote-user": "brentadvicefund_master",
+      "root": "/var/www/brentadvicefund_master/public_html",
+      "uri": "http://brentadvicefund.grantsupporter.com",
+      "branch": "master",
+      "deploy-via": "RemoteCache"
+    }
+  }
+}

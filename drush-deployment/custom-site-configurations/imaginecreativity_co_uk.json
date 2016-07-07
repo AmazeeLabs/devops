@@ -1,0 +1,28 @@
+{
+  "servers": {
+    "dev": {
+      "remote-host": "zh1.compact.amazee.io",
+      "remote-user": "imaginecreativity_co_uk_dev",
+      "root": "/var/www/imaginecreativity_co_uk_dev/public_html",
+      "uri": "http://$siteurl.dev.zh1.compact.amazee.io",
+      "branch": "dev",
+      "deploy-via": "Pull"
+    },
+    "test": {
+      "remote-host": "zh1.compact.amazee.io",
+      "remote-user": "imaginecreativity_co_uk_test",
+      "root": "/var/www/imaginecreativity_co_uk_test/public_html",
+      "uri": "http://$siteurl.test.zh1.compact.amazee.io",
+      "branch": "test",
+      "deploy-via": "Pull"
+    },
+    "master": {
+      "remote-host": "zh1.compact.amazee.io",
+      "remote-user": "imaginecreativity_co_uk_master",
+      "root": "/var/www/imaginecreativity_co_uk_master/public_html",
+      "uri": "http://www.imaginecreativity.co.uk",
+      "branch": "master",
+      "deploy-via": "RemoteCache"
+    }
+  }
+}

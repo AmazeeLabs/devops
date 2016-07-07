@@ -1,14 +1,5 @@
 {
     "servers": {
-        "test": {
-            "remote-host": "zh1.compact.amazee.io",
-            "remote-environment": "amazee.io",
-            "remote-user": "addtoevent_co_uk_test",
-            "root": "/var/www/addtoevent_co_uk_test/public_html/public",
-            "uri": "http://$siteurl.test.zh1.compact.amazee.io",
-            "deploy-via": "Pull",
-            "branch": "test"
-        },
         "development": {
             "remote-host": "uk1.compact.amazee.io",
             "remote-environment": "amazee.io",

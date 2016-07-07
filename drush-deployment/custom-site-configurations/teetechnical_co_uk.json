@@ -1,0 +1,20 @@
+{
+  "servers": {
+    "dev": {
+      "remote-host": "zh1.compact.amazee.io",
+      "remote-user": "teetechnical_co_uk_dev",
+      "root": "/var/www/teetechnical_co_uk_dev/public_html",
+      "uri": "http://$siteurl.dev.zh1.compact.amazee.io",
+      "branch": "dev",
+      "deploy-via": "Pull"
+    },
+    "master": {
+      "remote-host": "zh1.compact.amazee.io",
+      "remote-user": "teetechnical_co_uk_master",
+      "root": "/var/www/teetechnical_co_uk_master/public_html",
+      "uri": "http://www.teetechnical.co.uk",
+      "branch": "master",
+      "deploy-via": "RemoteCache"
+    }
+  }
+}

@@ -5,7 +5,7 @@
             "remote-environment": "amazee.io",
             "remote-user": "addtoevent_co_uk_development",
             "root": "/var/www/addtoevent_co_uk_development/public_html/public",
-            "uri": "http://$siteurl.development.zh1.compact.amazee.io",
+            "uri": "http://$siteurl.development.uk1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "development"
         },
@@ -14,7 +14,7 @@
             "remote-environment": "amazee.io",
             "remote-user": "addtoevent_co_uk_mandrillstats",
             "root": "/var/www/addtoevent_co_uk_mandrillstats/public_html/public",
-            "uri": "http://$siteurl.mandrillstats.zh1.compact.amazee.io",
+            "uri": "http://$siteurl.mandrillstats.uk1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "mandrillstats"
         },
@@ -23,7 +23,7 @@
             "remote-environment": "amazee.io",
             "remote-user": "addtoevent_co_uk_hotfixes",
             "root": "/var/www/addtoevent_co_uk_hotfixes/public_html/public",
-            "uri": "http://$siteurl.hotfixes.zh1.compact.amazee.io",
+            "uri": "http://$siteurl.hotfixes.uk1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "hotfixes"
         },
@@ -32,7 +32,7 @@
             "remote-environment": "amazee.io",
             "remote-user": "addtoevent_co_uk_reviews",
             "root": "/var/www/addtoevent_co_uk_reviews/public_html/public",
-            "uri": "http://$siteurl.reviews.zh1.compact.amazee.io",
+            "uri": "http://$siteurl.reviews.uk1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "reviews"
         },
@@ -41,7 +41,7 @@
             "remote-environment": "amazee.io",
             "remote-user": "addtoevent_co_uk_master",
             "root": "/var/www/addtoevent_co_uk_master/public_html/public",
-            "uri": "http://$siteurl.master.zh1.compact.amazee.io",
+            "uri": "http://$siteurl.master.uk1.compact.amazee.io",
             "branch": "master"
         }
     }

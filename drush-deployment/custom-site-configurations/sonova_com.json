@@ -1,14 +1,5 @@
 {
     "servers": {
-        "release_3.10": {
-            "remote-host": "dev1.compact.amazee.io",
-            "remote-environment": "amazee.io",
-            "remote-user": "sonova_com_release_3_10",
-            "root": "/var/www/sonova_com_release_3_10/public_html",
-            "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
-            "deploy-via": "Pull",
-            "branch": "release/3.10"
-        },
         "dev": {
             "remote-host": "dev1.compact.amazee.io",
             "remote-environment": "amazee.io",

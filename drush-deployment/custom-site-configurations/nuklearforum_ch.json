@@ -26,7 +26,7 @@
       "root": "/var/www/nuklearforum_ch_dev/public_html",
       "uri": "http://$siteurl.dev.zh2.single.amazee.io",
       "deploy-via": "Pull",
-      "branch": "dev"
+      "branch": "dev-new"
     },
     "prod-new": {
       "remote-host": "zh1.compact.amazee.io",
@@ -34,7 +34,7 @@
       "remote-user": "nuklearforum_ch_prod",
       "root": "/var/www/nuklearforum_ch_prod/public_html",
       "uri": "http://$siteurl",
-      "branch": "prod"
+      "branch": "prod-new"
     }
   }
 }

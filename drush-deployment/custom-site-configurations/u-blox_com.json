@@ -36,34 +36,19 @@
       "deploy-via": "Pull",
       "branch": "dev"
     },
-    "prod_amazeeio": {
+    "prod": {
       "remote-host": "ublox1.compact.amazee.io",
       "remote-environment": "amazee.io",
       "remote-user": "u-blox_com",
       "root": "/var/www/u-blox_com/public_html",
       "uri": "http://$siteurl",
-      "branch": "prod_amazeeio"
-    },
-    "ublox.prod": {
-      "remote-host": "www.u-blox.com",
-      "remote-user": "amazee",
-      "root": "/var/www/ublox",
-      "uri": "http://www.u-blox.com"
+      "branch": "prod"
     },
     "ublox.dev": {
       "remote-host": "ch-thl-vm-028.u-blox.com",
       "remote-user": "u-blox_com_dev",
       "root": "/var/www/u-blox_com_dev/public_html",
       "uri": "http://u-blox.com.dev.ublox1.compact.amazee.io"
-    },
-    "test": {
-      "remote-host": "test1.compact.amazee.io",
-      "remote-environment": "amazee.io",
-      "remote-user": "u-blox_com",
-      "root": "/var/www/u-blox_com/public_html",
-      "uri": "http://$siteurl.dev.test1.compact.amazee.io",
-      "deploy-via": "Pull",
-      "branch": "test"
     }
   }
 }

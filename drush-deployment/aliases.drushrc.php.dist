@@ -1,10 +1,8 @@
 <?php
 
-$sitename = 'CHANGEME';   //use the username on our servers like testsite_ch
-$options['newrelic-api-key'] = 'CHANGEME';
-$options['deploy-repository'] = 'git@github.com:AmazeeLabs/CHANGEME.git';
+$site_group = 'CHANGEME';   // use the hashed identifier of the site group.
 
-// - And we load the aliases file here
+// Load the alias file and embed it into the running script.
 global $aliases_stub;
 if (empty($aliases_stub)) {
   $aliases_stub = file_get_contents('https://raw.githubusercontent.com/AmazeeLabs/devops/master/drush-deployment/aliases.drushrc.php.stub?' . rand(0, 99999999999));

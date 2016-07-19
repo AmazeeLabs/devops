@@ -90,6 +90,7 @@ $aliases = array_reduce($sites, function ($carry, $item) use ($defaults) {
   $server_names = $item->serverNames;
   $site_name = $item->siteName;
   $site_branch = $item->siteBranch;
+  $site_environment = $item->siteEnvironment;
   $site_host = $item->siteHost;
   $web_root = $item->webRoot;
 
@@ -106,6 +107,8 @@ $aliases = array_reduce($sites, function ($carry, $item) use ($defaults) {
       'remote-host' => "$server_name.amazee.io",
       'remote-user' => $site_name,
       'root' => "/var/www/$site_name/public_html/$web_root",
+      'branch' => $site_branch,
+      'deploy-via' => $site_environment == 'production' ? "RemoteCache" : "Pull",      
     ];
   }
 

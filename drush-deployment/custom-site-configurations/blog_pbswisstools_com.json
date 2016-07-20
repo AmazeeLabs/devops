@@ -10,6 +10,15 @@
             "deploy-via": "Pull",
             "branch": "dev"
         },
+        "dev-new": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "blog_pbswisstools_com_dev",
+            "root": "/var/www/blog_pbswisstools_com_dev/public_html",
+            "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dev"
+        },
         "dropguard": {
             "remote-host": "backend.zh2.single.amazee.io",
             "remote-environment": "amazee.io",
@@ -20,6 +29,15 @@
             "deploy-via": "Pull",
             "branch": "dropguard"
         },
+        "dropguard-new": {
+            "remote-host": "dev1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "blog_pbswisstools_com_dg",
+            "root": "/var/www/blog_pbswisstools_com_dg/public_html",
+            "uri": "http://$siteurl.dropguard.dev1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "dropguard"
+        },
         "prod": {
             "remote-host": "backend.zh2.single.amazee.io",
             "remote-environment": "amazee.io",
@@ -27,6 +45,14 @@
             "root": "/var/www/blog_pbswisstools_com/public_html",
             "uri": "http://$siteurl",
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
+            "branch": "prod"
+        },
+        "prod-new": {
+            "remote-host": "zh1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "blog_pbswisstools_com",
+            "root": "/var/www/blog_pbswisstools_com/public_html",
+            "uri": "http://$siteurl",
             "branch": "prod"
         }
     }

@@ -17,7 +17,7 @@
             "root": "/var/www/blog_pbswisstools_com_dev/public_html",
             "uri": "http://$siteurl.dev.dev1.compact.amazee.io",
             "deploy-via": "Pull",
-            "branch": "dev"
+            "branch": "dev-new"
         },
         "dropguard": {
             "remote-host": "backend.zh2.single.amazee.io",
@@ -36,7 +36,7 @@
             "root": "/var/www/blog_pbswisstools_com_dg/public_html",
             "uri": "http://$siteurl.dropguard.dev1.compact.amazee.io",
             "deploy-via": "Pull",
-            "branch": "dropguard"
+            "branch": "dropguard-new"
         },
         "prod": {
             "remote-host": "backend.zh2.single.amazee.io",
@@ -53,7 +53,7 @@
             "remote-user": "blog_pbswisstools_com",
             "root": "/var/www/blog_pbswisstools_com/public_html",
             "uri": "http://$siteurl",
-            "branch": "prod"
+            "branch": "prod-new"
         }
     }
 }

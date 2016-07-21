@@ -36,6 +36,24 @@
             "deploy-via": "Pull",
             "branch": "reviews"
         },
+        "quoting-ui": {
+            "remote-host": "uk1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "addtoevent_co_uk_quoting-ui",
+            "root": "/var/www/addtoevent_co_uk_quoting-ui/public_html/public",
+            "uri": "http://$siteurl.quoting-ui.uk1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "quoting-ui"
+        },
+        "features": {
+            "remote-host": "uk1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "addtoevent_co_uk_features",
+            "root": "/var/www/addtoevent_co_uk_features/public_html/public",
+            "uri": "http://$siteurl.features.uk1.compact.amazee.io",
+            "deploy-via": "Pull",
+            "branch": "features"
+        },
         "master": {
             "remote-host": "uk1.compact.amazee.io",
             "remote-environment": "amazee.io",

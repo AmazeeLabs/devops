@@ -1,7 +1,5 @@
 <?php
 
-$site_group = 'CHANGEME';   // use the hashed identifier of the site group.
-
 // Load the alias file and embed it into the running script.
 global $aliases_stub;
 if (empty($aliases_stub)) {

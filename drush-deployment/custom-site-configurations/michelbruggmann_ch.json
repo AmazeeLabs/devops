@@ -9,12 +9,11 @@
             "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\""
         },
         "dev": {
-            "remote-host": "backend.zh2.single.amazee.io",
+            "remote-host": "zh1.compact.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "michelbruggmann_ch_dev",
             "root": "/var/www/michelbruggmann_ch_dev/public_html",
-            "uri": "http://$siteurl.dev.zh2.single.amazee.io",
-            "ssh-options": "-o ProxyCommand=\"ssh -W %h:%p frontend.zh2.single.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=amazeelabs 2> /dev/null\"",
+            "uri": "http://$siteurl.dev.zh1.compact.amazee.io",
             "deploy-via": "Pull",
             "branch": "dev"
         }

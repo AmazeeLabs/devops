@@ -1,6 +1,13 @@
 {
     "servers": {
         "prod": {
+            "remote-host": "zh1.compact.amazee.io",
+            "remote-environment": "amazee.io",
+            "remote-user": "michelbruggmann_ch_prod",
+            "root": "/var/www/michelbruggmann_ch_prod/public_html",
+            "uri": "http://$siteurl"
+        },
+        "prod.old": {
             "remote-host": "backend.zh2.single.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "michelbruggmann_ch",

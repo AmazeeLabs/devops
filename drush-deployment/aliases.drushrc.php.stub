@@ -1,243 +1,190 @@
-// Basic error handling
-if($sitename == 'CHANGEME')
-  die("[ERROR] - Luke, you should change the Sitename in aliases.drushrc.php!\n");
+// You know nothing, John amazee.io
+$amazeeioyml_path = $amazeeioyml = $sitegroup_name = FALSE;
 
-// Drush Deploy Options
-$options['application'] = 'drupal';
-$options['keep-releases'] = 3;
-$options['git_enable_submodules'] = TRUE;
+// No sitegroup name could be found, let's search for it via the .amazeeio.yml file
+drush_log(sprintf('Starting to search for .amazeeio.yml file to extract sitegroup name'));
 
-// Default server definition, which has no site specific elements
-$server_definition_defaults = array(
-  'command-specific' => array (
-    'sql-sync' => array (
-      'no-ordered-dump' => TRUE
-    ),
-  ),
-  'newrelic' => array (
-    'api-key' => $options['newrelic-api-key'],
-    'app-name' => '$siteurl'
-  ),
-  'deploy-via' => 'RemoteCache',
-  'branch' => 'prod',
-);
-
-$cid = 'amazeeio_aliases_' . $sitename;
-
-if (getenv('JENKINS_HOME')) {
-  $cid = $cid . "_" . getenv('BUILD_NUMBER');
+// Borrowed from drush_locate_root() - thank you
+foreach (array(TRUE, FALSE) as $follow_symlinks) {
+  $path = defined('DRUPAL_ROOT') ? drush_locate_root(DRUPAL_ROOT) : drush_cwd(); // trying to find the main root folder of drupal, if that fails, just the current folder
+  if ($follow_symlinks && is_link($path)) {
+    $path = realpath($path);
+  }
+  // Check the start path.
+  if (file_exists("$path/.amazeeio.yml")) {
+    $amazeeioyml_path = "$path/.amazeeio.yml";
+    break;
+  }
+  else {
+    // Move up dir by dir and check each.
+    while ($path = _drush_shift_path_up($path)) {
+      if ($follow_symlinks && is_link($path)) {
+        $path = realpath($path);
+      }
+      if (file_exists("$path/.amazeeio.yml")) {
+        $amazeeioyml_path = "$path/.amazeeio.yml";
+        break 2;
+      }
+    }
+  }
 }
 
+// An .amazeeio.yml file has been found, let's try to load the sitegroup from it.
+if ($amazeeioyml_path) {
+  drush_log(sprintf('Using .amazeeio.yml file at: "%s"', $amazeeioyml_path));
+  $amazeeioyml = Drush\Make\Parser\ParserYaml::parse(file_get_contents($amazeeioyml_path));
+  if ($amazeeioyml['sitegroup']) {
+    $sitegroup_name = $amazeeioyml['sitegroup'];
+    drush_log(sprintf('Discovered sitegroup name "%s" from .amazeeio.yml file', $sitegroup_name));
+  } else {
+    drush_log(sprintf('No sitegroup defined in .amazeeio.yml file, will try to fall back to deprecated $site_name variable.'));
+  }
+} else {
+  drush_log(sprintf('Could not find .amazeeio.yml file.'));
+}
+
+// Sitegroup still not defined, last try: using the deprecated variable $site_name directly inside aliases.drushrc.php
+if ($sitegroup_name === FALSE) {
+  if ($site_name && $site_name != 'CHANGEME') {
+    $sitegroup_name = $site_name;
+    drush_log(sprintf('Using sitegroup name "%s" from deprecated $site_name variable within aliases.drushrc.php. You should define the sitegroup within .amazeeio.yml for future compatibility.', $sitegroup_name), 'warning');
+  } else {
+    // No $site_name defined either (or never changed), fully bail here.
+    drush_set_error('ERROR: Could not discover sitegroup name, you should define it inside your .amazeeio.yml file');
+    exit;
+  }
+}
+
+// Some special things to make sure Jenkins does never cache the aliases.
+$suffix = getenv('JENKINS_HOME') ? '_' . getenv('BUILD_NUMBER') : '';
+$cid = "amazeeio_aliases_$sitegroup_name$suffix";
+
+// Try to pull the aliases from the cache.
 $cache = drush_cache_get($cid);
 
 // Drush does not respect the cache expire, so we need to check it ourselves.
 if (isset($cache->data) && time() < $cache->expire && getenv('AMAZEEIO_IGNORE_DRUSHCACHE') === FALSE) {
   $aliases = $cache->data;
+  return;
 }
-else {
-  // Servers Definition File contains the definition for all servers that exist.
-  drush_log('Loading: https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/custom-site-configurations/'.$sitename.'.json?');
-  $json = file_get_contents('https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/custom-site-configurations/'.$sitename.'.json?' . rand(0, 1000000));
-  if ($json === FALSE) {
-    // File cannot be loaded let's stop here.
-    drush_log('Error while loading site configuration file: https://raw.github.com/AmazeeLabs/devops/master/drush-deployment/custom-site-configurations/'.$sitename.'.json', 'warning');
-    return;
-  }
-  $servers_definition = json_decode($json, TRUE);
-  
 
-  // Adding the default server definitions into all servers.
-  foreach ($servers_definition['servers'] as $server => $server_definition) {
-    $aliases[$server] = $server_definition + $server_definition_defaults;
+// The aliases haven't been cached yet. Load them from the API.
+drush_log(sprintf('Loading site configuration for "%s" from the API.', $sitegroup_name));
 
-    if ($aliases[$server]['deploy-via'] == 'RemoteCache') {
-      // Add default deploy-symlink tasks if they are not defined for RemoteCache method
-      if (!isset($aliases[$server]['before']['deploy-symlink'])) {
-        $aliases[$server]['before']['deploy-symlink'][] = 'deploy_before_deploy_symlink_tasks';
-      }
-      if (!isset($aliases[$server]['after']['deploy-symlink'])) {
-        $aliases[$server]['after']['deploy-symlink'][] = 'deploy_after_deploy_symlink_tasks';
-      }
-    }
-    elseif ($aliases[$server]['deploy-via'] == 'Pull') {
-      if (!isset($aliases[$server]['after']['deploy-update-code'])) {
-        $aliases[$server]['after']['deploy-update-code'][] = 'deploy_cache_css_js_task';
+$query = sprintf('{
+  siteGroup:siteGroupByName(name: "%s") {
+    gitUrl
+    sites {
+      edges {
+        node {
+          siteName
+          siteBranch
+          siteEnvironment
+          siteHost
+          serverInfrastructure
+          serverIdentifier
+          serverNames
+          domains
+        }
       }
     }
   }
+}', $sitegroup_name);
 
-  if (is_array($servers_definition['groups'])) {
-    // Iterate through each group
-    foreach ($servers_definition['groups'] as $group_name => $group_servers) {
-      if (count($group_servers) == 1) {
-        // Only one server in this group, instead of creating an alias site list, we just create another site-alias with this name.
-        $aliases[$group_name] = $aliases[$group_servers[0]];
-      } else {
-        // For each actual server group, create an alias site list.
-        $aliases[$group_name] = array(
-          'site-list' => array_map(function($k){ return '@'.$k;}, $group_servers)
-        );
-      }
-    }
-  }
+$api = 'https://api.amazeeio.cloud/graphql';
+$curl = curl_init($api);
 
-  // Caching the aliases for 10 minutes.
-  drush_cache_set($cid, $aliases, 'default', time() + 600);
+// Build up the curl options for the GraphQL query. When using the content type
+// 'application/json', graphql-express expects the query to be in the json
+// encoded post body beneath the 'query' property.
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+curl_setopt($curl, CURLOPT_POST, TRUE);
+curl_setopt($curl, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode(array(
+  'query' => $query,
+)));
+
+$response = curl_exec($curl);
+
+// Check if the curl request succeeded.
+if ($response === FALSE) {
+  $info = var_export(curl_getinfo($curl));
+  curl_close($curl);
+
+  drush_set_error(sprintf('Curl request failed. Additional information: %s.', $info));
+  exit;
 }
 
-// Replace Site specifc variables like userid and siteurl from the generated array
-$siteurl = str_replace('_', '.', $sitename);
-array_walk_recursive($aliases, 'deploy_replace_sitespecifics', array('$sitename' => $sitename, '$siteurl' => $siteurl));
+curl_close($curl);
+$response = json_decode($response);
 
-// function_exists, because this file is included multiple times in the same drush process.
-if (!function_exists('deploy_replace_sitespecifics')) {
-  function deploy_replace_sitespecifics(&$item, $key, $sitespecifics) {
-    $item = strtr($item, $sitespecifics);
-  }
+// Check if the query returned any data for the requested site group.
+if (empty($response->data->siteGroup->sites->edges)) {
+  drush_set_error(sprintf('Curl request didn\'t return any sites for the given site group "%s".', $sitegroup_name));
+  exit;
 }
 
+$sites = array_map(function ($edge) {
+  return $edge->node;
+}, $response->data->siteGroup->sites->edges);
 
+$git_url = $response->data->siteGroup->gitUrl;
 
-// Default Group of Tasks that should run before the new symlinks are created.
-// This function should be used to overwrite in site specific aliases.drushrc.php files
-if (!function_exists("deploy_before_deploy_symlink_tasks")) {
-  function deploy_before_deploy_symlink_tasks($d) {
-      deploy_settings_local_php_task($d);
-      deploy_symlinks_task($d);
+// Default server definition, which has no site specific elements
+$defaults = [
+  'command-specific' => [
+    'sql-sync' => [
+      'no-ordered-dump' => TRUE
+    ],
+  ],
+  'deploy-repository' => $git_url
+];
+
+$aliases = array_reduce($sites, function ($carry, $item) use ($defaults) {
+  $server_infrastructure = $item->serverInfrastructure;
+  $server_names = $item->serverNames;
+  $site_name = $item->siteName;
+  $site_branch = str_replace('/', '_', $item->siteBranch); # siteBranches can have / in them, which is confusing for drush, so we replace them with a _
+  $site_environment = $item->siteEnvironment ?: 'production'; # siteEnvironment can be null, which means it's production
+  $site_host = $item->siteHost;
+  $web_root = $item->webRoot;
+  if ($site_environment == 'production') {
+    $site_url = 'http://' . $item->domains[0];
+  } else {
+    $site_url = 'http://' . implode('.', [$item->domains[0], $site_branch, $server_names[0], 'amazee.io']);
   }
-}
 
-// Default Group of Tasks that should run after the new symlinks are created.
-// This function should be used to overwrite in site specific aliases.drushrc.php files
-
-if (!function_exists("deploy_after_deploy_symlink_tasks")) {
-  function deploy_after_deploy_symlink_tasks($d) {
-      deploy_update_task($d);
-      deploy_newrelic_task($d);
-  }
-}
-
-
-
-/**
- * The task needs to be defined with a @task "decorator" in the comment block preceding it
- * @task
- * @mandatory
- */
-if (!function_exists("deploy_settings_local_php_task")) {
-  function deploy_settings_local_php_task($d) {
-    $d->run("cp ~/settings.local.php %s/sites/default/settings.local.php 2>/dev/null || :", $d->latest_release());
-  }
-}
-
-/**
- * The task needs to be defined with a @task "decorator" in the comment block preceding it
- * @task
- */
-if (!function_exists("deploy_symlinks_task")) {
-  function deploy_symlinks_task($d) {
-    if (strpos($d->sites[0]['remote-environment'], 'cluster.amazee.io') !== FALSE) {
-      $d->run("ln -s ~/shared/files %s/sites/default/files", $d->latest_release());
-    }
-    else {
-      $d->run("ln -s ~/files %s/sites/default/files", $d->latest_release());
-    }
-  }
-}
-
-
-/**
- * The task needs to be defined with a @task "decorator" in the comment block preceding it
- * @task
- */
-if (!function_exists("deploy_update_task")) {
-  function deploy_update_task($d) {
-    $d->run_once("cd %s && drush updb -y", $d->latest_release());
-  }
-}
-
-
-/**
- * The task needs to be defined with a @task "decorator" in the comment block preceding it
- * @task
- */
-if (!function_exists("deploy_cache_task")) {
-  function deploy_cache_task($d) {
-    $d->run_once("cd %s && drush cc all -y", $d->latest_release());
-  }
-}
-
-/**
- * The task needs to be defined with a @task "decorator" in the comment block preceding it
- * @task
- */
-if (!function_exists("deploy_cache_css_js_task")) {
-  function deploy_cache_css_js_task($d) {
-    $d->run_once("cd %s && drush cc css-js -y", $d->latest_release());
-  }
-}
-
-/**
- * The task needs to be defined with a @task "decorator" in the comment block preceding it
- * @task
- */
-if (!function_exists("deploy_cache_task_d8")) {
-  function deploy_cache_task_d8($d) {
-    $d->run_once("cd %s && drush cr -y", $d->latest_release());
-  }
-}
-
-/**
- * The task needs to be defined with a @task "decorator" in the comment block preceding it
- * @task
- */
-if (!function_exists("deploy_newrelic_task")) {
-  function deploy_newrelic_task($d) {
-    $deployment_info['app_name'] = $d->sites[0]['newrelic']['app-name'];
-
-    // Use getenv('LC_AMAZEEIO_USERNAME') or get_current_user()
-    $deployment_info['user'] = getenv('LC_AMAZEEIO_USERNAME') ? getenv('LC_AMAZEEIO_USERNAME') : get_current_user();
-
-    if (getenv('JENKINS_HOME')) {
-      $deployment_info['description'] = 'BUILD:' . getenv('BUILD_URL') . ' BRANCH:' . getenv('GIT_BRANCH');
-      $deployment_info['revision'] = getenv('GIT_COMMIT');
+  $aliases = [];
+  foreach ($server_names as $key => $server_name) {
+  	$human_key = ++$key;
+    $conditional = [];
+    if (in_array($server_infrastructure, ['single', 'cluster'])) {
+      $conditional = [
+        'ssh-options' => "-o ProxyCommand=\"ssh -W %h:%p frontend1.$site_host.amazee.io $LC_AMAZEEIO_SSH_OPTIONS -o USER=$site_name 2> /dev/null\"",
+      ];
     }
 
-    foreach ($deployment_info as $key => $value) {
-      $deployment_info_array[] = '-d "deployment[' . $key . ']=' . $value . '"';
-    }
-
-    $d->run_once('curl -H "x-api-key:'.$d->sites[0]['newrelic']['api-key'].'" '. implode(" ", $deployment_info_array) .' https://api.newrelic.com/deployments.xml', $d->latest_release());
+    $aliases["${site_branch}${human_key}"] = $defaults + $conditional + [
+      'remote-host' => "$server_name.amazee.io",
+      'remote-user' => $site_name,
+      'root' => "/var/www/$site_name/public_html/$web_root",
+      'branch' => $site_branch,
+      'deploy-via' => $site_environment == 'production' ? "RemoteCache" : "Pull",
+      'uri' => $site_url
+    ];
   }
-}
 
-
-/**
- * The task needs to be defined with a @task "decorator" in the comment block preceding it
- * @task
- */
-if (!function_exists("deploy_gulp_compile_task")) {
-  function deploy_gulp_compile_task($d) {
-    $d->run("cd %s && npm install && npm run bower -- install && npm run gulp -- compile", $d->latest_release());
+  if (count($aliases) === 1) {
+    return $carry + [$site_branch => reset($aliases)];
   }
-}
 
-/**
- * The task needs to be defined with a @task "decorator" in the comment block preceding it
- * @task
- */
-if (!function_exists("deploy_gulp_build_task")) {
-  function deploy_gulp_build_task($d) {
-    $d->run("cd %s && npm install && npm run gulp -- build", $d->latest_release());
-  }
-}
+  // Add another alias containing all of the aliases for this site's servers.
+  $aliases[$site_branch] = [
+    'site-list' => array_map(function ($alias) { return "@${alias}"; }, array_keys($aliases))
+  ];
 
-/**
- * The task needs to be defined with a @task "decorator" in the comment block preceding it
- * @task
- */
-if (!function_exists("deploy_apc_flush_task")) {
-  function deploy_apc_flush_task($d) {
-    // Empty for legacy reasons, we don't need apc flush anymore
-  }
-}
+  return $carry + $aliases;
+}, []);
+
+// Caching the aliases for 10 minutes.
+drush_cache_set($cid, $aliases, 'default', time() + 600);

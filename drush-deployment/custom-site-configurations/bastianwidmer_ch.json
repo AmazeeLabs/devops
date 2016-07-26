@@ -6,7 +6,6 @@
             "remote-user": "bastianwidmer_ch",
             "root": "/var/www/bastianwidmer_ch/public_html",
             "uri": "http://bastianwidmer.ch.test1.compact.amazee.io",
-            "deploy-via": "Pull",
             "branch": "dev"
         }
     }

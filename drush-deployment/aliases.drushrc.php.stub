@@ -37,19 +37,19 @@ if ($amazeeioyml_path) {
     $sitegroup_name = $amazeeioyml['sitegroup'];
     drush_log(sprintf('Discovered sitegroup name "%s" from .amazeeio.yml file', $sitegroup_name));
   } else {
-    drush_log(sprintf('No sitegroup defined in .amazeeio.yml file, will try to fall back to deprecated $site_name variable.'));
+    drush_log(sprintf('No sitegroup defined in .amazeeio.yml file, will try to fall back to deprecated $sitename variable.'));
   }
 } else {
   drush_log(sprintf('Could not find .amazeeio.yml file.'));
 }
 
-// Sitegroup still not defined, last try: using the deprecated variable $site_name directly inside aliases.drushrc.php
+// Sitegroup still not defined, last try: using the deprecated variable $sitename directly inside aliases.drushrc.php
 if ($sitegroup_name === FALSE) {
-  if ($site_name && $site_name != 'CHANGEME') {
-    $sitegroup_name = $site_name;
-    drush_log(sprintf('Using sitegroup name "%s" from deprecated $site_name variable within aliases.drushrc.php. You should define the sitegroup within .amazeeio.yml for future compatibility.', $sitegroup_name), 'warning');
+  if ($sitename && $sitename != 'CHANGEME') {
+    $sitegroup_name = $sitename;
+    drush_log(sprintf('Using sitegroup name "%s" from deprecated $sitename variable within aliases.drushrc.php. You should define the sitegroup within .amazeeio.yml for future compatibility.', $sitegroup_name), 'warning');
   } else {
-    // No $site_name defined either (or never changed), fully bail here.
+    // No $sitename defined either (or never changed), fully bail here.
     drush_set_error('ERROR: Could not discover sitegroup name, you should define it inside your .amazeeio.yml file');
     exit;
   }

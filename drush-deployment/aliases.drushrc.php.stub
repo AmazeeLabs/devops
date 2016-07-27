@@ -148,7 +148,7 @@ $aliases = array_reduce($sites, function ($carry, $item) use ($defaults) {
   $site_name = $item->siteName;
   $site_branch = str_replace('/', '_', $item->siteBranch); # siteBranches can have / in them, which is confusing for drush, so we replace them with a _
   $site_environment = $item->siteEnvironment ?: 'production'; # siteEnvironment can be null, which means it's production
-  $deploy_via = $item->deployVia;
+  $deploy_via = $item->deployVia ?: ($site_environment == 'production' ? "RemoteCache" : "Pull"); # if deployVia is set use that or define it based on the environment type
   $site_host = $item->siteHost;
   $web_root = $item->webRoot;
   if ($site_environment == 'production') {
@@ -172,7 +172,7 @@ $aliases = array_reduce($sites, function ($carry, $item) use ($defaults) {
       'remote-user' => $site_name,
       'root' => "/var/www/$site_name/public_html/$web_root",
       'branch' => $site_branch,
-      'deploy-via' => $deploy_via ?: $site_environment == 'production' ? "RemoteCache" : "Pull", # if $deploy_via is set use that or define it based on the environment type
+      'deploy-via' => $deploy_via,
       'uri' => $site_url
     ];
   }

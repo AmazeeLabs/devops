@@ -51,7 +51,7 @@ if ($sitegroup_name === FALSE) {
     drush_log(sprintf('Using sitegroup name "%s" from deprecated $sitename variable within aliases.drushrc.php. You should define the sitegroup within .amazeeio.yml for future compatibility.', $sitegroup_name), 'warning');
   } else {
     // No $sitename defined either (or never changed), fully bail here.
-    drush_set_error('ERROR: Could not discover sitegroup name, you should define it inside your .amazeeio.yml file');
+    drush_log('ERROR: Could not discover sitegroup name, you should define it inside your .amazeeio.yml file', 'warning');
     exit;
   }
 }
@@ -109,10 +109,10 @@ $response = curl_exec($curl);
 
 // Check if the curl request succeeded.
 if ($response === FALSE) {
-  $info = var_export(curl_getinfo($curl));
+  $info = var_export(curl_getinfo($curl), TRUE);
   curl_close($curl);
 
-  drush_set_error(sprintf('Curl request failed. Additional information: %s.', $info));
+  drush_log(sprintf('Curl request failed. Additional information: %s.', $info), 'warning');
   exit;
 }
 
@@ -121,7 +121,7 @@ $response = json_decode($response);
 
 // Check if the query returned any data for the requested site group.
 if (empty($response->data->siteGroup->sites->edges)) {
-  drush_set_error(sprintf('Curl request didn\'t return any sites for the given site group "%s".', $sitegroup_name));
+  drush_log(sprintf('Curl request didn\'t return any sites for the given site group "%s".', $sitegroup_name), 'warning');
   exit;
 }
 

@@ -86,6 +86,7 @@ $query = sprintf('{
           serverIdentifier
           serverNames
           deployVia
+          webRoot
           domains
         }
       }

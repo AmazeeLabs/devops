@@ -1,12 +1,13 @@
 // You know nothing, John amazee.io
 $amazeeioyml_path = $amazeeioyml = $sitegroup_name = FALSE;
 
+$path = drush_get_option('root') ? drush_locate_root(drush_get_option('root')) : getcwd(); // trying to find the main root folder of drupal, if that fails, just the current folder
+
 // No sitegroup name could be found, let's search for it via the .amazeeio.yml file
-drush_log(sprintf('Starting to search for .amazeeio.yml file to extract sitegroup name'));
+drush_log(sprintf('Starting to search for .amazeeio.yml file to extract sitegroup name within "%s" and parent directories', $path));
 
 // Borrowed from drush_locate_root() - thank you
 foreach (array(TRUE, FALSE) as $follow_symlinks) {
-  $path = defined('DRUPAL_ROOT') ? drush_locate_root(DRUPAL_ROOT) : drush_cwd(); // trying to find the main root folder of drupal, if that fails, just the current folder
   if ($follow_symlinks && is_link($path)) {
     $path = realpath($path);
   }
@@ -91,7 +92,7 @@ $query = sprintf('{
   }
 }', $sitegroup_name);
 
-$api = 'https://api.amazeeio.cloud/graphql';
+$api = 'http://api.amazeeio.cloud/graphql';
 $curl = curl_init($api);
 
 // Build up the curl options for the GraphQL query. When using the content type

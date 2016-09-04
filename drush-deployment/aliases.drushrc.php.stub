@@ -81,6 +81,9 @@ $query = sprintf('{
   siteGroup:siteGroupByName(name: "%s") {
     gitUrl
     slack
+    client {
+      clientName
+    }
     sites {
       edges {
         node {
@@ -139,6 +142,7 @@ $sites = array_map(function ($edge) {
 
 $git_url = $response->data->siteGroup->gitUrl;
 $slack = $response->data->siteGroup->slack;
+$client_name = $response->data->siteGroup->client->clientName;
 
 // Default server definition, which has no site specific elements
 $defaults = [
@@ -149,6 +153,8 @@ $defaults = [
   ],
   'deploy-repository' => $git_url,
   'slack' => $slack,
+  'client' => $client_name,
+  'sitegroup' => $sitegroup_name,
 ];
 
 $aliases = array_reduce($sites, function ($carry, $item) use ($defaults) {

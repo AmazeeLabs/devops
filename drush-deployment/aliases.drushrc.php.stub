@@ -1,58 +1,63 @@
-// You know nothing, John amazee.io
-$amazeeioyml_path = $amazeeioyml = $sitegroup_name = FALSE;
+global $sitegroup_name;
 
-$path = drush_get_option('root') ? drush_locate_root(drush_get_option('root')) : getcwd(); // trying to find the main root folder of drupal, if that fails, just the current folder
-
-// No sitegroup name could be found, let's search for it via the .amazeeio.yml file
-drush_log(sprintf('Starting to search for .amazeeio.yml file to extract sitegroup name within "%s" and parent directories', $path));
-
-// Borrowed from drush_locate_root() - thank you
-foreach (array(TRUE, FALSE) as $follow_symlinks) {
-  if ($follow_symlinks && is_link($path)) {
-    $path = realpath($path);
-  }
-  // Check the start path.
-  if (file_exists("$path/.amazeeio.yml")) {
-    $amazeeioyml_path = "$path/.amazeeio.yml";
-    break;
-  }
-  else {
-    // Move up dir by dir and check each.
-    while ($path = _drush_shift_path_up($path)) {
-      if ($follow_symlinks && is_link($path)) {
-        $path = realpath($path);
-      }
-      if (file_exists("$path/.amazeeio.yml")) {
-        $amazeeioyml_path = "$path/.amazeeio.yml";
-        break 2;
+if (empty($sitegroup_name)) {
+  // You know nothing, John amazee.io
+  $amazeeioyml_path = $amazeeioyml = $sitegroup_name = FALSE;
+  
+  drush_log(sprintf('Finding Drupal Root'));
+  $path = drush_locate_root(drush_get_option('root')) ?: getcwd(); // trying to find the main root folder of drupal, if that fails, just the current folder
+  
+  // No sitegroup name could be found, let's search for it via the .amazeeio.yml file
+  drush_log(sprintf('Starting to search for .amazeeio.yml file to extract sitegroup name within "%s" and parent directories', $path));
+  
+  // Borrowed from drush_locate_root() - thank you
+  foreach (array(TRUE, FALSE) as $follow_symlinks) {
+    if ($follow_symlinks && is_link($path)) {
+      $path = realpath($path);
+    }
+    // Check the start path.
+    if (file_exists("$path/.amazeeio.yml")) {
+      $amazeeioyml_path = "$path/.amazeeio.yml";
+      break;
+    }
+    else {
+      // Move up dir by dir and check each.
+      while ($path = _drush_shift_path_up($path)) {
+        if ($follow_symlinks && is_link($path)) {
+          $path = realpath($path);
+        }
+        if (file_exists("$path/.amazeeio.yml")) {
+          $amazeeioyml_path = "$path/.amazeeio.yml";
+          break 2;
+        }
       }
     }
   }
-}
-
-// An .amazeeio.yml file has been found, let's try to load the sitegroup from it.
-if ($amazeeioyml_path) {
-  drush_log(sprintf('Using .amazeeio.yml file at: "%s"', $amazeeioyml_path));
-  $amazeeioyml = Drush\Make\Parser\ParserYaml::parse(file_get_contents($amazeeioyml_path));
-  if ($amazeeioyml['sitegroup']) {
-    $sitegroup_name = $amazeeioyml['sitegroup'];
-    drush_log(sprintf('Discovered sitegroup name "%s" from .amazeeio.yml file', $sitegroup_name));
+  
+  // An .amazeeio.yml file has been found, let's try to load the sitegroup from it.
+  if ($amazeeioyml_path) {
+    drush_log(sprintf('Using .amazeeio.yml file at: "%s"', $amazeeioyml_path));
+    $amazeeioyml = Drush\Make\Parser\ParserYaml::parse(file_get_contents($amazeeioyml_path));
+    if ($amazeeioyml['sitegroup']) {
+      $sitegroup_name = $amazeeioyml['sitegroup'];
+      drush_log(sprintf('Discovered sitegroup name "%s" from .amazeeio.yml file', $sitegroup_name));
+    } else {
+      drush_log(sprintf('No sitegroup defined in .amazeeio.yml file, will try to fall back to deprecated $sitename variable.'));
+    }
   } else {
-    drush_log(sprintf('No sitegroup defined in .amazeeio.yml file, will try to fall back to deprecated $sitename variable.'));
+    drush_log(sprintf('Could not find .amazeeio.yml file.'));
   }
-} else {
-  drush_log(sprintf('Could not find .amazeeio.yml file.'));
-}
-
-// Sitegroup still not defined, last try: using the deprecated variable $sitename directly inside aliases.drushrc.php
-if ($sitegroup_name === FALSE) {
-  if ($sitename && $sitename != 'CHANGEME') {
-    $sitegroup_name = $sitename;
-    drush_log(sprintf('Using sitegroup name "%s" from deprecated $sitename variable within aliases.drushrc.php. You should define the sitegroup within .amazeeio.yml for future compatibility.', $sitegroup_name), 'warning');
-  } else {
-    // No $sitename defined either (or never changed), fully bail here.
-    drush_log('ERROR: Could not discover sitegroup name, you should define it inside your .amazeeio.yml file', 'warning');
-    exit;
+  
+  // Sitegroup still not defined, last try: using the deprecated variable $sitename directly inside aliases.drushrc.php
+  if ($sitegroup_name === FALSE) {
+    if ($sitename && $sitename != 'CHANGEME') {
+      $sitegroup_name = $sitename;
+      drush_log(sprintf('Using sitegroup name "%s" from deprecated $sitename variable within aliases.drushrc.php. You should define the sitegroup within .amazeeio.yml for future compatibility.', $sitegroup_name), 'warning');
+    } else {
+      // No $sitename defined either (or never changed), fully bail here.
+      drush_log('ERROR: Could not discover sitegroup name, you should define it inside your .amazeeio.yml file', 'warning');
+      exit;
+    }
   }
 }
 
@@ -75,6 +80,7 @@ drush_log(sprintf('Loading site configuration for "%s" from the API.', $sitegrou
 $query = sprintf('{
   siteGroup:siteGroupByName(name: "%s") {
     gitUrl
+    slack
     sites {
       edges {
         node {
@@ -85,7 +91,7 @@ $query = sprintf('{
           serverInfrastructure
           serverIdentifier
           serverNames
-          deployVia
+          deployStrategy
           webRoot
           domains
         }
@@ -132,6 +138,7 @@ $sites = array_map(function ($edge) {
 }, $response->data->siteGroup->sites->edges);
 
 $git_url = $response->data->siteGroup->gitUrl;
+$slack = $response->data->siteGroup->slack;
 
 // Default server definition, which has no site specific elements
 $defaults = [
@@ -140,7 +147,8 @@ $defaults = [
       'no-ordered-dump' => TRUE
     ],
   ],
-  'deploy-repository' => $git_url
+  'deploy-repository' => $git_url,
+  'slack' => $slack,
 ];
 
 $aliases = array_reduce($sites, function ($carry, $item) use ($defaults) {
@@ -149,7 +157,7 @@ $aliases = array_reduce($sites, function ($carry, $item) use ($defaults) {
   $site_name = $item->siteName;
   $site_branch = str_replace('/', '_', $item->siteBranch); # siteBranches can have / in them, which is confusing for drush, so we replace them with a _
   $site_environment = $item->siteEnvironment ?: 'production'; # siteEnvironment can be null, which means it's production
-  $deploy_via = $item->deployVia ?: ($site_environment == 'production' ? "RemoteCache" : "Pull"); # if deployVia is set use that or define it based on the environment type
+  $deploy_strategy = $item->deployStrategy ?: ($site_environment == 'production' ? "RemoteCache" : "Pull"); # if deployStrategy is set use that or define it based on the environment type
   $site_host = $item->siteHost;
   $web_root = $item->webRoot;
   if ($site_environment == 'production') {
@@ -173,7 +181,8 @@ $aliases = array_reduce($sites, function ($carry, $item) use ($defaults) {
       'remote-user' => $site_name,
       'root' => "/var/www/$site_name/public_html/$web_root",
       'branch' => $site_branch,
-      'deploy-via' => $deploy_via,
+      'deploy-via' => $deploy_strategy, # BC compatibility
+      'deploy-strategy' => $deploy_strategy,      
       'uri' => $site_url
     ];
   }

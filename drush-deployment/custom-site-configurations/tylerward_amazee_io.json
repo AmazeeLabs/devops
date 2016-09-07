@@ -1,11 +1,11 @@
 {
     "servers": {
-        "prod": {
-            "remote-host": "test1.compact.amazee.io",
+        "dev": {
+            "remote-host": "test2.compact.amazee.io",
             "remote-environment": "amazee.io",
             "remote-user": "tylerward_amazee_io",
             "root": "/var/www/tylerward_amazee_io/public_html",
-            "uri": "http://tylerward.test1.compact.amazee.io",
+            "uri": "http://tylerward.test2.compact.amazee.io",
             "branch": "prod"
         }
     }

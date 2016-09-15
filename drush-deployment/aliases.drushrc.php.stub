@@ -103,7 +103,7 @@ $query = sprintf('{
   }
 }', $sitegroup_name);
 
-$api = 'http://api.amazeeio.cloud/graphql';
+$api = 'https://api.amazeeio.cloud/graphql';
 $curl = curl_init($api);
 
 // Build up the curl options for the GraphQL query. When using the content type

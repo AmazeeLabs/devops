@@ -191,7 +191,7 @@ $aliases = array_reduce($sites, function ($carry, $item) use ($defaults) {
       ];
     }
 
-    $aliases["${site_branch}${human_key}"] = $defaults + $conditional + [
+    $aliases["${site_branch}${human_key}"] = [
       'remote-host' => "$server_name.amazee.io",
       'remote-user' => $site_name,
       'root' => "/var/www/$site_name/public_html/$web_root",
@@ -199,7 +199,7 @@ $aliases = array_reduce($sites, function ($carry, $item) use ($defaults) {
       'deploy-via' => $deploy_strategy, # BC compatibility
       'deploy-strategy' => $deploy_strategy,      
       'uri' => $site_url
-    ];
+    ] + $conditional + $defaults;
   }
 
   if (count($aliases) === 1) {

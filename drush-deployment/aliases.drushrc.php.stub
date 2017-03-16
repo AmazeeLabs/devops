@@ -142,7 +142,7 @@ $response = json_decode($response);
 // Check if the query returned any data for the requested site group.
 if (empty($response->data->siteGroup->sites->edges)) {
   drush_log(sprintf('Curl request didn\'t return any sites for the given site group "%s".', $sitegroup_name), 'warning');
-  exit;
+  return;
 }
 
 $sites = array_map(function ($edge) {

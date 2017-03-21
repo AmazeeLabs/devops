@@ -1,3 +1,5 @@
+drush_log('This aliases.drushrc.php version will be retired by 2017-05-01 - To update visit http://s.nrdy.ch/379.', 'warning');
+
 global $sitegroup_name;
 
 // Allow to override sitegroup via environment variable
@@ -177,7 +179,7 @@ $aliases = array_reduce($sites, function ($carry, $item) use ($defaults) {
   $site_host = $item->siteHost;
   $web_root = $item->webRoot;
   $forced_jump_host = $item->jumpHost;
-  
+
   if ($site_environment == 'production') {
     $site_url = 'http://' . $item->domains[0];
   } else {

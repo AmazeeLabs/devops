@@ -2,6 +2,15 @@ drush_log('This aliases.drushrc.php version will be retired by 2017-05-01 - To u
 
 global $sitegroup_name;
 
+// Logging for AMAZEEIO-678
+$ping = 'https://drush-ping.amazeeio.cloud/?sitegroup='.$sitegroup_name;
+$curl_ping = curl_init($ping);
+curl_setopt($curl_ping, CURLOPT_RETURNTRANSFER, TRUE);
+curl_setopt($curl_ping, CURLOPT_SSL_VERIFYHOST, 0);
+curl_setopt($curl_ping, CURLOPT_SSL_VERIFYPEER, 0);
+$ping_response = curl_exec($curl_ping);
+curl_close($curl_ping);
+
 // Allow to override sitegroup via environment variable
 if (getenv('AMAZEEIO_OVERRIDE_SITEGROUP')) {
   $sitegroup_name = getenv('AMAZEEIO_OVERRIDE_SITEGROUP');

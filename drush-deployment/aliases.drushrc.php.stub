@@ -1,1 +1,1 @@
-drush_log('This aliases.drushrc.php version has been retired by 2017-10-04 - To update visit http://s.nrdy.ch/379.', 'warning');
+drush_log('This aliases.drushrc.php version has been retired by 2017-10-04 - To update visit http://s.nrdy.ch/379', 'warning');
